@@ -1,15 +1,15 @@
 {
   "name": "vm-form",
   "version": "0.1.0",
-  "private": true,
+  "description": "vue model form",
+  "main": "src/index.js",
+  "author": "a1im",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
-  "dependencies": {
-    "vue": "^2.5.17"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.2.0",
     "@vue/cli-plugin-eslint": "^3.2.0",
@@ -21,8 +21,13 @@
     "lint-staged": "^7.2.2",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
+    "rollup": "^0.67.3",
+    "rollup-plugin-buble": "^0.19.4",
+    "rollup-plugin-polyfill": "^2.0.1",
+    "rollup-plugin-vue": "^4.3.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "vue": "^2.5.17",
     "vue-template-compiler": "^2.5.17"
   },
   "gitHooks": {

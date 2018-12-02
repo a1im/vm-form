@@ -40,14 +40,14 @@
 </template>
 
 <script>
-import Field from './Field';
+import MixinField from '../mixins/field';
 import MixinFieldSelect from '../mixins/fieldSelect';
 
 
-export default Field.extend({
+export default {
     name: 'vm_select',
 
-    mixins: [MixinFieldSelect],
+    mixins: [MixinField, MixinFieldSelect],
 
     methods: {
         checkSelected(newValue) {
@@ -91,7 +91,7 @@ export default Field.extend({
                 : '');
         },
     },
-});
+};
 </script>
 
 <style lang="stylus" scoped>

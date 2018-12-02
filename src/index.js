@@ -1,6 +1,10 @@
 import {
     Input,
-    Select, Textarea, DatePicker, Form, Field,
+    Select,
+    Textarea,
+    DatePicker,
+    Form,
+    Field,
 } from './models';
 import { VMField, VMForm, VMFieldAll } from './functional';
 

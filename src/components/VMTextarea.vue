@@ -18,16 +18,18 @@
 </template>
 
 <script>
-import Field from './Field';
+import MixinField from '../mixins/field';
 
 
-export default Field.extend({
+export default {
     name: 'vm_textarea',
+
+    mixins: [MixinField],
 
     mounted() {
         this.field.$el = this.$refs.textarea;
     },
-});
+};
 </script>
 
 <style lang="stylus" scoped>

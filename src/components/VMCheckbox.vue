@@ -20,12 +20,14 @@
 </template>
 
 <script>
-import Field from './Field';
+import MixinField from '../mixins/field';
 
 
-export default Field.extend({
+export default {
     name: 'vm_checkbox',
-});
+
+    mixins: [MixinField],
+};
 </script>
 
 <style lang="stylus" scoped>
