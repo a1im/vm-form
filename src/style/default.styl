@@ -1,0 +1,145 @@
+.vm-button
+  --button-margin-top 2rem
+
+.vm-field
+  --bg-color white
+  --text-color black
+  --placeholder-color gray
+  --field-height 46px
+  --field-margin 10px
+  --padding 1rem
+  --border-radius 23px
+  --border-color black
+  --label-color white
+  --scroll-color white
+  --bg-select-container gray
+  --bg-option-hover gray
+  --options-border-top white
+  --option-hover white
+  --bg-checkbox-circle #c0c0c0
+  --font-size 1rem
+  --validation-default #c0c0c0
+  --validation-success #1ed700
+  --validation-error #e00000
+  --validation-warn #ffa500
+  --message-color gray
+
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  font-size var(--font-size)
+  color var(--text-color)
+
+  &.center
+    display flex
+    justify-content center
+
+  &.transparent
+    --bg-color transparent
+    --field-margin 0
+
+
+  & + .vm-button
+    margin-top var(--button-margin-top)
+
+  *
+  *:after
+  *:before
+    box-sizing border-box
+
+  &:not(:last-child)
+    margin-bottom: var(--field-margin)
+
+  input[type='checkbox']
+    appearance checkbox
+    margin-right var(--field-margin)
+
+  .vm-input-block
+    display: flex
+    align-items: stretch
+    width 100%
+    position relative
+
+  .vm-input
+    border-color var(--border-color)
+    background-color var(--bg-color)
+    border-style solid
+    border-width 2px
+    font-size 1em
+    height var(--field-height)
+    outline none
+    padding 0 var(--padding)
+    text-decoration none
+    white-space nowrapReversed
+    width 100%
+    transition all .1s
+    color currentColor
+    border-radius var(--border-radius)
+    font-weight 600
+    z-index 2
+    position relative
+
+    &.validator
+      padding-right: 32px
+
+    &:-webkit-outer-spin-button
+    &:-webkit-inner-spin-button
+      appearance none
+      display none
+      margin 0
+
+    &:-webkit-autofill
+      // Прозрачный background при автозаполнении в Chrome
+      transition background-color 86400s ease-in-out 0s
+      -webkit-box-shadow 0 0 0 1000px transparent inset
+      -webkit-text-fill-color var(--text-color) !important
+
+    /* webkit */
+    &::-webkit-input-placeholder {
+      color: var(--placeholder-color);
+      opacity: 1;
+    }
+    /* Firefox 19+ */
+    &::-moz-placeholder {
+      color: var(--placeholder-color);
+      opacity: 1;
+    }
+    /* Firefox 18- */
+    &:-moz-placeholder {
+      color: var(--placeholder-color);
+      opacity: 1;
+    }
+    /* IE */
+    &:-ms-input-placeholder {
+      color: var(--placeholder-color);
+      opacity: 1;
+    }
+
+  .vm-textarea
+    display block
+    line-height 1.5
+    min-height 7.1em
+    padding .4rem var(--padding)
+    resize none
+    width 100%
+
+    + .vm-validator
+      top: 20px
+
+  .vm-label
+    color var(--label-color)
+    font-weight bold
+    margin-left: var(--padding)
+    font-size: .9em;
+    margin-bottom 5px
+
+  .vm-field-message
+    font-size 14px
+    font-weight normal
+    margin-left: var(--padding)
+    color var(--message-color)
+
+    &::before
+      content: '*'
+      color red
+
