@@ -2,9 +2,7 @@
   "name": "vm-form",
   "version": "0.1.1",
   "description": "vue model form",
-  "main": "dist/vm-form.umd.min.js",
-  "module": "dist/vm-form.umd.min.js",
-  "unpkg": "dist/vm-form.umd.min.js",
+  "main": "src/index.js",
   "author": "a1im",
   "license": "MIT",
   "scripts": {
