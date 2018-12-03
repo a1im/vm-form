@@ -68,5 +68,6 @@ export default {
                 right .9rem
                 transition all .2s
                 z-index 2
+                cursor pointer
 
 </style>

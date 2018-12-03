@@ -36,7 +36,7 @@ export default {
             {
                 name: 'number',
                 fieldType: 'select',
-                options: [1, 2, 3],
+                options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             },
             {
                 name: 'multimulti',
@@ -44,7 +44,11 @@ export default {
                 component: 'VMMultiSelectGroup',
                 options: [
                     { label: 'First', options: ['asf'] },
-                    { label: 'Last', options: ['1', '2'] },
+                    { label: 'Last1', options: ['1', '2'] },
+                    { label: 'Last2', options: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'] },
+                    { label: 'Last3', options: ['1', '2'] },
+                    { label: 'Last4', options: ['1', '2'] },
+                    { label: 'Last5', options: ['1', '2'] },
                 ],
             },
             {
