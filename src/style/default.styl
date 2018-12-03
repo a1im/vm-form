@@ -143,3 +143,11 @@
       content: '*'
       color red
 
+  .vm-show-select
+    &-enter-active
+    &-leave-active
+      transition: transform .2s
+
+    &-enter
+    &-leave-to
+      transform translateY(-50%) scaleY(0)

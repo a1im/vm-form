@@ -13,7 +13,7 @@
                 .vm-select-trigger(@click="toggle")
                     VMIcon.icon(:icon="isActive ? 'up' : 'down'")
 
-            transition(name="fade")
+            transition(name="vm-show-select")
                 .vm-select-options-container(v-if="isActive")
                     ul.vm-select-options.level1
                         li.vm-select-option(
@@ -120,7 +120,7 @@ export default {
         .vm-select-input
             padding-right $xxl
             text-overflow ellipsis
-            transition border-radius .1s
+            transition border-radius .2s
             z-index 1
 
         .vm-select-input-block
