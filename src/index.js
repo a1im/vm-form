@@ -1,3 +1,4 @@
+import './style/default.styl';
 import {
     Input,
     Select,
