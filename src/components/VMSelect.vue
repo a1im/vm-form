@@ -11,7 +11,7 @@
                 )
                 .vm-select-input-overlay(v-if="!isAutocomplete" @click="toggle")
                 .vm-select-trigger(@click="toggle")
-                    VMIcon.icon(:icon="isActive ? 'up' : 'down'")
+                    VMIcon.vm-icon(:icon="currentIcon")
 
             transition(name="vm-show-select")
                 .vm-select-options-container(v-if="isActive")
@@ -19,9 +19,9 @@
                         li.vm-select-option(
                         v-if="!searchedOptions || !searchedOptions.length"
                         key="searchedOptionsNotResult"
-                        :title="lang.common.no_result"
+                        title="Нет результата"
                         )
-                            span.vm-select-option-text {{ lang.common.no_result }}
+                            span.vm-select-option-text Нет результата
                         li.vm-select-option(
                         v-for="option in searchedOptions"
                         :key="option.value"
@@ -63,6 +63,7 @@ export default {
                 .vm-select-input
                     position relative
                     z-index 5
+                    transition border-radius .1s
 
                 .vm-select-input-overlay
                     z-index 5
@@ -70,7 +71,7 @@ export default {
         .vm-select-input
             padding-right $xxl
             text-overflow ellipsis
-            transition border-radius .2s
+            transition border-radius .1s .2s
             z-index 2
 
         .vm-select-input-block
@@ -160,12 +161,6 @@ export default {
             display flex
             font-weight 600
             justify-content space-between
-            // padding $xs var(--padding)
-
-            @media $tablet
-                &:hover
-                    background-color var(--bg-option-hover)
-                    color var(--option-hover)
 
         .vm-select-option-text
             display block

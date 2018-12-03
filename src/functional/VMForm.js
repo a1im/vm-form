@@ -68,8 +68,6 @@ export default options => ({
             langNameText,
         } = props || {};
 
-        console.log('c', ctx);
-
         return ce('form', {
             class: [
                 { [staticClass]: staticClass },

@@ -11,7 +11,7 @@
                 )
                 .vm-select-input-overlay(v-if="!isAutocomplete" @click="toggle")
                 .vm-select-trigger(@click="toggle")
-                    VMIcon.icon(:icon="isActive ? 'up' : 'down'")
+                    VMIcon.vm-icon(:icon="currentIcon")
 
             transition(name="vm-show-select")
                 .vm-select-options-container(v-if="isActive")
@@ -67,17 +67,30 @@ export default {
         },
 
         selectOption(option, newValue) {
-            const value = this.field.getValue();
-            const groupIsSelected = this.checkSelectedGroup({ group: option.value });
+            const value = this.field.getValue() || [];
 
             newValue = { group: option.value, value: newValue.toString() };
-            newValue = this.checkSelected(newValue) || newValue;
+            const isValue = this.checkSelected(newValue);
 
-            if (groupIsSelected && !this.checkSelected(newValue)) {
-                this.field.setValue(groupIsSelected);
+            if (isValue) {
+                const index = value.findIndex(el => el === isValue);
+
+                value.splice(index, 1);
+            } else {
+                if (!this.isMultiple) {
+                    const groupIsSelected = this.checkSelectedGroup({ group: option.value });
+
+                    if (groupIsSelected) {
+                        const index = value.findIndex(el => el === groupIsSelected);
+
+                        value.splice(index, 1);
+                    }
+                }
+
+                value.push(newValue);
             }
 
-            this.onInput(newValue, Array.isArray(value) ? value : [newValue]);
+            this.onInput(value, value);
             this.updateOptions();
         },
 
@@ -113,6 +126,7 @@ export default {
                 .vm-select-input
                     position relative
                     z-index 5
+                    transition border-radius .1s
 
                 .vm-select-input-overlay
                     z-index 5
@@ -120,7 +134,7 @@ export default {
         .vm-select-input
             padding-right $xxl
             text-overflow ellipsis
-            transition border-radius .2s
+            transition border-radius .1s .2s
             z-index 1
 
         .vm-select-input-block

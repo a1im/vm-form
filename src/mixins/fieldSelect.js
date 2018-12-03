@@ -7,7 +7,7 @@ export default {
     },
 
     props: {
-        selectIcon: String,
+        icon: String,
     },
 
     data: () => ({
@@ -30,11 +30,13 @@ export default {
                 options: el && el.options || [],
             }));
         },
+
         classObject() {
             return {
                 active: this.isActive,
             };
         },
+
         searchedOptions() {
             if (this.search && this.isFirstClick || !this.isAutocomplete) {
                 this.isFirstClick = false;
@@ -47,11 +49,19 @@ export default {
                 .toLowerCase()
                 .indexOf(this.search.toLowerCase()) !== -1);
         },
+
         isMultiple() {
             return this.field.multiple;
         },
+
         isAutocomplete() {
             return this.field.autocomplete;
+        },
+
+        currentIcon() {
+            return this.icon
+                ? this.icon
+                : this.isActive ? 'up' : 'down';
         },
     },
 

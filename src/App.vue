@@ -1,6 +1,7 @@
 <template lang="pug">
     #app
         VMForm(:form="form" :langNameText="text")
+        VMField(:field="form.field('number')" icon="dots")
 </template>
 
 <script>
@@ -36,6 +37,15 @@ export default {
                 name: 'number',
                 fieldType: 'select',
                 options: [1, 2, 3],
+            },
+            {
+                name: 'multimulti',
+                fieldType: 'select',
+                component: 'VMMultiSelectGroup',
+                options: [
+                    { label: 'First', options: ['asf'] },
+                    { label: 'Last', options: ['1', '2'] },
+                ],
             },
             {
                 name: 'comment',
