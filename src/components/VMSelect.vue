@@ -44,4 +44,4 @@ export default {
 };
 </script>
 
-<style lang="stylus" src="../style/select.styl"></style>
+<style lang="stylus"></style>
