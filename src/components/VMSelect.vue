@@ -43,5 +43,3 @@ export default {
     mixins: [MixinField, MixinFieldSelect],
 };
 </script>
-
-<style lang="stylus"></style>
