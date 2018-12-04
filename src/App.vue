@@ -1,7 +1,8 @@
 <template lang="pug">
     #app
-        VMForm(:form="form" :langNameText="text")
+        VMForm(:form="form" :langNameText="text" :excludes="['number', 'time']")
         VMField(:field="form.field('number')" icon="dots")
+        VMField(:field="form.field('time')" icon="dots")
 </template>
 
 <script>
@@ -61,6 +62,16 @@ export default {
             {
                 name: 'is-form',
                 component: 'VMCheckbox',
+            },
+            {
+                name: 'time',
+                fieldType: 'timePicker',
+                isRange: true,
+                startTime: 1300,
+                offset: 500,
+                onChange: (value) => {
+                    console.log('onChange', value);
+                },
             },
         ]);
     },

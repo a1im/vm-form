@@ -1,13 +1,15 @@
 import Vue from 'vue';
 import App from './App.vue';
 import './style/default.styl';
-import VMField, {
+import VMField from './index';
+import {
     VMInput,
     VMTextarea,
     VMCheckbox,
     VMMultiSelectGroup,
     VMSelect,
-} from './index';
+    VMTimePicker,
+} from './components';
 
 Vue.use(VMField, {
     components: {
@@ -16,6 +18,7 @@ Vue.use(VMField, {
         VMCheckbox,
         VMMultiSelectGroup,
         VMSelect,
+        VMTimePicker,
     },
 });
 

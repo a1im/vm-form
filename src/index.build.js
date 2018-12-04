@@ -9,6 +9,14 @@ import {
     Field,
     TimePicker,
 } from './models';
+import {
+    VMInput,
+    VMSelect,
+    VMMultiSelectGroup,
+    VMCheckbox,
+    VMTextarea,
+    VMTimePicker,
+} from './components';
 import { VMField, VMForm, VMFieldAll } from './functional';
 
 const GlobalVue = (window || {}).Vue || (global || {}).Vue;
@@ -21,7 +29,15 @@ const Root = {
         defaultRequired = true,
     }) {
         if (this.installed) return;
-        Vue.component('VMField', VMField(components || {}));
+        Vue.component('VMField', VMField({
+            VMInput,
+            VMSelect,
+            VMMultiSelectGroup,
+            VMCheckbox,
+            VMTextarea,
+            VMTimePicker,
+            ...(components || {}),
+        }));
         Vue.component('VMForm', VMForm(form || {}));
         Vue.component('VMFieldAll', VMFieldAll);
 

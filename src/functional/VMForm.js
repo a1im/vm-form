@@ -31,6 +31,12 @@ export default options => ({
             type: [Object, Array, String],
             default: () => (options.buttonClass || {}),
         },
+        excludes: {
+            type: [Array],
+        },
+        includes: {
+            type: [Array],
+        },
     },
 
     methods: {
@@ -66,6 +72,8 @@ export default options => ({
             fieldClass,
             buttonClass,
             langNameText,
+            excludes,
+            includes,
         } = props || {};
 
         return ce('form', {
@@ -81,15 +89,15 @@ export default options => ({
                 ...listeners,
             },
         }, children || [
-            ...form.fields
-                .filter(field => field.type !== 'hidden')
-                .map(field => ce('VMField', {
-                    props: {
-                        field,
-                        langNameText,
-                    },
+            ce('VMFieldAll', {
+                props: {
+                    fields: form.fields,
+                    langNameText,
+                    excludes,
+                    includes,
                     class: fieldClass || [],
-                })),
+                },
+            }),
             ce('button', {
                 class: ['vm-button', buttonClass || []],
                 attrs: {
