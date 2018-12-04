@@ -9,11 +9,13 @@ import {
     Field,
     TimePicker,
 } from './models';
-import { VMField, VMForm, VMFieldAll } from './functional';
+import {
+    VMField,
+    VMForm,
+    VMFieldAll,
+} from './functional';
 
-const GlobalVue = (window || {}).Vue || (global || {}).Vue;
 const Root = {
-    installed: false,
     install(Vue, {
         components,
         form,
@@ -21,6 +23,7 @@ const Root = {
         defaultRequired = true,
     }) {
         if (this.installed) return;
+
         Vue.component('VMField', VMField(components || {}));
         Vue.component('VMForm', VMForm(form || {}));
         Vue.component('VMFieldAll', VMFieldAll);
@@ -83,9 +86,5 @@ const Root = {
         Vue.prototype.$VMForm = $VMForm;
     },
 };
-
-if (GlobalVue) {
-    GlobalVue.use(Root);
-}
 
 export default Root;

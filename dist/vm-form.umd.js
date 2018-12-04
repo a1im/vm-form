@@ -330,174 +330,6 @@ module.exports = __webpack_require__("9e1e") ? Object.defineProperties : functio
 
 /***/ }),
 
-/***/ "15fd":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _objectWithoutProperties; });
-
-function _objectWithoutProperties(source, excluded) {
-  if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose(source, excluded);
-  var key, i;
-
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-
-  return target;
-}
-
-/***/ }),
-
-/***/ "188b":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var core_js_modules_es6_array_find__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("7514");
-/* harmony import */ var core_js_modules_es6_array_find__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_array_find__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es6_function_name__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("7f7f");
-/* harmony import */ var core_js_modules_es6_function_name__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_function_name__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Users_alim_Documents_webSites_vm_form_node_modules_babel_runtime_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("53ca");
-/* harmony import */ var _Users_alim_Documents_webSites_vm_form_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("be94");
-/* harmony import */ var _style_default_styl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("7d4f");
-/* harmony import */ var _style_default_styl__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_default_styl__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _style_select_styl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("f627");
-/* harmony import */ var _style_select_styl__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_style_select_styl__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _models__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("3a34");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("2af9");
-/* harmony import */ var _functional__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__("b538");
-
-
-
-
-
-
-
-
-
-var GlobalVue = (window || {}).Vue || (global || {}).Vue;
-var Root = {
-  installed: false,
-  install: function install(Vue, _ref) {
-    var components = _ref.components,
-        form = _ref.form,
-        _ref$templates = _ref.templates,
-        templates = _ref$templates === void 0 ? function () {
-      return [];
-    } : _ref$templates,
-        _ref$defaultRequired = _ref.defaultRequired,
-        defaultRequired = _ref$defaultRequired === void 0 ? true : _ref$defaultRequired;
-    if (this.installed) return;
-    Vue.component('VMField', Object(_functional__WEBPACK_IMPORTED_MODULE_8__[/* VMField */ "b"])(Object(_Users_alim_Documents_webSites_vm_form_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])({
-      VMInput: _components__WEBPACK_IMPORTED_MODULE_7__[/* VMInput */ "b"],
-      VMSelect: _components__WEBPACK_IMPORTED_MODULE_7__[/* VMSelect */ "d"],
-      VMMultiSelectGroup: _components__WEBPACK_IMPORTED_MODULE_7__[/* VMMultiSelectGroup */ "c"],
-      VMCheckbox: _components__WEBPACK_IMPORTED_MODULE_7__[/* VMCheckbox */ "a"],
-      VMTextarea: _components__WEBPACK_IMPORTED_MODULE_7__[/* VMTextarea */ "e"],
-      VMTimePicker: _components__WEBPACK_IMPORTED_MODULE_7__[/* VMTimePicker */ "f"]
-    }, components || {})));
-    Vue.component('VMForm', Object(_functional__WEBPACK_IMPORTED_MODULE_8__[/* VMForm */ "d"])(form || {}));
-    Vue.component('VMFieldAll', _functional__WEBPACK_IMPORTED_MODULE_8__[/* VMFieldAll */ "c"]);
-
-    var $VMField = function $VMField(name) {
-      if (name instanceof _models__WEBPACK_IMPORTED_MODULE_6__[/* Field */ "b"]) return name;
-      var obj = typeof name === 'string' ? {
-        name: name
-      } : Object(_Users_alim_Documents_webSites_vm_form_node_modules_babel_runtime_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(name) === 'object' && !Array.isArray(name) ? name : {};
-
-      if (!obj.name) {
-        throw {
-          error: 'Prop "name" is required'
-        };
-      }
-
-      var template = templates().find(function (el) {
-        return el.template === obj.template;
-      }) || {};
-      var fieldType = template.fieldType || obj.fieldType || 'input';
-      var templateDefault = templates().find(function (el) {
-        return el.template === fieldType;
-      }) || {}; // find template
-
-      var fieldData = Object(_Users_alim_Documents_webSites_vm_form_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])({
-        required: defaultRequired
-      }, templateDefault, template, obj);
-
-      var field;
-
-      switch (fieldType) {
-        case 'input':
-          field = new _models__WEBPACK_IMPORTED_MODULE_6__[/* Input */ "d"](fieldData);
-          break;
-
-        case 'textarea':
-          field = new _models__WEBPACK_IMPORTED_MODULE_6__[/* Textarea */ "f"](fieldData);
-          break;
-
-        case 'select':
-          field = new _models__WEBPACK_IMPORTED_MODULE_6__[/* Select */ "e"](fieldData);
-          break;
-
-        case 'datePicker':
-          field = new _models__WEBPACK_IMPORTED_MODULE_6__[/* DatePicker */ "a"](fieldData);
-          break;
-
-        case 'timePicker':
-          field = new _models__WEBPACK_IMPORTED_MODULE_6__[/* TimePicker */ "g"](fieldData);
-          break;
-
-        default:
-          field = new _models__WEBPACK_IMPORTED_MODULE_6__[/* Input */ "d"](fieldData);
-      }
-
-      return field;
-    };
-
-    var $VMForm = function $VMForm(data, submit) {
-      return new _models__WEBPACK_IMPORTED_MODULE_6__[/* Form */ "c"](data.map(function (el) {
-        return $VMField(el);
-      }), submit);
-    };
-
-    Vue.prototype.$VMField = $VMField;
-    Vue.prototype.$VMForm = $VMForm;
-  }
-};
-
-if (GlobalVue) {
-  GlobalVue.use(Root);
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (Root);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__("c8ba")))
-
-/***/ }),
-
 /***/ "1991":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -586,49 +418,6 @@ module.exports = {
   clear: clearTask
 };
 
-
-/***/ }),
-
-/***/ "1da1":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _asyncToGenerator; });
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
-  try {
-    var info = gen[key](arg);
-    var value = info.value;
-  } catch (error) {
-    reject(error);
-    return;
-  }
-
-  if (info.done) {
-    resolve(value);
-  } else {
-    Promise.resolve(value).then(_next, _throw);
-  }
-}
-
-function _asyncToGenerator(fn) {
-  return function () {
-    var self = this,
-        args = arguments;
-    return new Promise(function (resolve, reject) {
-      var gen = fn.apply(self, args);
-
-      function _next(value) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
-      }
-
-      function _throw(err) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
-      }
-
-      _next(undefined);
-    });
-  };
-}
 
 /***/ }),
 
@@ -880,1176 +669,6 @@ module.exports = Object.create || function create(O, Properties) {
 
 /***/ }),
 
-/***/ "2af9":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMInput.vue?vue&type=template&id=4735c048&scoped=true&lang=pug&
-var VMInputvue_type_template_id_4735c048_scoped_true_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMFieldWrapper"}},[_c('div',{staticClass:"vm-input-block"},[_c('input',{ref:"input",staticClass:"vm-input",class:_vm.inputClass,attrs:{"minlength":_vm.field.minlength,"maxlength":_vm.field.maxlength,"placeholder":_vm.text.placeholder,"readonly":_vm.field.readonly,"required":_vm.required,"type":_vm.field.type || 'text',"name":_vm.name},domProps:{"value":_vm.value},on:{"input":function($event){_vm.onInput($event.target.value)},"invalid":function($event){_vm.field.onInvalid()}}}),(!_vm.hideValidator)?_c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMValidator"}}):_vm._e()],1)])}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/VMInput.vue?vue&type=template&id=4735c048&scoped=true&lang=pug&
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.find.js
-var es6_array_find = __webpack_require__("7514");
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
-var slicedToArray = __webpack_require__("3835");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.array.includes.js
-var es7_array_includes = __webpack_require__("6762");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.includes.js
-var es6_string_includes = __webpack_require__("2fdb");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.to-string.js
-var es6_regexp_to_string = __webpack_require__("6b54");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.search.js
-var es6_regexp_search = __webpack_require__("386d");
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/typeof.js
-var esm_typeof = __webpack_require__("53ca");
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
-var defineProperty = __webpack_require__("ade3");
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread.js
-var objectSpread = __webpack_require__("be94");
-
-// EXTERNAL MODULE: ./src/assets/icons_bundle.svg
-var icons_bundle = __webpack_require__("5d2b");
-var icons_bundle_default = /*#__PURE__*/__webpack_require__.n(icons_bundle);
-
-// CONCATENATED MODULE: ./src/functional/VMIcon.js
-
-
-
-/* harmony default export */ var VMIcon = ({
-  name: 'vm_icon',
-  functional: true,
-  props: {
-    icon: [String, Array],
-    src: String
-  },
-  render: function render(c, ctx) {
-    var _ref = ctx || {},
-        props = _ref.props,
-        data = _ref.data,
-        listeners = _ref.listeners;
-
-    var _ref2 = data || {},
-        staticClass = _ref2.staticClass,
-        className = _ref2.class;
-
-    var svgLink = "".concat(icons_bundle_default.a, "#").concat(props.icon);
-    return c('svg', {
-      props: {
-        key: svgLink
-      },
-      on: Object(objectSpread["a" /* default */])({}, listeners),
-      class: [Object(defineProperty["a" /* default */])({}, staticClass, staticClass), className || []]
-    }, [c('use', {
-      attrs: {
-        'xlink:href': svgLink
-      }
-    })]);
-  }
-});
-// CONCATENATED MODULE: ./src/mixins/fieldSelect.js
-
-
-
-
-
-
-
-
-/* harmony default export */ var fieldSelect = ({
-  components: {
-    VMIcon: VMIcon
-  },
-  props: {
-    icon: String
-  },
-  data: function data() {
-    return {
-      search: '',
-      isFirstClick: true,
-      isActive: false
-    };
-  },
-  computed: {
-    options: function options() {
-      var options = this.field.options || [];
-      return options.map(function (el) {
-        return {
-          value: Object(esm_typeof["a" /* default */])(el) === 'object' ? el.value === undefined ? el.label : el.value : el,
-          label: Object(esm_typeof["a" /* default */])(el) === 'object' ? el.label === undefined ? el.value : el.label : el,
-          options: el && el.options || []
-        };
-      });
-    },
-    classObject: function classObject() {
-      return {
-        active: this.isActive
-      };
-    },
-    searchedOptions: function searchedOptions() {
-      var _this = this;
-
-      if (this.search && this.isFirstClick || !this.isAutocomplete) {
-        this.isFirstClick = false;
-        return this.options;
-      }
-
-      return this.options.filter(function (it) {
-        return it.label.toString().toLowerCase().indexOf(_this.search.toLowerCase()) !== -1;
-      });
-    },
-    isMultiple: function isMultiple() {
-      return this.field.multiple;
-    },
-    isAutocomplete: function isAutocomplete() {
-      return this.field.autocomplete;
-    },
-    currentIcon: function currentIcon() {
-      return this.icon ? this.icon : this.isActive ? 'up' : 'down';
-    }
-  },
-  watch: {
-    options: function options() {
-      this.updateOptions();
-    }
-  },
-  methods: {
-    updateOptions: function updateOptions() {
-      var _this2 = this;
-
-      if (this.isMultiple) {
-        this.setSearch(Array.isArray(this.field.getValue()) ? this.options.filter(function (el) {
-          return _this2.field.getValue().includes(el.value.toString());
-        }).map(function (el) {
-          return el.label;
-        }).join(', ') : '');
-      } else {
-        var option = this.getOptionByValue(this.field.getValue());
-
-        if (!option && this.options.length) {
-          var _this$options = Object(slicedToArray["a" /* default */])(this.options, 1);
-
-          option = _this$options[0];
-        }
-
-        option = option || {
-          value: '',
-          label: ''
-        };
-        this.setSearch(option.label);
-        this.field.setValue(option.value);
-      }
-    },
-    setSearch: function setSearch(value) {
-      value = value || '';
-      this.search = value.toString();
-    },
-    getOptionByValue: function getOptionByValue(value) {
-      return this.options.find(function (ot) {
-        return ot.value.toString() === value.toString();
-      });
-    },
-    clickedOutside: function clickedOutside(event) {
-      var _this3 = this;
-
-      if (!this.isActive) return;
-      var path = event.path || event.composedPath && event.composedPath() || [];
-      var isOutside = path.every(function (el) {
-        return _this3.$el !== el;
-      });
-      if (!isOutside) return;
-      this.deactivated();
-    },
-    selectAll: function selectAll() {
-      this.$refs.input.select();
-    },
-    onSearchFocus: function onSearchFocus() {
-      this.selectAll();
-      this.isActive = true;
-    },
-    selectOption: function selectOption(option) {
-      if (this.isMultiple) {
-        var value = this.field.getValue();
-        var newValue = option.value.toString();
-        this.onInput(newValue, Array.isArray(value) ? value : [newValue]);
-        this.updateOptions();
-      } else {
-        this.onInput(option.value.toString(), option);
-        this.deactivated(option);
-        this.setSearch(option.label);
-      }
-    },
-    optionSelected: function optionSelected(_ref) {
-      var value = _ref.value;
-
-      if (this.isMultiple) {
-        return this.field.getValue().includes(value.toString());
-      }
-
-      return this.field.getValue().toString() === value.toString();
-    },
-    deactivated: function deactivated() {
-      var option = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-
-      if (this.isAutocomplete) {
-        option = option || this.getOptionByValue(this.field.getValue()) || {};
-        this.isFirstClick = true;
-        this.setSearch(option.label);
-        this.isActive = false;
-      } else {
-        this.isActive = false;
-      }
-    },
-    toggle: function toggle() {
-      if (this.isActive) {
-        this.deactivated();
-      } else {
-        this.isActive = !this.isActive;
-      }
-    }
-  },
-  created: function created() {
-    this.updateOptions();
-    if (typeof window === 'undefined') return;
-    document.addEventListener('mouseup', this.clickedOutside, true);
-    document.addEventListener('touchend', this.clickedOutside, true);
-  },
-  beforeDestroy: function beforeDestroy() {
-    if (typeof window === 'undefined') return;
-    document.removeEventListener('mouseup', this.clickedOutside, true);
-    document.removeEventListener('touchend', this.clickedOutside, true);
-  }
-});
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.object.assign.js
-var es6_object_assign = __webpack_require__("f751");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
-var es6_function_name = __webpack_require__("7f7f");
-
-// EXTERNAL MODULE: ./src/models/index.js + 14 modules
-var models = __webpack_require__("3a34");
-
-// CONCATENATED MODULE: ./src/mixins/all.js
-
-
-
-
-/* harmony default export */ var mixins_all = ({
-  props: {
-    langText: Object,
-    langNameText: Object,
-    langProp: String,
-    label: String,
-    placeholder: String,
-    validationError: String,
-    message: String,
-    field: {
-      type: Object,
-      required: true,
-      validator: function validator(value) {
-        return value instanceof models["b" /* Field */];
-      }
-    }
-  },
-  computed: {
-    name: function name() {
-      return this.field.name;
-    },
-    text: function text() {
-      return this.langText || (this.langNameText || {})[this.name] || Object.assign({}, this.label ? {
-        label: this.label
-      } : {}, this.placeholder ? {
-        placeholder: this.placeholder
-      } : {}, this.validationError ? {
-        validationError: this.validationError
-      } : {});
-    },
-    hideValidator: function hideValidator() {
-      return this.field.hideValidator;
-    },
-    value: function value() {
-      return this.field.value[this.field.prop];
-    },
-    inputClass: function inputClass() {
-      return [{
-        validator: !this.hideValidator
-      }, this.field.inputClass || []];
-    },
-    fieldClass: function fieldClass() {
-      var _ref;
-
-      return [(_ref = {}, Object(defineProperty["a" /* default */])(_ref, "vm-field-".concat(this.field.name), true), Object(defineProperty["a" /* default */])(_ref, "required", this.field.required), _ref), this.field.fieldClass || []];
-    },
-    required: function required() {
-      return this.field.required || false;
-    },
-    cMessage: function cMessage() {
-      return this.message;
-    },
-    componentName: function componentName() {
-      return this.$options.name;
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/mixins/index.js
-
-
-// EXTERNAL MODULE: ./src/functional/index.js + 4 modules
-var functional = __webpack_require__("b538");
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMFieldWrapper.vue?vue&type=template&id=5f3cfcda&lang=pug&
-var VMFieldWrappervue_type_template_id_5f3cfcda_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vm-field-wrapper vm-field",class:_vm.fieldClass},[(_vm.text.label)?_c('VMLabel',[_vm._v(_vm._s(_vm.text.label))]):_vm._e(),_vm._t("default"),(_vm.cMessage)?_c('div',{staticClass:"vm-field-message"},[_vm._v(_vm._s(_vm.cMessage))]):_vm._e()],2)}
-var VMFieldWrappervue_type_template_id_5f3cfcda_lang_pug_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/VMFieldWrapper.vue?vue&type=template&id=5f3cfcda&lang=pug&
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMLabel.vue?vue&type=template&id=2a5c11aa&scoped=true&lang=pug&
-var VMLabelvue_type_template_id_2a5c11aa_scoped_true_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{staticClass:"vm-label"},[_vm._t("default")],2)}
-var VMLabelvue_type_template_id_2a5c11aa_scoped_true_lang_pug_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/VMLabel.vue?vue&type=template&id=2a5c11aa&scoped=true&lang=pug&
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMLabel.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-/* harmony default export */ var VMLabelvue_type_script_lang_js_ = ({
-  name: 'vm_label'
-});
-// CONCATENATED MODULE: ./src/components/VMLabel.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_VMLabelvue_type_script_lang_js_ = (VMLabelvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/VMLabel.vue?vue&type=style&index=0&id=2a5c11aa&lang=stylus&scoped=true&
-var VMLabelvue_type_style_index_0_id_2a5c11aa_lang_stylus_scoped_true_ = __webpack_require__("5248");
-
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-function normalizeComponent (
-  scriptExports,
-  render,
-  staticRenderFns,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier, /* server only */
-  shadowMode /* vue-cli only */
-) {
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (render) {
-    options.render = render
-    options.staticRenderFns = staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = 'data-v-' + scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = shadowMode
-      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
-      : injectStyles
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return originalRender(h, context)
-      }
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    }
-  }
-
-  return {
-    exports: scriptExports,
-    options: options
-  }
-}
-
-// CONCATENATED MODULE: ./src/components/VMLabel.vue
-
-
-
-
-
-
-/* normalize component */
-
-var component = normalizeComponent(
-  components_VMLabelvue_type_script_lang_js_,
-  VMLabelvue_type_template_id_2a5c11aa_scoped_true_lang_pug_render,
-  VMLabelvue_type_template_id_2a5c11aa_scoped_true_lang_pug_staticRenderFns,
-  false,
-  null,
-  "2a5c11aa",
-  null
-  
-)
-
-component.options.__file = "VMLabel.vue"
-/* harmony default export */ var VMLabel = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMFieldWrapper.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ var VMFieldWrappervue_type_script_lang_js_ = ({
-  name: 'vm_field_wrapper',
-  mixins: [mixins_all],
-  components: {
-    VMLabel: VMLabel
-  }
-});
-// CONCATENATED MODULE: ./src/components/VMFieldWrapper.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_VMFieldWrappervue_type_script_lang_js_ = (VMFieldWrappervue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/VMFieldWrapper.vue?vue&type=style&index=0&lang=stylus&
-var VMFieldWrappervue_type_style_index_0_lang_stylus_ = __webpack_require__("0676");
-
-// CONCATENATED MODULE: ./src/components/VMFieldWrapper.vue
-
-
-
-
-
-
-/* normalize component */
-
-var VMFieldWrapper_component = normalizeComponent(
-  components_VMFieldWrappervue_type_script_lang_js_,
-  VMFieldWrappervue_type_template_id_5f3cfcda_lang_pug_render,
-  VMFieldWrappervue_type_template_id_5f3cfcda_lang_pug_staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-VMFieldWrapper_component.options.__file = "VMFieldWrapper.vue"
-/* harmony default export */ var VMFieldWrapper = (VMFieldWrapper_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMValidator.vue?vue&type=template&id=1db74260&lang=pug&
-var VMValidatorvue_type_template_id_1db74260_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.field.type !== 'hidden')?_c('div',{staticClass:"vm-validator",on:{"mouseenter":function($event){_vm.field.onValidator($event)},"touchstart":function($event){_vm.field.onValidator($event)}}},[_c('div',{staticClass:"vm-validator-circle",class:{
-        error: !_vm.field._isEdit && _vm.field._isInvalid === true,
-        success: _vm.field._isInvalid === false,
-        warn: _vm.field._isEdit && _vm.field._isInvalid === true,
-    }})]):_vm._e()}
-var VMValidatorvue_type_template_id_1db74260_lang_pug_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/VMValidator.vue?vue&type=template&id=1db74260&lang=pug&
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMValidator.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ var VMValidatorvue_type_script_lang_js_ = ({
-  name: 'vm_validator',
-  mixins: [mixins_all]
-});
-// CONCATENATED MODULE: ./src/components/VMValidator.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_VMValidatorvue_type_script_lang_js_ = (VMValidatorvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/VMValidator.vue?vue&type=style&index=0&lang=stylus&
-var VMValidatorvue_type_style_index_0_lang_stylus_ = __webpack_require__("371f");
-
-// CONCATENATED MODULE: ./src/components/VMValidator.vue
-
-
-
-
-
-
-/* normalize component */
-
-var VMValidator_component = normalizeComponent(
-  components_VMValidatorvue_type_script_lang_js_,
-  VMValidatorvue_type_template_id_1db74260_lang_pug_render,
-  VMValidatorvue_type_template_id_1db74260_lang_pug_staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-VMValidator_component.options.__file = "VMValidator.vue"
-/* harmony default export */ var VMValidator = (VMValidator_component.exports);
-// CONCATENATED MODULE: ./src/utils/inputFunction.js
-var getCaretPosition = function getCaretPosition(field) {
-  // Initialize
-  var iCaretPos = 0; // IE Support
-
-  if (document.selection) {
-    // Set focus on the element
-    field.focus(); // To get cursor position, get empty selection range
-
-    var oSel = document.selection.createRange(); // Move selection start to 0 position
-
-    oSel.moveStart('character', -field.value.length); // The caret position is selection length
-
-    iCaretPos = oSel.text.length;
-  } else if (field.selectionStart || field.selectionStart === '0') {
-    // Firefox support
-    iCaretPos = field.selectionStart;
-  } // Return results
-
-
-  return iCaretPos;
-};
-
-var setCursorPosition = function setCursorPosition(field, pos) {
-  var type = field.getAttribute('type');
-
-  if (type === 'text' || type === 'password') {
-    if (field.setSelectionRange) {
-      field.setSelectionRange(pos, pos);
-    } else if (field.createTextRange) {
-      var range = field.createTextRange();
-      range.collapse(true);
-      range.moveEnd('character', pos);
-      range.moveStart('character', pos);
-      range.select();
-    }
-  }
-};
-
-
-// CONCATENATED MODULE: ./src/utils/index.js
-
-// CONCATENATED MODULE: ./src/mixins/field.js
-
-
-
-
-
-/* harmony default export */ var field = ({
-  mixins: [mixins_all],
-  components: {
-    VMFieldWrapper: VMFieldWrapper,
-    VMValidator: VMValidator,
-    PropsSplit: functional["a" /* PropsSplit */]
-  },
-  methods: {
-    beforeOnInput: function beforeOnInput() {},
-    onInput: function onInput(value) {
-      var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-      this.field._isEdit = true;
-      console.log("".concat(this.componentName, ": "), "val: ".concat(value), "res: ".concat(this.field.checkValue(value)));
-      value = this.field.checkValue(value);
-
-      if (this.field.$el) {
-        // реактивность не срабатывает если после checkValue значение не изменилось
-        var elem = this.field.$el;
-        var posCur = getCaretPosition(elem);
-        elem.value = value;
-        setCursorPosition(elem, posCur);
-      }
-
-      this.beforeOnInput(value);
-      this.field.setValue(value);
-      this.field.checkValidation();
-      this.field.onChange(value, data);
-      this.$emit('input', value, data);
-    }
-  },
-  watch: {
-    text: function text() {
-      this.field.setText(this.text);
-    }
-  },
-  created: function created() {
-    this.field.setText(this.text);
-  }
-});
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMInput.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ var VMInputvue_type_script_lang_js_ = ({
-  name: 'vm_input',
-  mixins: [field],
-  mounted: function mounted() {
-    this.field.$el = this.$refs.input;
-  }
-});
-// CONCATENATED MODULE: ./src/components/VMInput.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_VMInputvue_type_script_lang_js_ = (VMInputvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/VMInput.vue?vue&type=style&index=0&id=4735c048&lang=stylus&scoped=true&
-var VMInputvue_type_style_index_0_id_4735c048_lang_stylus_scoped_true_ = __webpack_require__("9c6a");
-
-// CONCATENATED MODULE: ./src/components/VMInput.vue
-
-
-
-
-
-
-/* normalize component */
-
-var VMInput_component = normalizeComponent(
-  components_VMInputvue_type_script_lang_js_,
-  VMInputvue_type_template_id_4735c048_scoped_true_lang_pug_render,
-  staticRenderFns,
-  false,
-  null,
-  "4735c048",
-  null
-  
-)
-
-VMInput_component.options.__file = "VMInput.vue"
-/* harmony default export */ var VMInput = (VMInput_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMTextarea.vue?vue&type=template&id=7b8d7098&scoped=true&lang=pug&
-var VMTextareavue_type_template_id_7b8d7098_scoped_true_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMFieldWrapper"}},[_c('div',{staticClass:"vm-input-block"},[_c('textarea',{ref:"textarea",staticClass:"vm-input vm-textarea",class:_vm.inputClass,attrs:{"minlength":_vm.field.minlength,"maxlength":_vm.field.maxlength,"placeholder":_vm.text.placeholder,"readonly":_vm.field.readonly,"required":_vm.required,"name":_vm.name},domProps:{"value":_vm.value},on:{"input":function($event){_vm.onInput($event.target.value)},"invalid":function($event){_vm.field.onInvalid()}}}),(!_vm.hideValidator)?_c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMValidator"}}):_vm._e()],1)])}
-var VMTextareavue_type_template_id_7b8d7098_scoped_true_lang_pug_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/VMTextarea.vue?vue&type=template&id=7b8d7098&scoped=true&lang=pug&
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMTextarea.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ var VMTextareavue_type_script_lang_js_ = ({
-  name: 'vm_textarea',
-  mixins: [field],
-  mounted: function mounted() {
-    this.field.$el = this.$refs.textarea;
-  }
-});
-// CONCATENATED MODULE: ./src/components/VMTextarea.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_VMTextareavue_type_script_lang_js_ = (VMTextareavue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/VMTextarea.vue?vue&type=style&index=0&id=7b8d7098&lang=stylus&scoped=true&
-var VMTextareavue_type_style_index_0_id_7b8d7098_lang_stylus_scoped_true_ = __webpack_require__("cf10");
-
-// CONCATENATED MODULE: ./src/components/VMTextarea.vue
-
-
-
-
-
-
-/* normalize component */
-
-var VMTextarea_component = normalizeComponent(
-  components_VMTextareavue_type_script_lang_js_,
-  VMTextareavue_type_template_id_7b8d7098_scoped_true_lang_pug_render,
-  VMTextareavue_type_template_id_7b8d7098_scoped_true_lang_pug_staticRenderFns,
-  false,
-  null,
-  "7b8d7098",
-  null
-  
-)
-
-VMTextarea_component.options.__file = "VMTextarea.vue"
-/* harmony default export */ var VMTextarea = (VMTextarea_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMSelect.vue?vue&type=template&id=5811604c&lang=pug&
-var VMSelectvue_type_template_id_5811604c_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMFieldWrapper"}},[_c('div',{staticClass:"vm-select-container",class:_vm.classObject},[_c('div',{staticClass:"vm-select-input-block"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.search),expression:"search"}],ref:"input",staticClass:"vm-input vm-select-input",attrs:{"placeholder":_vm.text.placeholder},domProps:{"value":(_vm.search)},on:{"focus":function($event){$event.stopPropagation();return _vm.onSearchFocus($event)},"dblclick":function($event){$event.stopPropagation();return _vm.selectAll($event)},"input":function($event){if($event.target.composing){ return; }_vm.search=$event.target.value}}}),(!_vm.isAutocomplete)?_c('div',{staticClass:"vm-select-input-overlay",on:{"click":_vm.toggle}}):_vm._e(),_c('div',{staticClass:"vm-select-trigger",on:{"click":_vm.toggle}},[_c('VMIcon',{staticClass:"vm-icon",attrs:{"icon":_vm.currentIcon}})],1)]),_c('transition',{attrs:{"name":"vm-show-select"}},[(_vm.isActive)?_c('div',{staticClass:"vm-select-options-container"},[_c('ul',{staticClass:"vm-select-options",class:{ multiple: _vm.isMultiple }},[(!_vm.searchedOptions || !_vm.searchedOptions.length)?_c('li',{key:"searchedOptionsNotResult",staticClass:"vm-select-option",attrs:{"title":"Нет результата"}},[_c('span',{staticClass:"vm-select-option-text"},[_vm._v("Нет результата")])]):_vm._e(),_vm._l((_vm.searchedOptions),function(option){return _c('li',{key:option.value,staticClass:"vm-select-option",class:{ selected: _vm.optionSelected(option) },attrs:{"title":option.label},on:{"click":function($event){_vm.selectOption(option)}}},[_c('span',{staticClass:"vm-select-option-text"},[_vm._v(_vm._s(option.label))])])})],2)]):_vm._e()])],1)])}
-var VMSelectvue_type_template_id_5811604c_lang_pug_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/VMSelect.vue?vue&type=template&id=5811604c&lang=pug&
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMSelect.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ var VMSelectvue_type_script_lang_js_ = ({
-  name: 'vm_select',
-  mixins: [field, fieldSelect]
-});
-// CONCATENATED MODULE: ./src/components/VMSelect.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_VMSelectvue_type_script_lang_js_ = (VMSelectvue_type_script_lang_js_); 
-// CONCATENATED MODULE: ./src/components/VMSelect.vue
-
-
-
-
-
-/* normalize component */
-
-var VMSelect_component = normalizeComponent(
-  components_VMSelectvue_type_script_lang_js_,
-  VMSelectvue_type_template_id_5811604c_lang_pug_render,
-  VMSelectvue_type_template_id_5811604c_lang_pug_staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-VMSelect_component.options.__file = "VMSelect.vue"
-/* harmony default export */ var VMSelect = (VMSelect_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMCheckbox.vue?vue&type=template&id=07a021c0&scoped=true&lang=pug&
-var VMCheckboxvue_type_template_id_07a021c0_scoped_true_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMFieldWrapper"}},[(_vm.text.label)?_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.text.label))]):_vm._e(),_c('input',{staticClass:"vm-input vm-input-checkbox",domProps:{"value":_vm.text.placeholder}}),_c('label',[_c('div',{staticClass:"vm-field-overlay"}),_c('div',{staticClass:"vm-checkbox",class:{ active: _vm.value }},[_c('input',{ref:"input",class:_vm.inputClass,attrs:{"required":_vm.required,"type":"checkbox","name":_vm.name},domProps:{"checked":_vm.value},on:{"change":function($event){_vm.onInput($event.target.checked)}}}),_c('div',{staticClass:"vm-checkbox-circle"})])])])}
-var VMCheckboxvue_type_template_id_07a021c0_scoped_true_lang_pug_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/VMCheckbox.vue?vue&type=template&id=07a021c0&scoped=true&lang=pug&
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMCheckbox.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ var VMCheckboxvue_type_script_lang_js_ = ({
-  name: 'vm_checkbox',
-  mixins: [field]
-});
-// CONCATENATED MODULE: ./src/components/VMCheckbox.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_VMCheckboxvue_type_script_lang_js_ = (VMCheckboxvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/VMCheckbox.vue?vue&type=style&index=0&id=07a021c0&lang=stylus&scoped=true&
-var VMCheckboxvue_type_style_index_0_id_07a021c0_lang_stylus_scoped_true_ = __webpack_require__("2812");
-
-// CONCATENATED MODULE: ./src/components/VMCheckbox.vue
-
-
-
-
-
-
-/* normalize component */
-
-var VMCheckbox_component = normalizeComponent(
-  components_VMCheckboxvue_type_script_lang_js_,
-  VMCheckboxvue_type_template_id_07a021c0_scoped_true_lang_pug_render,
-  VMCheckboxvue_type_template_id_07a021c0_scoped_true_lang_pug_staticRenderFns,
-  false,
-  null,
-  "07a021c0",
-  null
-  
-)
-
-VMCheckbox_component.options.__file = "VMCheckbox.vue"
-/* harmony default export */ var VMCheckbox = (VMCheckbox_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMMultiSelectGroup.vue?vue&type=template&id=4a5b9985&lang=pug&
-var VMMultiSelectGroupvue_type_template_id_4a5b9985_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMFieldWrapper"}},[_c('div',{staticClass:"vm-select-container",class:_vm.classObject},[_c('div',{staticClass:"vm-select-input-block"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.search),expression:"search"}],ref:"input",staticClass:"vm-input vm-select-input",attrs:{"placeholder":_vm.text.placeholder},domProps:{"value":(_vm.search)},on:{"focus":function($event){$event.stopPropagation();return _vm.onSearchFocus($event)},"dblclick":function($event){$event.stopPropagation();return _vm.selectAll($event)},"input":function($event){if($event.target.composing){ return; }_vm.search=$event.target.value}}}),(!_vm.isAutocomplete)?_c('div',{staticClass:"vm-select-input-overlay",on:{"click":_vm.toggle}}):_vm._e(),_c('div',{staticClass:"vm-select-trigger",on:{"click":_vm.toggle}},[_c('VMIcon',{staticClass:"vm-icon",attrs:{"icon":_vm.currentIcon}})],1)]),_c('transition',{attrs:{"name":"vm-show-select"}},[(_vm.isActive)?_c('div',{staticClass:"vm-select-options-container"},[_c('ul',{staticClass:"vm-select-options"},[(!_vm.searchedOptions || !_vm.searchedOptions.length)?_c('li',{key:"searchedOptionsNotResult",staticClass:"vm-select-option vm-column",attrs:{"title":"Нет результата"}},[_c('span',{staticClass:"vm-select-option-text"},[_vm._v("Нет результата")])]):_vm._e(),_vm._l((_vm.searchedOptions),function(option){return _c('li',{key:option.value,staticClass:"vm-select-option vm-column",attrs:{"title":option.label}},[_c('span',{staticClass:"vm-select-option-text"},[_vm._v(_vm._s(option.label))]),_c('ul',{staticClass:"vm-select-options-group",class:{ multiple: _vm.isMultiple }},_vm._l((option.options),function(val){return _c('li',{key:val,staticClass:"vm-select-option",class:{ selected: _vm.checkSelected({ group: option.value, value: val }) },attrs:{"title":val},on:{"click":function($event){_vm.selectOption(option, val)}}},[_c('span',{staticClass:"vm-select-option-text"},[_vm._v(_vm._s(val))])])}))])})],2)]):_vm._e()])],1)])}
-var VMMultiSelectGroupvue_type_template_id_4a5b9985_lang_pug_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/VMMultiSelectGroup.vue?vue&type=template&id=4a5b9985&lang=pug&
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.find-index.js
-var es6_array_find_index = __webpack_require__("20d6");
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMMultiSelectGroup.vue?vue&type=script&lang=js&
-
-
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ var VMMultiSelectGroupvue_type_script_lang_js_ = ({
-  name: 'vm_select',
-  mixins: [field, fieldSelect],
-  methods: {
-    checkSelected: function checkSelected(newValue) {
-      var value = this.field.getValue();
-      return Array.isArray(value) ? value.find(function (el) {
-        return el.group === newValue.group && el.value === newValue.value;
-      }) : null;
-    },
-    checkSelectedGroup: function checkSelectedGroup(newValue) {
-      var value = this.field.getValue();
-      return Array.isArray(value) ? value.find(function (el) {
-        return el.group === newValue.group;
-      }) : null;
-    },
-    selectOption: function selectOption(option, newValue) {
-      var value = this.field.getValue() || [];
-      newValue = {
-        group: option.value,
-        value: newValue.toString()
-      };
-      var isValue = this.checkSelected(newValue);
-
-      if (isValue) {
-        var index = value.findIndex(function (el) {
-          return el === isValue;
-        });
-        value.splice(index, 1);
-      } else {
-        if (!this.isMultiple) {
-          var groupIsSelected = this.checkSelectedGroup({
-            group: option.value
-          });
-
-          if (groupIsSelected) {
-            var _index = value.findIndex(function (el) {
-              return el === groupIsSelected;
-            });
-
-            value.splice(_index, 1);
-          }
-        }
-
-        value.push(newValue);
-      }
-
-      this.onInput(value, value);
-      this.updateOptions();
-    },
-    updateOptions: function updateOptions() {
-      var value = this.field.getValue();
-      this.setSearch(Array.isArray(value) ? value.map(function (el) {
-        return el.value;
-      }).join(', ') : '');
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/components/VMMultiSelectGroup.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_VMMultiSelectGroupvue_type_script_lang_js_ = (VMMultiSelectGroupvue_type_script_lang_js_); 
-// CONCATENATED MODULE: ./src/components/VMMultiSelectGroup.vue
-
-
-
-
-
-/* normalize component */
-
-var VMMultiSelectGroup_component = normalizeComponent(
-  components_VMMultiSelectGroupvue_type_script_lang_js_,
-  VMMultiSelectGroupvue_type_template_id_4a5b9985_lang_pug_render,
-  VMMultiSelectGroupvue_type_template_id_4a5b9985_lang_pug_staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-VMMultiSelectGroup_component.options.__file = "VMMultiSelectGroup.vue"
-/* harmony default export */ var VMMultiSelectGroup = (VMMultiSelectGroup_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMTimePicker.vue?vue&type=template&id=5fdab57d&scoped=true&lang=pug&
-var VMTimePickervue_type_template_id_5fdab57d_scoped_true_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMFieldWrapper"}},[_c('div',{staticClass:"vm-time-picker"},[_c('VMField',{staticClass:"vm-time-picker__item",attrs:{"field":_vm.selectTimeFrom}}),(_vm.isRange)?_c('VMField',{staticClass:"vm-time-picker__item",attrs:{"field":_vm.selectTimeTo}}):_vm._e()],1)])}
-var VMTimePickervue_type_template_id_5fdab57d_scoped_true_lang_pug_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/VMTimePicker.vue?vue&type=template&id=5fdab57d&scoped=true&lang=pug&
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMTimePicker.vue?vue&type=script&lang=js&
-
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ var VMTimePickervue_type_script_lang_js_ = ({
-  name: 'vm_time_picker',
-  mixins: [field],
-  computed: {
-    currentValue: function currentValue() {
-      return this.value || [];
-    },
-    currentStart: function currentStart() {
-      var _this$currentValue = Object(slicedToArray["a" /* default */])(this.currentValue, 1),
-          value = _this$currentValue[0];
-
-      return value || null;
-    },
-    currentEnd: function currentEnd() {
-      var _this$currentValue2 = Object(slicedToArray["a" /* default */])(this.currentValue, 2),
-          value = _this$currentValue2[1];
-
-      return value || null;
-    },
-    isAutocomplete: function isAutocomplete() {
-      return this.field.autocomplete;
-    },
-    isRange: function isRange() {
-      return this.field.isRange;
-    },
-    selectTimeFrom: function selectTimeFrom() {
-      var _this = this;
-
-      return new models["e" /* Select */]({
-        name: 'VMTimePickerFrom',
-        autocomplete: this.isAutocomplete,
-        options: this.field.timeFrom(),
-        value: this.currentStart === null ? '' : this.currentStart,
-        onChange: function onChange(value) {
-          return _this.updateTime([+value, _this.currentEnd]);
-        }
-      });
-    },
-    selectTimeTo: function selectTimeTo() {
-      var _this2 = this;
-
-      return new models["e" /* Select */]({
-        name: 'VMTimePickerTo',
-        autocomplete: this.isAutocomplete,
-        options: this.field.timeTo(),
-        value: this.currentEnd === null ? '' : this.currentEnd,
-        onChange: function onChange(value) {
-          return _this2.updateTime([_this2.currentStart, +value]);
-        }
-      });
-    }
-  },
-  methods: {
-    updateTime: function updateTime(value) {
-      this.onInput(value);
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/components/VMTimePicker.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_VMTimePickervue_type_script_lang_js_ = (VMTimePickervue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/VMTimePicker.vue?vue&type=style&index=0&id=5fdab57d&lang=stylus&scoped=true&
-var VMTimePickervue_type_style_index_0_id_5fdab57d_lang_stylus_scoped_true_ = __webpack_require__("c73f");
-
-// CONCATENATED MODULE: ./src/components/VMTimePicker.vue
-
-
-
-
-
-
-/* normalize component */
-
-var VMTimePicker_component = normalizeComponent(
-  components_VMTimePickervue_type_script_lang_js_,
-  VMTimePickervue_type_template_id_5fdab57d_scoped_true_lang_pug_render,
-  VMTimePickervue_type_template_id_5fdab57d_scoped_true_lang_pug_staticRenderFns,
-  false,
-  null,
-  "5fdab57d",
-  null
-  
-)
-
-VMTimePicker_component.options.__file = "VMTimePicker.vue"
-/* harmony default export */ var VMTimePicker = (VMTimePicker_component.exports);
-// CONCATENATED MODULE: ./src/components/index.js
-/* concated harmony reexport VMInput */__webpack_require__.d(__webpack_exports__, "b", function() { return VMInput; });
-/* concated harmony reexport VMTextarea */__webpack_require__.d(__webpack_exports__, "e", function() { return VMTextarea; });
-/* concated harmony reexport VMSelect */__webpack_require__.d(__webpack_exports__, "d", function() { return VMSelect; });
-/* concated harmony reexport VMCheckbox */__webpack_require__.d(__webpack_exports__, "a", function() { return VMCheckbox; });
-/* concated harmony reexport VMMultiSelectGroup */__webpack_require__.d(__webpack_exports__, "c", function() { return VMMultiSelectGroup; });
-/* concated harmony reexport VMTimePicker */__webpack_require__.d(__webpack_exports__, "f", function() { return VMTimePicker; });
-
-
-
-
-
-
-
-/***/ }),
-
 /***/ "2b4c":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2172,56 +791,6 @@ module.exports = function (it) {
 
 /***/ }),
 
-/***/ "3835":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
-function _arrayWithHoles(arr) {
-  if (Array.isArray(arr)) return arr;
-}
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js
-function _iterableToArrayLimit(arr, i) {
-  var _arr = [];
-  var _n = true;
-  var _d = false;
-  var _e = undefined;
-
-  try {
-    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-      _arr.push(_s.value);
-
-      if (i && _arr.length === i) break;
-    }
-  } catch (err) {
-    _d = true;
-    _e = err;
-  } finally {
-    try {
-      if (!_n && _i["return"] != null) _i["return"]();
-    } finally {
-      if (_d) throw _e;
-    }
-  }
-
-  return _arr;
-}
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
-function _nonIterableRest() {
-  throw new TypeError("Invalid attempt to destructure non-iterable instance");
-}
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _slicedToArray; });
-
-
-
-function _slicedToArray(arr, i) {
-  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
-}
-
-/***/ }),
-
 /***/ "3846":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2267,751 +836,6 @@ module.exports = Object.getPrototypeOf || function (O) {
     return O.constructor.prototype;
   } return O instanceof Object ? ObjectProto : null;
 };
-
-
-/***/ }),
-
-/***/ "3a34":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
-var slicedToArray = __webpack_require__("3835");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.object.entries.js
-var es7_object_entries = __webpack_require__("ffc1");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.find.js
-var es6_array_find = __webpack_require__("7514");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
-var es6_function_name = __webpack_require__("7f7f");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
-var web_dom_iterable = __webpack_require__("ac6a");
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/typeof.js
-var esm_typeof = __webpack_require__("53ca");
-
-// EXTERNAL MODULE: ./node_modules/regenerator-runtime/runtime.js
-var runtime = __webpack_require__("96cf");
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
-var asyncToGenerator = __webpack_require__("1da1");
-
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/createClass.js
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.replace.js
-var es6_regexp_replace = __webpack_require__("a481");
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
-var defineProperty = __webpack_require__("ade3");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.iterator.js
-var es6_array_iterator = __webpack_require__("cadf");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.promise.js
-var es6_promise = __webpack_require__("551c");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.promise.finally.js
-var es7_promise_finally = __webpack_require__("097d");
-
-// CONCATENATED MODULE: ./src/models/field.js
-
-
-
-
-
-
-
-
-
-
-var field_Field =
-/*#__PURE__*/
-function () {
-  function Field(_ref) {
-    var name = _ref.name,
-        component = _ref.component,
-        _ref$prop = _ref.prop,
-        prop = _ref$prop === void 0 ? 'name' : _ref$prop,
-        _ref$label = _ref.label,
-        label = _ref$label === void 0 ? '' : _ref$label,
-        _ref$value = _ref.value,
-        value = _ref$value === void 0 ? '' : _ref$value,
-        _ref$required = _ref.required,
-        required = _ref$required === void 0 ? false : _ref$required,
-        _ref$hideValidator = _ref.hideValidator,
-        hideValidator = _ref$hideValidator === void 0 ? false : _ref$hideValidator,
-        _ref$inputClass = _ref.inputClass,
-        inputClass = _ref$inputClass === void 0 ? '' : _ref$inputClass,
-        _ref$fieldClass = _ref.fieldClass,
-        fieldClass = _ref$fieldClass === void 0 ? '' : _ref$fieldClass,
-        _ref$langPath = _ref.langPath,
-        langPath = _ref$langPath === void 0 ? null : _ref$langPath,
-        _ref$onChange = _ref.onChange,
-        onChange = _ref$onChange === void 0 ? function () {
-      return {};
-    } : _ref$onChange,
-        _ref$pattern = _ref.pattern,
-        pattern = _ref$pattern === void 0 ? '' : _ref$pattern,
-        _ref$validation = _ref.validation,
-        validation = _ref$validation === void 0 ? function () {} : _ref$validation;
-
-    _classCallCheck(this, Field);
-
-    this.name = name;
-    this.prop = prop;
-    this.label = label;
-    this.value = Object(esm_typeof["a" /* default */])(value) !== 'object' || Array.isArray(value) ? Object(defineProperty["a" /* default */])({}, this.prop, value) : value;
-    this.required = required;
-    this.component = component;
-    this.inputClass = inputClass;
-    this.fieldClass = fieldClass;
-    this.langPath = langPath;
-    this.onChange = onChange;
-    this.pattern = pattern;
-    this.validation = validation;
-    this.hideValidator = hideValidator;
-    this.$el = null;
-    this.langText = {}; // validation variable
-
-    this._isInvalid = null;
-    this._isEdit = false;
-  }
-
-  _createClass(Field, [{
-    key: "getValue",
-    value: function getValue() {
-      return this.value[this.prop];
-    }
-  }, {
-    key: "setValue",
-    value: function setValue(value) {
-      this.value[this.prop] = value;
-    }
-  }, {
-    key: "setText",
-    value: function setText(value) {
-      this.langText = value || {};
-    }
-  }, {
-    key: "checkValue",
-    value: function checkValue(value) {
-      return this.pattern ? value.replace(this.pattern, '') : value;
-    }
-  }, {
-    key: "checkValidation",
-    value: function checkValidation() {
-      var text;
-
-      if (this.$el && this.validation) {
-        text = this.validation(this.getValue(), this.langText, this);
-        this.$el.setCustomValidity(text || ''); // console.log('setCustomValidity', Object.getPrototypeOf(this.$el));
-
-        this._isInvalid = !!text || !this.$el.validity.valid;
-      }
-
-      return this._isInvalid;
-    }
-  }, {
-    key: "clearValidation",
-    value: function clearValidation() {
-      if (this.$el) {
-        this.$el.setCustomValidity('');
-        this._isInvalid = null;
-        this._isEdit = false;
-      }
-    }
-  }, {
-    key: "onInvalid",
-    value: function onInvalid() {
-      this._isInvalid = true;
-      this._isEdit = false;
-    }
-  }, {
-    key: "onValidator",
-    value: function onValidator(event) {
-      this._isEdit = true;
-      this._isInvalid = this.checkValidation();
-
-      if (this.$el) {
-        this.$el.focus();
-        this.$el.reportValidity();
-        event.preventDefault();
-      }
-    }
-  }, {
-    key: "validationSuccess",
-    value: function validationSuccess() {
-      if (this.$el) {
-        this.$el.setCustomValidity('');
-        this._isInvalid = false;
-        this._isEdit = false;
-      }
-    }
-  }]);
-
-  return Field;
-}();
-
-
-// CONCATENATED MODULE: ./src/models/form.js
-
-
-
-
-
-
-
-
-
-
-
-
-var form_Form =
-/*#__PURE__*/
-function () {
-  function Form(fields) {
-    var _this = this;
-
-    var onSubmit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] :
-    /*#__PURE__*/
-    Object(asyncToGenerator["a" /* default */])(
-    /*#__PURE__*/
-    regeneratorRuntime.mark(function _callee() {
-      return regeneratorRuntime.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              return _context.abrupt("return", {});
-
-            case 1:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee, this);
-    }));
-
-    _classCallCheck(this, Form);
-
-    this.fields = [];
-    this.onSubmit = onSubmit;
-
-    if (!Array.isArray(fields) && Object(esm_typeof["a" /* default */])(fields) === 'object' || typeof fields === 'string') {
-      fields = [fields];
-    }
-
-    if (Array.isArray(fields)) {
-      fields.forEach(function (el) {
-        if (el instanceof field_Field) {
-          _this.fields.push(el);
-        } else {
-          throw {
-            message: 'Error create input'
-          };
-        }
-      });
-    } else {
-      throw {
-        message: 'Error create form'
-      };
-    }
-  }
-
-  _createClass(Form, [{
-    key: "field",
-    value: function field(name) {
-      return typeof name === 'number' ? this.fields[name] : this.fields.find(function (el) {
-        return el.name === name;
-      });
-    }
-  }, {
-    key: "fieldValue",
-    value: function fieldValue(name) {
-      return this.field(name).getValue();
-    }
-  }, {
-    key: "sendData",
-    value: function sendData() {
-      return this.fields.reduce(function (res, field) {
-        res[field.name] = field.getValue();
-        return res;
-      }, {});
-    }
-  }, {
-    key: "getQueryParams",
-    value: function getQueryParams() {
-      var newQuery = Object.entries(this.sendData()).filter(function (_ref2) {
-        var _ref3 = Object(slicedToArray["a" /* default */])(_ref2, 2),
-            value = _ref3[1];
-
-        return value;
-      }).map(function (_ref4) {
-        var _ref5 = Object(slicedToArray["a" /* default */])(_ref4, 2),
-            key = _ref5[0],
-            value = _ref5[1];
-
-        value = encodeURIComponent && encodeURIComponent(value) || value;
-        return [key, value].join('=');
-      }).join('&');
-      return newQuery ? "".concat(newQuery) : '';
-    }
-  }]);
-
-  return Form;
-}();
-
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread.js
-var objectSpread = __webpack_require__("be94");
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js + 1 modules
-var objectWithoutProperties = __webpack_require__("15fd");
-
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return self;
-}
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js
-
-
-function _possibleConstructorReturn(self, call) {
-  if (call && (Object(esm_typeof["a" /* default */])(call) === "object" || typeof call === "function")) {
-    return call;
-  }
-
-  return _assertThisInitialized(self);
-}
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js
-function _getPrototypeOf(o) {
-  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-    return o.__proto__ || Object.getPrototypeOf(o);
-  };
-  return _getPrototypeOf(o);
-}
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js
-function _setPrototypeOf(o, p) {
-  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  };
-
-  return _setPrototypeOf(o, p);
-}
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/inherits.js
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      writable: true,
-      configurable: true
-    }
-  });
-  if (superClass) _setPrototypeOf(subClass, superClass);
-}
-// CONCATENATED MODULE: ./src/models/input.js
-
-
-
-
-
-
-
-
-
-
-/* eslint-disable no-undef */
-
-
-var input_Input =
-/*#__PURE__*/
-function (_Field) {
-  _inherits(Input, _Field);
-
-  function Input(_ref) {
-    var _this;
-
-    var _ref$minlength = _ref.minlength,
-        minlength = _ref$minlength === void 0 ? null : _ref$minlength,
-        _ref$maxlength = _ref.maxlength,
-        maxlength = _ref$maxlength === void 0 ? null : _ref$maxlength,
-        _ref$readonly = _ref.readonly,
-        readonly = _ref$readonly === void 0 ? false : _ref$readonly,
-        _ref$type = _ref.type,
-        type = _ref$type === void 0 ? 'text' : _ref$type,
-        _ref$component = _ref.component,
-        component = _ref$component === void 0 ? 'VMInput' : _ref$component,
-        defaultProps = Object(objectWithoutProperties["a" /* default */])(_ref, ["minlength", "maxlength", "readonly", "type", "component"]);
-
-    _classCallCheck(this, Input);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Input).call(this, Object(objectSpread["a" /* default */])({}, defaultProps, {
-      component: component
-    })));
-    _this.type = type;
-    _this.minlength = minlength;
-    _this.maxlength = maxlength;
-    _this.readonly = readonly;
-    return _this;
-  }
-
-  return Input;
-}(field_Field);
-
-
-// CONCATENATED MODULE: ./src/models/textarea.js
-
-
-
-
-
-
-
-
-
-
-/* eslint-disable no-undef */
-
-
-var textarea_Textarea =
-/*#__PURE__*/
-function (_Field) {
-  _inherits(Textarea, _Field);
-
-  function Textarea(_ref) {
-    var _this;
-
-    var _ref$row = _ref.row,
-        row = _ref$row === void 0 ? null : _ref$row,
-        _ref$coll = _ref.coll,
-        coll = _ref$coll === void 0 ? null : _ref$coll,
-        _ref$readonly = _ref.readonly,
-        readonly = _ref$readonly === void 0 ? false : _ref$readonly,
-        _ref$minlength = _ref.minlength,
-        minlength = _ref$minlength === void 0 ? null : _ref$minlength,
-        _ref$maxlength = _ref.maxlength,
-        maxlength = _ref$maxlength === void 0 ? null : _ref$maxlength,
-        _ref$component = _ref.component,
-        component = _ref$component === void 0 ? 'VMTextarea' : _ref$component,
-        defaultProps = Object(objectWithoutProperties["a" /* default */])(_ref, ["row", "coll", "readonly", "minlength", "maxlength", "component"]);
-
-    _classCallCheck(this, Textarea);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Textarea).call(this, Object(objectSpread["a" /* default */])({}, defaultProps, {
-      component: component
-    })));
-    _this.row = row;
-    _this.coll = coll;
-    _this.minlength = minlength;
-    _this.maxlength = maxlength;
-    _this.readonly = readonly;
-    return _this;
-  }
-
-  return Textarea;
-}(field_Field);
-
-
-// CONCATENATED MODULE: ./src/models/select.js
-
-
-
-
-
-
-
-
-/* eslint-disable no-undef */
-
-
-var select_Select =
-/*#__PURE__*/
-function (_Field) {
-  _inherits(Select, _Field);
-
-  function Select(_ref) {
-    var _this;
-
-    var _ref$multiple = _ref.multiple,
-        multiple = _ref$multiple === void 0 ? false : _ref$multiple,
-        _ref$autocomplete = _ref.autocomplete,
-        autocomplete = _ref$autocomplete === void 0 ? false : _ref$autocomplete,
-        _ref$options = _ref.options,
-        options = _ref$options === void 0 ? [] : _ref$options,
-        _ref$component = _ref.component,
-        component = _ref$component === void 0 ? 'VMSelect' : _ref$component,
-        defaultProps = Object(objectWithoutProperties["a" /* default */])(_ref, ["multiple", "autocomplete", "options", "component"]);
-
-    _classCallCheck(this, Select);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Select).call(this, Object(objectSpread["a" /* default */])({}, defaultProps, {
-      component: component
-    })));
-    _this.options = options;
-    _this.multiple = multiple;
-    _this.autocomplete = autocomplete;
-    return _this;
-  }
-
-  _createClass(Select, [{
-    key: "setValue",
-    value: function setValue(value) {
-      if (this.multiple) {
-        if (!Array.isArray(this.value[this.prop])) {
-          this.value[this.prop] = [];
-        }
-
-        var index = this.value[this.prop].indexOf(value);
-
-        if (index === -1) {
-          this.value[this.prop].push(value);
-        } else {
-          this.value[this.prop].splice(index, 1);
-        }
-      } else {
-        this.value[this.prop] = value;
-      }
-    }
-  }, {
-    key: "firstOption",
-    value: function firstOption() {
-      return this.options[0] || {};
-    }
-  }]);
-
-  return Select;
-}(field_Field);
-
-
-// CONCATENATED MODULE: ./src/models/datePicker.js
-
-
-
-
-
-
-
-/* eslint-disable no-undef */
-
-
-var datePicker_DatePicker =
-/*#__PURE__*/
-function (_Field) {
-  _inherits(DatePicker, _Field);
-
-  function DatePicker(_ref) {
-    var _ref$value = _ref.value,
-        value = _ref$value === void 0 ? [] : _ref$value,
-        _ref$component = _ref.component,
-        component = _ref$component === void 0 ? 'VMDatePicker' : _ref$component,
-        defaultProps = Object(objectWithoutProperties["a" /* default */])(_ref, ["value", "component"]);
-
-    _classCallCheck(this, DatePicker);
-
-    if (!value || value.length < 2) {
-      var startDate = new Date();
-      var endDate = new Date();
-      startDate.setDate(endDate.getDate() - 7);
-      value = [startDate, endDate];
-    }
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(DatePicker).call(this, Object(objectSpread["a" /* default */])({}, defaultProps, {
-      component: component,
-      value: value
-    })));
-  }
-
-  return DatePicker;
-}(field_Field);
-
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.to-string.js
-var es6_regexp_to_string = __webpack_require__("6b54");
-
-// CONCATENATED MODULE: ./src/models/timePicker.js
-
-
-
-
-
-
-
-
-
-/* eslint-disable no-undef */
-
-var MAX_TIME = 24 * 60;
-
-var timePicker_TimePicker =
-/*#__PURE__*/
-function (_Field) {
-  _inherits(TimePicker, _Field);
-
-  _createClass(TimePicker, null, [{
-    key: "gAddZeroFirst",
-    value: function gAddZeroFirst(value) {
-      return (+value < 10 ? '0' : '') + value.toString();
-    }
-  }]);
-
-  function TimePicker(_ref) {
-    var _this;
-
-    var _ref$autocomplete = _ref.autocomplete,
-        autocomplete = _ref$autocomplete === void 0 ? true : _ref$autocomplete,
-        _ref$startTime = _ref.startTime,
-        startTime = _ref$startTime === void 0 ? 0 : _ref$startTime,
-        _ref$offset = _ref.offset,
-        offset = _ref$offset === void 0 ? MAX_TIME : _ref$offset,
-        _ref$interval = _ref.interval,
-        interval = _ref$interval === void 0 ? 5 : _ref$interval,
-        _ref$isRange = _ref.isRange,
-        isRange = _ref$isRange === void 0 ? false : _ref$isRange,
-        _ref$isRangeUpdated = _ref.isRangeUpdated,
-        isRangeUpdated = _ref$isRangeUpdated === void 0 ? true : _ref$isRangeUpdated,
-        _ref$component = _ref.component,
-        component = _ref$component === void 0 ? 'VMTimePicker' : _ref$component,
-        _ref$value = _ref.value,
-        value = _ref$value === void 0 ? [0, 0] : _ref$value,
-        defaultProps = Object(objectWithoutProperties["a" /* default */])(_ref, ["autocomplete", "startTime", "offset", "interval", "isRange", "isRangeUpdated", "component", "value"]);
-
-    _classCallCheck(this, TimePicker);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(TimePicker).call(this, Object(objectSpread["a" /* default */])({}, defaultProps, {
-      component: component
-    })));
-    _this.autocomplete = autocomplete;
-    _this.startTime = startTime;
-    _this.endTime = startTime + offset;
-    _this.offset = offset;
-    _this.interval = interval;
-    _this.isRange = isRange;
-    _this.isRangeUpdated = isRangeUpdated;
-
-    _this.setValue(value);
-
-    return _this;
-  }
-
-  _createClass(TimePicker, [{
-    key: "checkValue",
-    value: function checkValue(value) {
-      value = !Array.isArray(value) ? [value, 0] : value;
-
-      if (value.length !== 2) {
-        var val1 = +(value[0] || this.startTime);
-        var val2 = +(value[1] || this.startTime);
-        value = [val1, val2];
-      }
-
-      if (value[0] < this.startTime) {
-        value[0] = this.startTime;
-      }
-
-      if (value[0] > this.endTime) {
-        value[0] = this.endTime;
-      }
-
-      if (value[1] < this.startTime) {
-        value[1] = this.startTime;
-      }
-
-      if (value[1] > this.endTime) {
-        value[1] = this.endTime;
-      }
-
-      return value;
-    }
-  }, {
-    key: "timeAll",
-    value: function timeAll() {
-      var arr = [];
-
-      for (var i = this.startTime; i <= this.endTime; i += this.interval) {
-        var hour = ~~(i / 60 % 24);
-        var minute = i % 60;
-        arr.push({
-          value: i,
-          // hour * 60 + minute
-          label: "".concat(TimePicker.gAddZeroFirst(hour), ":").concat(TimePicker.gAddZeroFirst(minute))
-        });
-      }
-
-      return arr;
-    }
-  }, {
-    key: "timeFrom",
-    value: function timeFrom() {
-      var options = this.timeAll();
-
-      if (this.isRange) {
-        options.pop();
-      }
-
-      return options;
-    }
-  }, {
-    key: "timeTo",
-    value: function timeTo() {
-      if (!this.isRangeUpdated) return this.timeFrom();
-      var currentStart = this.value[this.prop][0] + this.interval;
-      var options = this.timeAll();
-      return options.filter(function (el) {
-        return el.value >= currentStart;
-      });
-    }
-  }]);
-
-  return TimePicker;
-}(field_Field);
-
-
-// CONCATENATED MODULE: ./src/models/index.js
-/* concated harmony reexport Form */__webpack_require__.d(__webpack_exports__, "c", function() { return form_Form; });
-/* concated harmony reexport Field */__webpack_require__.d(__webpack_exports__, "b", function() { return field_Field; });
-/* concated harmony reexport Input */__webpack_require__.d(__webpack_exports__, "d", function() { return input_Input; });
-/* concated harmony reexport Textarea */__webpack_require__.d(__webpack_exports__, "f", function() { return textarea_Textarea; });
-/* concated harmony reexport Select */__webpack_require__.d(__webpack_exports__, "e", function() { return select_Select; });
-/* concated harmony reexport DatePicker */__webpack_require__.d(__webpack_exports__, "a", function() { return datePicker_DatePicker; });
-/* concated harmony reexport TimePicker */__webpack_require__.d(__webpack_exports__, "g", function() { return timePicker_TimePicker; });
-
-
-
-
-
-
 
 
 /***/ }),
@@ -3181,29 +1005,6 @@ module.exports = function (KEY) {
 
 exports.f = {}.propertyIsEnumerable;
 
-
-/***/ }),
-
-/***/ "53ca":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _typeof; });
-function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
-
-function _typeof(obj) {
-  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
-    _typeof = function _typeof(obj) {
-      return _typeof2(obj);
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
-    };
-  }
-
-  return _typeof(obj);
-}
 
 /***/ }),
 
@@ -4988,355 +2789,6 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 
 /***/ }),
 
-/***/ "ade3":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _defineProperty; });
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-/***/ }),
-
-/***/ "b538":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.iterator.js
-var es6_array_iterator = __webpack_require__("cadf");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.promise.js
-var es6_promise = __webpack_require__("551c");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.promise.finally.js
-var es7_promise_finally = __webpack_require__("097d");
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
-var defineProperty = __webpack_require__("ade3");
-
-// EXTERNAL MODULE: ./src/models/index.js + 14 modules
-var models = __webpack_require__("3a34");
-
-// CONCATENATED MODULE: ./src/functional/VMField.js
-
-
-/* harmony default export */ var VMField = (function (components) {
-  return {
-    functional: true,
-    render: function render(ce, ctx) {
-      var _ref = ctx || {},
-          props = _ref.props,
-          data = _ref.data;
-
-      if (!props || !props.field || !(props.field instanceof models["b" /* Field */]) || !props.field.component) {
-        console.error('required prop field!!!', ctx);
-        return;
-      }
-
-      if (!components[props.field.component]) {
-        console.error("component \"".concat(props.field.component, "\" not found!!!"));
-        return;
-      }
-
-      var componentField = components[props.field.component];
-
-      var _ref2 = data || {},
-          staticClass = _ref2.staticClass,
-          className = _ref2.class;
-
-      return ce(componentField, {
-        props: props,
-        class: [Object(defineProperty["a" /* default */])({}, staticClass, staticClass), className || []]
-      });
-    }
-  };
-});
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread.js
-var objectSpread = __webpack_require__("be94");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
-var es6_function_name = __webpack_require__("7f7f");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.array.includes.js
-var es7_array_includes = __webpack_require__("6762");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.includes.js
-var es6_string_includes = __webpack_require__("2fdb");
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js + 1 modules
-var objectWithoutProperties = __webpack_require__("15fd");
-
-// CONCATENATED MODULE: ./src/functional/VMFieldAll.js
-
-
-
-
-
-
-/* harmony default export */ var VMFieldAll = ({
-  name: 'vm_field_all',
-  functional: true,
-  props: {
-    fields: {
-      type: Array,
-      required: true
-    },
-    langNameText: {
-      type: Object
-    },
-    excludes: {
-      type: [Array],
-      default: function _default() {
-        return [];
-      }
-    },
-    includes: {
-      type: [Array],
-      default: function _default() {
-        return [];
-      }
-    }
-  },
-  render: function render(ce, ctx) {
-    var _ref = ctx || {},
-        props = _ref.props,
-        data = _ref.data;
-
-    var _ref2 = data || {},
-        staticClass = _ref2.staticClass,
-        className = _ref2.class;
-
-    var _ref3 = props || {},
-        fields = _ref3.fields,
-        langNameText = _ref3.langNameText,
-        excludes = _ref3.excludes,
-        includes = _ref3.includes,
-        propsOld = Object(objectWithoutProperties["a" /* default */])(_ref3, ["fields", "langNameText", "excludes", "includes"]);
-
-    return fields.filter(function (field) {
-      return field.type !== 'hidden' && !excludes.includes(field.name) && !(includes.length && !includes.includes(field.name));
-    }).map(function (field) {
-      return ce('VMField', {
-        props: Object(objectSpread["a" /* default */])({
-          field: field,
-          langNameText: langNameText,
-          key: field.name
-        }, propsOld),
-        class: [Object(defineProperty["a" /* default */])({}, staticClass, staticClass), className || []]
-      });
-    });
-  }
-});
-// CONCATENATED MODULE: ./src/functional/PropsSplit.js
-
-/* harmony default export */ var PropsSplit = ({
-  functional: true,
-  render: function render(ce, ctx) {
-    var _ref = ctx || {},
-        props = _ref.props,
-        data = _ref.data,
-        children = _ref.children;
-
-    if (!props || !props.props || !props.component) {
-      console.error('required attr props & component!!!', ctx);
-      return;
-    }
-
-    var proxyProps = props.props,
-        component = props.component;
-
-    var _ref2 = data || {},
-        staticClass = _ref2.staticClass,
-        className = _ref2.class;
-
-    return ce(component, {
-      props: proxyProps,
-      class: [Object(defineProperty["a" /* default */])({}, staticClass, staticClass), className || []]
-    }, children || []);
-  }
-});
-// EXTERNAL MODULE: ./node_modules/regenerator-runtime/runtime.js
-var runtime = __webpack_require__("96cf");
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
-var asyncToGenerator = __webpack_require__("1da1");
-
-// CONCATENATED MODULE: ./src/functional/VMForm.js
-
-
-
-
-
-
-
-/* harmony default export */ var VMForm = (function (options) {
-  return {
-    functional: true,
-    name: 'vm_form',
-    props: {
-      form: {
-        type: Object,
-        required: true,
-        validator: function validator(value) {
-          return value instanceof models["c" /* Form */];
-        }
-      },
-      langNameText: {
-        type: Object
-      },
-      submitText: {
-        type: String,
-        default: options.submitText || 'Submit'
-      },
-      disabled: {
-        type: Boolean,
-        default: false
-      },
-      fieldClass: {
-        type: [Object, Array, String],
-        default: function _default() {
-          return options.fieldClass || {};
-        }
-      },
-      buttonClass: {
-        type: [Object, Array, String],
-        default: function _default() {
-          return options.buttonClass || {};
-        }
-      },
-      excludes: {
-        type: [Array]
-      },
-      includes: {
-        type: [Array]
-      }
-    },
-    methods: {
-      submit: function () {
-        var _submit = Object(asyncToGenerator["a" /* default */])(
-        /*#__PURE__*/
-        regeneratorRuntime.mark(function _callee() {
-          return regeneratorRuntime.wrap(function _callee$(_context) {
-            while (1) {
-              switch (_context.prev = _context.next) {
-                case 0:
-                  this.$emit('submit');
-                  _context.next = 3;
-                  return this.form.onSubmit();
-
-                case 3:
-                case "end":
-                  return _context.stop();
-              }
-            }
-          }, _callee, this);
-        }));
-
-        return function submit() {
-          return _submit.apply(this, arguments);
-        };
-      }()
-    },
-    render: function render(ce, ctx) {
-      var _ref = ctx || {},
-          children = _ref.children,
-          listeners = _ref.listeners,
-          data = _ref.data,
-          props = _ref.props;
-
-      if (!props || !props.form || !(props.form instanceof models["c" /* Form */])) {
-        console.error('required props form!!!', ctx);
-        return;
-      }
-
-      var _ref2 = data || {},
-          staticClass = _ref2.staticClass,
-          className = _ref2.class;
-
-      var _ref3 = props || {},
-          form = _ref3.form,
-          submitText = _ref3.submitText,
-          disabled = _ref3.disabled,
-          fieldClass = _ref3.fieldClass,
-          buttonClass = _ref3.buttonClass,
-          langNameText = _ref3.langNameText,
-          excludes = _ref3.excludes,
-          includes = _ref3.includes;
-
-      return ce('form', {
-        class: [Object(defineProperty["a" /* default */])({}, staticClass, staticClass), className || []],
-        on: Object(objectSpread["a" /* default */])({
-          submit: function () {
-            var _submit2 = Object(asyncToGenerator["a" /* default */])(
-            /*#__PURE__*/
-            regeneratorRuntime.mark(function _callee2(event) {
-              return regeneratorRuntime.wrap(function _callee2$(_context2) {
-                while (1) {
-                  switch (_context2.prev = _context2.next) {
-                    case 0:
-                      event.preventDefault();
-                      _context2.next = 3;
-                      return form.onSubmit();
-
-                    case 3:
-                    case "end":
-                      return _context2.stop();
-                  }
-                }
-              }, _callee2, this);
-            }));
-
-            return function submit(_x) {
-              return _submit2.apply(this, arguments);
-            };
-          }()
-        }, listeners)
-      }, children || [ce('VMFieldAll', {
-        props: {
-          fields: form.fields,
-          langNameText: langNameText,
-          excludes: excludes,
-          includes: includes,
-          class: fieldClass || []
-        }
-      }), ce('button', {
-        class: ['vm-button', buttonClass || []],
-        attrs: {
-          type: 'submit',
-          disabled: disabled
-        }
-      }, submitText)]);
-    }
-  };
-});
-// CONCATENATED MODULE: ./src/functional/index.js
-/* concated harmony reexport VMField */__webpack_require__.d(__webpack_exports__, "b", function() { return VMField; });
-/* concated harmony reexport VMFieldAll */__webpack_require__.d(__webpack_exports__, "c", function() { return VMFieldAll; });
-/* concated harmony reexport PropsSplit */__webpack_require__.d(__webpack_exports__, "a", function() { return PropsSplit; });
-/* concated harmony reexport VMForm */__webpack_require__.d(__webpack_exports__, "d", function() { return VMForm; });
-
-
-
-
-
-
-
-
-/***/ }),
-
 /***/ "bcaa":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5365,34 +2817,6 @@ module.exports = function (it) {
   return it;
 };
 
-
-/***/ }),
-
-/***/ "be94":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _objectSpread; });
-/* harmony import */ var _defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("ade3");
-
-function _objectSpread(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-    var ownKeys = Object.keys(source);
-
-    if (typeof Object.getOwnPropertySymbols === 'function') {
-      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-      }));
-    }
-
-    ownKeys.forEach(function (key) {
-      Object(_defineProperty__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(target, key, source[key]);
-    });
-  }
-
-  return target;
-}
 
 /***/ }),
 
@@ -5444,33 +2868,6 @@ module.exports = !__webpack_require__("9e1e") && !__webpack_require__("79e5")(fu
 /* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_11_oneOf_1_0_node_modules_css_loader_index_js_ref_11_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_oneOf_1_2_node_modules_stylus_loader_index_js_ref_11_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VMTimePicker_vue_vue_type_style_index_0_id_5fdab57d_lang_stylus_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_11_oneOf_1_0_node_modules_css_loader_index_js_ref_11_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_oneOf_1_2_node_modules_stylus_loader_index_js_ref_11_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VMTimePicker_vue_vue_type_style_index_0_id_5fdab57d_lang_stylus_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
 /* unused harmony reexport * */
  /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_11_oneOf_1_0_node_modules_css_loader_index_js_ref_11_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_oneOf_1_2_node_modules_stylus_loader_index_js_ref_11_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VMTimePicker_vue_vue_type_style_index_0_id_5fdab57d_lang_stylus_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
-/***/ "c8ba":
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
 
 /***/ }),
 
@@ -5745,22 +3142,2425 @@ __webpack_require__.r(__webpack_exports__);
 // This file is imported into lib/wc client bundles.
 
 if (typeof window !== 'undefined') {
-  var i
-  if ((i = window.document.currentScript) && (i = i.src.match(/(.+\/)[^/]+\.js(\?.*)?$/))) {
-    __webpack_require__.p = i[1] // eslint-disable-line
+  var setPublicPath_i
+  if ((setPublicPath_i = window.document.currentScript) && (setPublicPath_i = setPublicPath_i.src.match(/(.+\/)[^/]+\.js(\?.*)?$/))) {
+    __webpack_require__.p = setPublicPath_i[1] // eslint-disable-line
   }
 }
 
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// EXTERNAL MODULE: ./src/index.build.js
-var index_build = __webpack_require__("188b");
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
 
+  return obj;
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread.js
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      _defineProperty(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.find.js
+var es6_array_find = __webpack_require__("7514");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
+var es6_function_name = __webpack_require__("7f7f");
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/typeof.js
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    _typeof = function _typeof(obj) {
+      return _typeof2(obj);
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
+  }
+
+  return _typeof(obj);
+}
+// EXTERNAL MODULE: ./src/style/default.styl
+var style_default = __webpack_require__("7d4f");
+
+// EXTERNAL MODULE: ./src/style/select.styl
+var style_select = __webpack_require__("f627");
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js
+function _iterableToArrayLimit(arr, i) {
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js
+
+
+
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
+}
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.object.entries.js
+var es7_object_entries = __webpack_require__("ffc1");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
+var web_dom_iterable = __webpack_require__("ac6a");
+
+// EXTERNAL MODULE: ./node_modules/regenerator-runtime/runtime.js
+var runtime = __webpack_require__("96cf");
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
+
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+        args = arguments;
+    return new Promise(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+
+      _next(undefined);
+    });
+  };
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/createClass.js
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.replace.js
+var es6_regexp_replace = __webpack_require__("a481");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.iterator.js
+var es6_array_iterator = __webpack_require__("cadf");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.promise.js
+var es6_promise = __webpack_require__("551c");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.promise.finally.js
+var es7_promise_finally = __webpack_require__("097d");
+
+// CONCATENATED MODULE: ./src/models/field.js
+
+
+
+
+
+
+
+
+
+
+var field_Field =
+/*#__PURE__*/
+function () {
+  function Field(_ref) {
+    var name = _ref.name,
+        component = _ref.component,
+        _ref$prop = _ref.prop,
+        prop = _ref$prop === void 0 ? 'name' : _ref$prop,
+        _ref$label = _ref.label,
+        label = _ref$label === void 0 ? '' : _ref$label,
+        _ref$value = _ref.value,
+        value = _ref$value === void 0 ? '' : _ref$value,
+        _ref$required = _ref.required,
+        required = _ref$required === void 0 ? false : _ref$required,
+        _ref$hideValidator = _ref.hideValidator,
+        hideValidator = _ref$hideValidator === void 0 ? false : _ref$hideValidator,
+        _ref$inputClass = _ref.inputClass,
+        inputClass = _ref$inputClass === void 0 ? '' : _ref$inputClass,
+        _ref$fieldClass = _ref.fieldClass,
+        fieldClass = _ref$fieldClass === void 0 ? '' : _ref$fieldClass,
+        _ref$langPath = _ref.langPath,
+        langPath = _ref$langPath === void 0 ? null : _ref$langPath,
+        _ref$onChange = _ref.onChange,
+        onChange = _ref$onChange === void 0 ? function () {
+      return {};
+    } : _ref$onChange,
+        _ref$pattern = _ref.pattern,
+        pattern = _ref$pattern === void 0 ? '' : _ref$pattern,
+        _ref$validation = _ref.validation,
+        validation = _ref$validation === void 0 ? function () {} : _ref$validation;
+
+    _classCallCheck(this, Field);
+
+    this.name = name;
+    this.prop = prop;
+    this.label = label;
+    this.value = _typeof(value) !== 'object' || Array.isArray(value) ? _defineProperty({}, this.prop, value) : value;
+    this.required = required;
+    this.component = component;
+    this.inputClass = inputClass;
+    this.fieldClass = fieldClass;
+    this.langPath = langPath;
+    this.onChange = onChange;
+    this.pattern = pattern;
+    this.validation = validation;
+    this.hideValidator = hideValidator;
+    this.$el = null;
+    this.langText = {}; // validation variable
+
+    this._isInvalid = null;
+    this._isEdit = false;
+  }
+
+  _createClass(Field, [{
+    key: "getValue",
+    value: function getValue() {
+      return this.value[this.prop];
+    }
+  }, {
+    key: "setValue",
+    value: function setValue(value) {
+      this.value[this.prop] = value;
+    }
+  }, {
+    key: "setText",
+    value: function setText(value) {
+      this.langText = value || {};
+    }
+  }, {
+    key: "checkValue",
+    value: function checkValue(value) {
+      return this.pattern ? value.replace(this.pattern, '') : value;
+    }
+  }, {
+    key: "checkValidation",
+    value: function checkValidation() {
+      var text;
+
+      if (this.$el && this.validation) {
+        text = this.validation(this.getValue(), this.langText, this);
+        this.$el.setCustomValidity(text || ''); // console.log('setCustomValidity', Object.getPrototypeOf(this.$el));
+
+        this._isInvalid = !!text || !this.$el.validity.valid;
+      }
+
+      return this._isInvalid;
+    }
+  }, {
+    key: "clearValidation",
+    value: function clearValidation() {
+      if (this.$el) {
+        this.$el.setCustomValidity('');
+        this._isInvalid = null;
+        this._isEdit = false;
+      }
+    }
+  }, {
+    key: "onInvalid",
+    value: function onInvalid() {
+      this._isInvalid = true;
+      this._isEdit = false;
+    }
+  }, {
+    key: "onValidator",
+    value: function onValidator(event) {
+      this._isEdit = true;
+      this._isInvalid = this.checkValidation();
+
+      if (this.$el) {
+        this.$el.focus();
+        this.$el.reportValidity();
+        event.preventDefault();
+      }
+    }
+  }, {
+    key: "validationSuccess",
+    value: function validationSuccess() {
+      if (this.$el) {
+        this.$el.setCustomValidity('');
+        this._isInvalid = false;
+        this._isEdit = false;
+      }
+    }
+  }]);
+
+  return Field;
+}();
+
+
+// CONCATENATED MODULE: ./src/models/form.js
+
+
+
+
+
+
+
+
+
+
+
+
+var form_Form =
+/*#__PURE__*/
+function () {
+  function Form(fields) {
+    var _this = this;
+
+    var onSubmit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] :
+    /*#__PURE__*/
+    _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee() {
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              return _context.abrupt("return", {});
+
+            case 1:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, this);
+    }));
+
+    _classCallCheck(this, Form);
+
+    this.fields = [];
+    this.onSubmit = onSubmit;
+
+    if (!Array.isArray(fields) && _typeof(fields) === 'object' || typeof fields === 'string') {
+      fields = [fields];
+    }
+
+    if (Array.isArray(fields)) {
+      fields.forEach(function (el) {
+        if (el instanceof field_Field) {
+          _this.fields.push(el);
+        } else {
+          throw {
+            message: 'Error create input'
+          };
+        }
+      });
+    } else {
+      throw {
+        message: 'Error create form'
+      };
+    }
+  }
+
+  _createClass(Form, [{
+    key: "field",
+    value: function field(name) {
+      return typeof name === 'number' ? this.fields[name] : this.fields.find(function (el) {
+        return el.name === name;
+      });
+    }
+  }, {
+    key: "fieldValue",
+    value: function fieldValue(name) {
+      return this.field(name).getValue();
+    }
+  }, {
+    key: "sendData",
+    value: function sendData() {
+      return this.fields.reduce(function (res, field) {
+        res[field.name] = field.getValue();
+        return res;
+      }, {});
+    }
+  }, {
+    key: "getQueryParams",
+    value: function getQueryParams() {
+      var newQuery = Object.entries(this.sendData()).filter(function (_ref2) {
+        var _ref3 = _slicedToArray(_ref2, 2),
+            value = _ref3[1];
+
+        return value;
+      }).map(function (_ref4) {
+        var _ref5 = _slicedToArray(_ref4, 2),
+            key = _ref5[0],
+            value = _ref5[1];
+
+        value = encodeURIComponent && encodeURIComponent(value) || value;
+        return [key, value].join('=');
+      }).join('&');
+      return newQuery ? "".concat(newQuery) : '';
+    }
+  }]);
+
+  return Form;
+}();
+
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js
+
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/inherits.js
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+// CONCATENATED MODULE: ./src/models/input.js
+
+
+
+
+
+
+
+
+
+
+/* eslint-disable no-undef */
+
+
+var input_Input =
+/*#__PURE__*/
+function (_Field) {
+  _inherits(Input, _Field);
+
+  function Input(_ref) {
+    var _this;
+
+    var _ref$minlength = _ref.minlength,
+        minlength = _ref$minlength === void 0 ? null : _ref$minlength,
+        _ref$maxlength = _ref.maxlength,
+        maxlength = _ref$maxlength === void 0 ? null : _ref$maxlength,
+        _ref$readonly = _ref.readonly,
+        readonly = _ref$readonly === void 0 ? false : _ref$readonly,
+        _ref$type = _ref.type,
+        type = _ref$type === void 0 ? 'text' : _ref$type,
+        _ref$component = _ref.component,
+        component = _ref$component === void 0 ? 'VMInput' : _ref$component,
+        defaultProps = _objectWithoutProperties(_ref, ["minlength", "maxlength", "readonly", "type", "component"]);
+
+    _classCallCheck(this, Input);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Input).call(this, _objectSpread({}, defaultProps, {
+      component: component
+    })));
+    _this.type = type;
+    _this.minlength = minlength;
+    _this.maxlength = maxlength;
+    _this.readonly = readonly;
+    return _this;
+  }
+
+  return Input;
+}(field_Field);
+
+
+// CONCATENATED MODULE: ./src/models/textarea.js
+
+
+
+
+
+
+
+
+
+
+/* eslint-disable no-undef */
+
+
+var textarea_Textarea =
+/*#__PURE__*/
+function (_Field) {
+  _inherits(Textarea, _Field);
+
+  function Textarea(_ref) {
+    var _this;
+
+    var _ref$row = _ref.row,
+        row = _ref$row === void 0 ? null : _ref$row,
+        _ref$coll = _ref.coll,
+        coll = _ref$coll === void 0 ? null : _ref$coll,
+        _ref$readonly = _ref.readonly,
+        readonly = _ref$readonly === void 0 ? false : _ref$readonly,
+        _ref$minlength = _ref.minlength,
+        minlength = _ref$minlength === void 0 ? null : _ref$minlength,
+        _ref$maxlength = _ref.maxlength,
+        maxlength = _ref$maxlength === void 0 ? null : _ref$maxlength,
+        _ref$component = _ref.component,
+        component = _ref$component === void 0 ? 'VMTextarea' : _ref$component,
+        defaultProps = _objectWithoutProperties(_ref, ["row", "coll", "readonly", "minlength", "maxlength", "component"]);
+
+    _classCallCheck(this, Textarea);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Textarea).call(this, _objectSpread({}, defaultProps, {
+      component: component
+    })));
+    _this.row = row;
+    _this.coll = coll;
+    _this.minlength = minlength;
+    _this.maxlength = maxlength;
+    _this.readonly = readonly;
+    return _this;
+  }
+
+  return Textarea;
+}(field_Field);
+
+
+// CONCATENATED MODULE: ./src/models/select.js
+
+
+
+
+
+
+
+
+/* eslint-disable no-undef */
+
+
+var select_Select =
+/*#__PURE__*/
+function (_Field) {
+  _inherits(Select, _Field);
+
+  function Select(_ref) {
+    var _this;
+
+    var _ref$multiple = _ref.multiple,
+        multiple = _ref$multiple === void 0 ? false : _ref$multiple,
+        _ref$autocomplete = _ref.autocomplete,
+        autocomplete = _ref$autocomplete === void 0 ? false : _ref$autocomplete,
+        _ref$options = _ref.options,
+        options = _ref$options === void 0 ? [] : _ref$options,
+        _ref$component = _ref.component,
+        component = _ref$component === void 0 ? 'VMSelect' : _ref$component,
+        defaultProps = _objectWithoutProperties(_ref, ["multiple", "autocomplete", "options", "component"]);
+
+    _classCallCheck(this, Select);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Select).call(this, _objectSpread({}, defaultProps, {
+      component: component
+    })));
+    _this.options = options;
+    _this.multiple = multiple;
+    _this.autocomplete = autocomplete;
+    return _this;
+  }
+
+  _createClass(Select, [{
+    key: "setValue",
+    value: function setValue(value) {
+      if (this.multiple) {
+        if (!Array.isArray(this.value[this.prop])) {
+          this.value[this.prop] = [];
+        }
+
+        var index = this.value[this.prop].indexOf(value);
+
+        if (index === -1) {
+          this.value[this.prop].push(value);
+        } else {
+          this.value[this.prop].splice(index, 1);
+        }
+      } else {
+        this.value[this.prop] = value;
+      }
+    }
+  }, {
+    key: "firstOption",
+    value: function firstOption() {
+      return this.options[0] || {};
+    }
+  }]);
+
+  return Select;
+}(field_Field);
+
+
+// CONCATENATED MODULE: ./src/models/datePicker.js
+
+
+
+
+
+
+
+/* eslint-disable no-undef */
+
+
+var datePicker_DatePicker =
+/*#__PURE__*/
+function (_Field) {
+  _inherits(DatePicker, _Field);
+
+  function DatePicker(_ref) {
+    var _ref$value = _ref.value,
+        value = _ref$value === void 0 ? [] : _ref$value,
+        _ref$component = _ref.component,
+        component = _ref$component === void 0 ? 'VMDatePicker' : _ref$component,
+        defaultProps = _objectWithoutProperties(_ref, ["value", "component"]);
+
+    _classCallCheck(this, DatePicker);
+
+    if (!value || value.length < 2) {
+      var startDate = new Date();
+      var endDate = new Date();
+      startDate.setDate(endDate.getDate() - 7);
+      value = [startDate, endDate];
+    }
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(DatePicker).call(this, _objectSpread({}, defaultProps, {
+      component: component,
+      value: value
+    })));
+  }
+
+  return DatePicker;
+}(field_Field);
+
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.to-string.js
+var es6_regexp_to_string = __webpack_require__("6b54");
+
+// CONCATENATED MODULE: ./src/models/timePicker.js
+
+
+
+
+
+
+
+
+
+/* eslint-disable no-undef */
+
+var MAX_TIME = 24 * 60;
+
+var timePicker_TimePicker =
+/*#__PURE__*/
+function (_Field) {
+  _inherits(TimePicker, _Field);
+
+  _createClass(TimePicker, null, [{
+    key: "gAddZeroFirst",
+    value: function gAddZeroFirst(value) {
+      return (+value < 10 ? '0' : '') + value.toString();
+    }
+  }]);
+
+  function TimePicker(_ref) {
+    var _this;
+
+    var _ref$autocomplete = _ref.autocomplete,
+        autocomplete = _ref$autocomplete === void 0 ? true : _ref$autocomplete,
+        _ref$startTime = _ref.startTime,
+        startTime = _ref$startTime === void 0 ? 0 : _ref$startTime,
+        _ref$offset = _ref.offset,
+        offset = _ref$offset === void 0 ? MAX_TIME : _ref$offset,
+        _ref$interval = _ref.interval,
+        interval = _ref$interval === void 0 ? 5 : _ref$interval,
+        _ref$isRange = _ref.isRange,
+        isRange = _ref$isRange === void 0 ? false : _ref$isRange,
+        _ref$isRangeUpdated = _ref.isRangeUpdated,
+        isRangeUpdated = _ref$isRangeUpdated === void 0 ? true : _ref$isRangeUpdated,
+        _ref$component = _ref.component,
+        component = _ref$component === void 0 ? 'VMTimePicker' : _ref$component,
+        _ref$value = _ref.value,
+        value = _ref$value === void 0 ? [0, 0] : _ref$value,
+        defaultProps = _objectWithoutProperties(_ref, ["autocomplete", "startTime", "offset", "interval", "isRange", "isRangeUpdated", "component", "value"]);
+
+    _classCallCheck(this, TimePicker);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(TimePicker).call(this, _objectSpread({}, defaultProps, {
+      component: component
+    })));
+    _this.autocomplete = autocomplete;
+    _this.startTime = startTime;
+    _this.endTime = startTime + offset;
+    _this.offset = offset;
+    _this.interval = interval;
+    _this.isRange = isRange;
+    _this.isRangeUpdated = isRangeUpdated;
+
+    _this.setValue(value);
+
+    return _this;
+  }
+
+  _createClass(TimePicker, [{
+    key: "checkValue",
+    value: function checkValue(value) {
+      value = !Array.isArray(value) ? [value, 0] : value;
+
+      if (value.length !== 2) {
+        var val1 = +(value[0] || this.startTime);
+        var val2 = +(value[1] || this.startTime);
+        value = [val1, val2];
+      }
+
+      if (value[0] < this.startTime) {
+        value[0] = this.startTime;
+      }
+
+      if (value[0] > this.endTime) {
+        value[0] = this.endTime;
+      }
+
+      if (value[1] < this.startTime) {
+        value[1] = this.startTime;
+      }
+
+      if (value[1] > this.endTime) {
+        value[1] = this.endTime;
+      }
+
+      return value;
+    }
+  }, {
+    key: "timeAll",
+    value: function timeAll() {
+      var arr = [];
+
+      for (var i = this.startTime; i <= this.endTime; i += this.interval) {
+        var hour = ~~(i / 60 % 24);
+        var minute = i % 60;
+        arr.push({
+          value: i,
+          // hour * 60 + minute
+          label: "".concat(TimePicker.gAddZeroFirst(hour), ":").concat(TimePicker.gAddZeroFirst(minute))
+        });
+      }
+
+      return arr;
+    }
+  }, {
+    key: "timeFrom",
+    value: function timeFrom() {
+      var options = this.timeAll();
+
+      if (this.isRange) {
+        options.pop();
+      }
+
+      return options;
+    }
+  }, {
+    key: "timeTo",
+    value: function timeTo() {
+      if (!this.isRangeUpdated) return this.timeFrom();
+      var currentStart = this.value[this.prop][0] + this.interval;
+      var options = this.timeAll();
+      return options.filter(function (el) {
+        return el.value >= currentStart;
+      });
+    }
+  }]);
+
+  return TimePicker;
+}(field_Field);
+
+
+// CONCATENATED MODULE: ./src/models/index.js
+
+
+
+
+
+
+
+// CONCATENATED MODULE: ./src/functional/VMField.js
+
+
+/* harmony default export */ var VMField = (function (components) {
+  return {
+    functional: true,
+    render: function render(ce, ctx) {
+      var _ref = ctx || {},
+          props = _ref.props,
+          data = _ref.data;
+
+      if (!props || !props.field || !(props.field instanceof field_Field) || !props.field.component) {
+        console.error('required prop field!!!', ctx);
+        return;
+      }
+
+      if (!components[props.field.component]) {
+        console.error("component \"".concat(props.field.component, "\" not found!!!"));
+        return;
+      }
+
+      var componentField = components[props.field.component];
+
+      var _ref2 = data || {},
+          staticClass = _ref2.staticClass,
+          className = _ref2.class;
+
+      return ce(componentField, {
+        props: props,
+        class: [_defineProperty({}, staticClass, staticClass), className || []]
+      });
+    }
+  };
+});
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.array.includes.js
+var es7_array_includes = __webpack_require__("6762");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.includes.js
+var es6_string_includes = __webpack_require__("2fdb");
+
+// CONCATENATED MODULE: ./src/functional/VMFieldAll.js
+
+
+
+
+
+
+/* harmony default export */ var VMFieldAll = ({
+  name: 'vm_field_all',
+  functional: true,
+  props: {
+    fields: {
+      type: Array,
+      required: true
+    },
+    langNameText: {
+      type: Object
+    },
+    excludes: {
+      type: [Array],
+      default: function _default() {
+        return [];
+      }
+    },
+    includes: {
+      type: [Array],
+      default: function _default() {
+        return [];
+      }
+    }
+  },
+  render: function render(ce, ctx) {
+    var _ref = ctx || {},
+        props = _ref.props,
+        data = _ref.data;
+
+    var _ref2 = data || {},
+        staticClass = _ref2.staticClass,
+        className = _ref2.class;
+
+    var _ref3 = props || {},
+        fields = _ref3.fields,
+        langNameText = _ref3.langNameText,
+        excludes = _ref3.excludes,
+        includes = _ref3.includes,
+        propsOld = _objectWithoutProperties(_ref3, ["fields", "langNameText", "excludes", "includes"]);
+
+    return fields.filter(function (field) {
+      return field.type !== 'hidden' && !excludes.includes(field.name) && !(includes.length && !includes.includes(field.name));
+    }).map(function (field) {
+      return ce('VMField', {
+        props: _objectSpread({
+          field: field,
+          langNameText: langNameText,
+          key: field.name
+        }, propsOld),
+        class: [_defineProperty({}, staticClass, staticClass), className || []]
+      });
+    });
+  }
+});
+// CONCATENATED MODULE: ./src/functional/PropsSplit.js
+
+/* harmony default export */ var PropsSplit = ({
+  functional: true,
+  render: function render(ce, ctx) {
+    var _ref = ctx || {},
+        props = _ref.props,
+        data = _ref.data,
+        children = _ref.children;
+
+    if (!props || !props.props || !props.component) {
+      console.error('required attr props & component!!!', ctx);
+      return;
+    }
+
+    var proxyProps = props.props,
+        component = props.component;
+
+    var _ref2 = data || {},
+        staticClass = _ref2.staticClass,
+        className = _ref2.class;
+
+    return ce(component, {
+      props: proxyProps,
+      class: [_defineProperty({}, staticClass, staticClass), className || []]
+    }, children || []);
+  }
+});
+// CONCATENATED MODULE: ./src/functional/VMForm.js
+
+
+
+
+
+
+
+/* harmony default export */ var VMForm = (function (options) {
+  return {
+    functional: true,
+    name: 'vm_form',
+    props: {
+      form: {
+        type: Object,
+        required: true,
+        validator: function validator(value) {
+          return value instanceof form_Form;
+        }
+      },
+      langNameText: {
+        type: Object
+      },
+      submitText: {
+        type: String,
+        default: options.submitText || 'Submit'
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      fieldClass: {
+        type: [Object, Array, String],
+        default: function _default() {
+          return options.fieldClass || {};
+        }
+      },
+      buttonClass: {
+        type: [Object, Array, String],
+        default: function _default() {
+          return options.buttonClass || {};
+        }
+      },
+      excludes: {
+        type: [Array]
+      },
+      includes: {
+        type: [Array]
+      }
+    },
+    methods: {
+      submit: function () {
+        var _submit = _asyncToGenerator(
+        /*#__PURE__*/
+        regeneratorRuntime.mark(function _callee() {
+          return regeneratorRuntime.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  this.$emit('submit');
+                  _context.next = 3;
+                  return this.form.onSubmit();
+
+                case 3:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee, this);
+        }));
+
+        return function submit() {
+          return _submit.apply(this, arguments);
+        };
+      }()
+    },
+    render: function render(ce, ctx) {
+      var _ref = ctx || {},
+          children = _ref.children,
+          listeners = _ref.listeners,
+          data = _ref.data,
+          props = _ref.props;
+
+      if (!props || !props.form || !(props.form instanceof form_Form)) {
+        console.error('required props form!!!', ctx);
+        return;
+      }
+
+      var _ref2 = data || {},
+          staticClass = _ref2.staticClass,
+          className = _ref2.class;
+
+      var _ref3 = props || {},
+          form = _ref3.form,
+          submitText = _ref3.submitText,
+          disabled = _ref3.disabled,
+          fieldClass = _ref3.fieldClass,
+          buttonClass = _ref3.buttonClass,
+          langNameText = _ref3.langNameText,
+          excludes = _ref3.excludes,
+          includes = _ref3.includes;
+
+      return ce('form', {
+        class: [_defineProperty({}, staticClass, staticClass), className || []],
+        on: _objectSpread({
+          submit: function () {
+            var _submit2 = _asyncToGenerator(
+            /*#__PURE__*/
+            regeneratorRuntime.mark(function _callee2(event) {
+              return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                while (1) {
+                  switch (_context2.prev = _context2.next) {
+                    case 0:
+                      event.preventDefault();
+                      _context2.next = 3;
+                      return form.onSubmit();
+
+                    case 3:
+                    case "end":
+                      return _context2.stop();
+                  }
+                }
+              }, _callee2, this);
+            }));
+
+            return function submit(_x) {
+              return _submit2.apply(this, arguments);
+            };
+          }()
+        }, listeners)
+      }, children || [ce('VMFieldAll', {
+        props: {
+          fields: form.fields,
+          langNameText: langNameText,
+          excludes: excludes,
+          includes: includes,
+          class: fieldClass || []
+        }
+      }), ce('button', {
+        class: ['vm-button', buttonClass || []],
+        attrs: {
+          type: 'submit',
+          disabled: disabled
+        }
+      }, submitText)]);
+    }
+  };
+});
+// CONCATENATED MODULE: ./src/functional/index.js
+
+
+
+
+
+
+
+// CONCATENATED MODULE: ./src/index.js
+
+
+
+
+
+
+
+
+var Root = {
+  install: function install(Vue, _ref) {
+    var components = _ref.components,
+        form = _ref.form,
+        _ref$templates = _ref.templates,
+        templates = _ref$templates === void 0 ? function () {
+      return [];
+    } : _ref$templates,
+        _ref$defaultRequired = _ref.defaultRequired,
+        defaultRequired = _ref$defaultRequired === void 0 ? true : _ref$defaultRequired;
+    if (this.installed) return;
+    Vue.component('VMField', VMField(components || {}));
+    Vue.component('VMForm', VMForm(form || {}));
+    Vue.component('VMFieldAll', VMFieldAll);
+
+    var $VMField = function $VMField(name) {
+      if (name instanceof field_Field) return name;
+      var obj = typeof name === 'string' ? {
+        name: name
+      } : _typeof(name) === 'object' && !Array.isArray(name) ? name : {};
+
+      if (!obj.name) {
+        throw {
+          error: 'Prop "name" is required'
+        };
+      }
+
+      var template = templates().find(function (el) {
+        return el.template === obj.template;
+      }) || {};
+      var fieldType = template.fieldType || obj.fieldType || 'input';
+      var templateDefault = templates().find(function (el) {
+        return el.template === fieldType;
+      }) || {}; // find template
+
+      var fieldData = _objectSpread({
+        required: defaultRequired
+      }, templateDefault, template, obj);
+
+      var field;
+
+      switch (fieldType) {
+        case 'input':
+          field = new input_Input(fieldData);
+          break;
+
+        case 'textarea':
+          field = new textarea_Textarea(fieldData);
+          break;
+
+        case 'select':
+          field = new select_Select(fieldData);
+          break;
+
+        case 'datePicker':
+          field = new datePicker_DatePicker(fieldData);
+          break;
+
+        case 'timePicker':
+          field = new timePicker_TimePicker(fieldData);
+          break;
+
+        default:
+          field = new input_Input(fieldData);
+      }
+
+      return field;
+    };
+
+    var $VMForm = function $VMForm(data, submit) {
+      return new form_Form(data.map(function (el) {
+        return $VMField(el);
+      }), submit);
+    };
+
+    Vue.prototype.$VMField = $VMField;
+    Vue.prototype.$VMForm = $VMForm;
+  }
+};
+/* harmony default export */ var src = (Root);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMInput.vue?vue&type=template&id=4735c048&scoped=true&lang=pug&
+var VMInputvue_type_template_id_4735c048_scoped_true_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMFieldWrapper"}},[_c('div',{staticClass:"vm-input-block"},[_c('input',{ref:"input",staticClass:"vm-input",class:_vm.inputClass,attrs:{"minlength":_vm.field.minlength,"maxlength":_vm.field.maxlength,"placeholder":_vm.text.placeholder,"readonly":_vm.field.readonly,"required":_vm.required,"type":_vm.field.type || 'text',"name":_vm.name},domProps:{"value":_vm.value},on:{"input":function($event){_vm.onInput($event.target.value)},"invalid":function($event){_vm.field.onInvalid()}}}),(!_vm.hideValidator)?_c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMValidator"}}):_vm._e()],1)])}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/VMInput.vue?vue&type=template&id=4735c048&scoped=true&lang=pug&
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.search.js
+var es6_regexp_search = __webpack_require__("386d");
+
+// EXTERNAL MODULE: ./src/assets/icons_bundle.svg
+var icons_bundle = __webpack_require__("5d2b");
+var icons_bundle_default = /*#__PURE__*/__webpack_require__.n(icons_bundle);
+
+// CONCATENATED MODULE: ./src/functional/VMIcon.js
+
+
+
+/* harmony default export */ var VMIcon = ({
+  name: 'vm_icon',
+  functional: true,
+  props: {
+    icon: [String, Array],
+    src: String
+  },
+  render: function render(c, ctx) {
+    var _ref = ctx || {},
+        props = _ref.props,
+        data = _ref.data,
+        listeners = _ref.listeners;
+
+    var _ref2 = data || {},
+        staticClass = _ref2.staticClass,
+        className = _ref2.class;
+
+    var svgLink = "".concat(icons_bundle_default.a, "#").concat(props.icon);
+    return c('svg', {
+      props: {
+        key: svgLink
+      },
+      on: _objectSpread({}, listeners),
+      class: [_defineProperty({}, staticClass, staticClass), className || []]
+    }, [c('use', {
+      attrs: {
+        'xlink:href': svgLink
+      }
+    })]);
+  }
+});
+// CONCATENATED MODULE: ./src/mixins/fieldSelect.js
+
+
+
+
+
+
+
+
+/* harmony default export */ var fieldSelect = ({
+  components: {
+    VMIcon: VMIcon
+  },
+  props: {
+    icon: String
+  },
+  data: function data() {
+    return {
+      search: '',
+      isFirstClick: true,
+      isActive: false
+    };
+  },
+  computed: {
+    options: function options() {
+      var options = this.field.options || [];
+      return options.map(function (el) {
+        return {
+          value: _typeof(el) === 'object' ? el.value === undefined ? el.label : el.value : el,
+          label: _typeof(el) === 'object' ? el.label === undefined ? el.value : el.label : el,
+          options: el && el.options || []
+        };
+      });
+    },
+    classObject: function classObject() {
+      return {
+        active: this.isActive
+      };
+    },
+    searchedOptions: function searchedOptions() {
+      var _this = this;
+
+      if (this.search && this.isFirstClick || !this.isAutocomplete) {
+        this.isFirstClick = false;
+        return this.options;
+      }
+
+      return this.options.filter(function (it) {
+        return it.label.toString().toLowerCase().indexOf(_this.search.toLowerCase()) !== -1;
+      });
+    },
+    isMultiple: function isMultiple() {
+      return this.field.multiple;
+    },
+    isAutocomplete: function isAutocomplete() {
+      return this.field.autocomplete;
+    },
+    currentIcon: function currentIcon() {
+      return this.icon ? this.icon : this.isActive ? 'up' : 'down';
+    }
+  },
+  watch: {
+    options: function options() {
+      this.updateOptions();
+    }
+  },
+  methods: {
+    updateOptions: function updateOptions() {
+      var _this2 = this;
+
+      if (this.isMultiple) {
+        this.setSearch(Array.isArray(this.field.getValue()) ? this.options.filter(function (el) {
+          return _this2.field.getValue().includes(el.value.toString());
+        }).map(function (el) {
+          return el.label;
+        }).join(', ') : '');
+      } else {
+        var option = this.getOptionByValue(this.field.getValue());
+
+        if (!option && this.options.length) {
+          var _this$options = _slicedToArray(this.options, 1);
+
+          option = _this$options[0];
+        }
+
+        option = option || {
+          value: '',
+          label: ''
+        };
+        this.setSearch(option.label);
+        this.field.setValue(option.value);
+      }
+    },
+    setSearch: function setSearch(value) {
+      value = value || '';
+      this.search = value.toString();
+    },
+    getOptionByValue: function getOptionByValue(value) {
+      return this.options.find(function (ot) {
+        return ot.value.toString() === value.toString();
+      });
+    },
+    clickedOutside: function clickedOutside(event) {
+      var _this3 = this;
+
+      if (!this.isActive) return;
+      var path = event.path || event.composedPath && event.composedPath() || [];
+      var isOutside = path.every(function (el) {
+        return _this3.$el !== el;
+      });
+      if (!isOutside) return;
+      this.deactivated();
+    },
+    selectAll: function selectAll() {
+      this.$refs.input.select();
+    },
+    onSearchFocus: function onSearchFocus() {
+      this.selectAll();
+      this.isActive = true;
+    },
+    selectOption: function selectOption(option) {
+      if (this.isMultiple) {
+        var value = this.field.getValue();
+        var newValue = option.value.toString();
+        this.onInput(newValue, Array.isArray(value) ? value : [newValue]);
+        this.updateOptions();
+      } else {
+        this.onInput(option.value.toString(), option);
+        this.deactivated(option);
+        this.setSearch(option.label);
+      }
+    },
+    optionSelected: function optionSelected(_ref) {
+      var value = _ref.value;
+
+      if (this.isMultiple) {
+        return this.field.getValue().includes(value.toString());
+      }
+
+      return this.field.getValue().toString() === value.toString();
+    },
+    deactivated: function deactivated() {
+      var option = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+      if (this.isAutocomplete) {
+        option = option || this.getOptionByValue(this.field.getValue()) || {};
+        this.isFirstClick = true;
+        this.setSearch(option.label);
+        this.isActive = false;
+      } else {
+        this.isActive = false;
+      }
+    },
+    toggle: function toggle() {
+      if (this.isActive) {
+        this.deactivated();
+      } else {
+        this.isActive = !this.isActive;
+      }
+    }
+  },
+  created: function created() {
+    this.updateOptions();
+    if (typeof window === 'undefined') return;
+    document.addEventListener('mouseup', this.clickedOutside, true);
+    document.addEventListener('touchend', this.clickedOutside, true);
+  },
+  beforeDestroy: function beforeDestroy() {
+    if (typeof window === 'undefined') return;
+    document.removeEventListener('mouseup', this.clickedOutside, true);
+    document.removeEventListener('touchend', this.clickedOutside, true);
+  }
+});
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.object.assign.js
+var es6_object_assign = __webpack_require__("f751");
+
+// CONCATENATED MODULE: ./src/mixins/all.js
+
+
+
+
+/* harmony default export */ var mixins_all = ({
+  props: {
+    langText: Object,
+    langNameText: Object,
+    langProp: String,
+    label: String,
+    placeholder: String,
+    validationError: String,
+    message: String,
+    field: {
+      type: Object,
+      required: true,
+      validator: function validator(value) {
+        return value instanceof field_Field;
+      }
+    }
+  },
+  computed: {
+    name: function name() {
+      return this.field.name;
+    },
+    text: function text() {
+      return this.langText || (this.langNameText || {})[this.name] || Object.assign({}, this.label ? {
+        label: this.label
+      } : {}, this.placeholder ? {
+        placeholder: this.placeholder
+      } : {}, this.validationError ? {
+        validationError: this.validationError
+      } : {});
+    },
+    hideValidator: function hideValidator() {
+      return this.field.hideValidator;
+    },
+    value: function value() {
+      return this.field.value[this.field.prop];
+    },
+    inputClass: function inputClass() {
+      return [{
+        validator: !this.hideValidator
+      }, this.field.inputClass || []];
+    },
+    fieldClass: function fieldClass() {
+      var _ref;
+
+      return [(_ref = {}, _defineProperty(_ref, "vm-field-".concat(this.field.name), true), _defineProperty(_ref, "required", this.field.required), _ref), this.field.fieldClass || []];
+    },
+    required: function required() {
+      return this.field.required || false;
+    },
+    cMessage: function cMessage() {
+      return this.message;
+    },
+    componentName: function componentName() {
+      return this.$options.name;
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/mixins/index.js
+
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMFieldWrapper.vue?vue&type=template&id=5f3cfcda&lang=pug&
+var VMFieldWrappervue_type_template_id_5f3cfcda_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vm-field-wrapper vm-field",class:_vm.fieldClass},[(_vm.text.label)?_c('VMLabel',[_vm._v(_vm._s(_vm.text.label))]):_vm._e(),_vm._t("default"),(_vm.cMessage)?_c('div',{staticClass:"vm-field-message"},[_vm._v(_vm._s(_vm.cMessage))]):_vm._e()],2)}
+var VMFieldWrappervue_type_template_id_5f3cfcda_lang_pug_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/VMFieldWrapper.vue?vue&type=template&id=5f3cfcda&lang=pug&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMLabel.vue?vue&type=template&id=2a5c11aa&scoped=true&lang=pug&
+var VMLabelvue_type_template_id_2a5c11aa_scoped_true_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{staticClass:"vm-label"},[_vm._t("default")],2)}
+var VMLabelvue_type_template_id_2a5c11aa_scoped_true_lang_pug_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/VMLabel.vue?vue&type=template&id=2a5c11aa&scoped=true&lang=pug&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMLabel.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+/* harmony default export */ var VMLabelvue_type_script_lang_js_ = ({
+  name: 'vm_label'
+});
+// CONCATENATED MODULE: ./src/components/VMLabel.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_VMLabelvue_type_script_lang_js_ = (VMLabelvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/components/VMLabel.vue?vue&type=style&index=0&id=2a5c11aa&lang=stylus&scoped=true&
+var VMLabelvue_type_style_index_0_id_2a5c11aa_lang_stylus_scoped_true_ = __webpack_require__("5248");
+
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+// CONCATENATED MODULE: ./src/components/VMLabel.vue
+
+
+
+
+
+
+/* normalize component */
+
+var VMLabel_component = normalizeComponent(
+  components_VMLabelvue_type_script_lang_js_,
+  VMLabelvue_type_template_id_2a5c11aa_scoped_true_lang_pug_render,
+  VMLabelvue_type_template_id_2a5c11aa_scoped_true_lang_pug_staticRenderFns,
+  false,
+  null,
+  "2a5c11aa",
+  null
+  
+)
+
+VMLabel_component.options.__file = "VMLabel.vue"
+/* harmony default export */ var VMLabel = (VMLabel_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMFieldWrapper.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ var VMFieldWrappervue_type_script_lang_js_ = ({
+  name: 'vm_field_wrapper',
+  mixins: [mixins_all],
+  components: {
+    VMLabel: VMLabel
+  }
+});
+// CONCATENATED MODULE: ./src/components/VMFieldWrapper.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_VMFieldWrappervue_type_script_lang_js_ = (VMFieldWrappervue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/components/VMFieldWrapper.vue?vue&type=style&index=0&lang=stylus&
+var VMFieldWrappervue_type_style_index_0_lang_stylus_ = __webpack_require__("0676");
+
+// CONCATENATED MODULE: ./src/components/VMFieldWrapper.vue
+
+
+
+
+
+
+/* normalize component */
+
+var VMFieldWrapper_component = normalizeComponent(
+  components_VMFieldWrappervue_type_script_lang_js_,
+  VMFieldWrappervue_type_template_id_5f3cfcda_lang_pug_render,
+  VMFieldWrappervue_type_template_id_5f3cfcda_lang_pug_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+VMFieldWrapper_component.options.__file = "VMFieldWrapper.vue"
+/* harmony default export */ var VMFieldWrapper = (VMFieldWrapper_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMValidator.vue?vue&type=template&id=1db74260&lang=pug&
+var VMValidatorvue_type_template_id_1db74260_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.field.type !== 'hidden')?_c('div',{staticClass:"vm-validator",on:{"mouseenter":function($event){_vm.field.onValidator($event)},"touchstart":function($event){_vm.field.onValidator($event)}}},[_c('div',{staticClass:"vm-validator-circle",class:{
+        error: !_vm.field._isEdit && _vm.field._isInvalid === true,
+        success: _vm.field._isInvalid === false,
+        warn: _vm.field._isEdit && _vm.field._isInvalid === true,
+    }})]):_vm._e()}
+var VMValidatorvue_type_template_id_1db74260_lang_pug_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/VMValidator.vue?vue&type=template&id=1db74260&lang=pug&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMValidator.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var VMValidatorvue_type_script_lang_js_ = ({
+  name: 'vm_validator',
+  mixins: [mixins_all]
+});
+// CONCATENATED MODULE: ./src/components/VMValidator.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_VMValidatorvue_type_script_lang_js_ = (VMValidatorvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/components/VMValidator.vue?vue&type=style&index=0&lang=stylus&
+var VMValidatorvue_type_style_index_0_lang_stylus_ = __webpack_require__("371f");
+
+// CONCATENATED MODULE: ./src/components/VMValidator.vue
+
+
+
+
+
+
+/* normalize component */
+
+var VMValidator_component = normalizeComponent(
+  components_VMValidatorvue_type_script_lang_js_,
+  VMValidatorvue_type_template_id_1db74260_lang_pug_render,
+  VMValidatorvue_type_template_id_1db74260_lang_pug_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+VMValidator_component.options.__file = "VMValidator.vue"
+/* harmony default export */ var VMValidator = (VMValidator_component.exports);
+// CONCATENATED MODULE: ./src/utils/inputFunction.js
+var getCaretPosition = function getCaretPosition(field) {
+  // Initialize
+  var iCaretPos = 0; // IE Support
+
+  if (document.selection) {
+    // Set focus on the element
+    field.focus(); // To get cursor position, get empty selection range
+
+    var oSel = document.selection.createRange(); // Move selection start to 0 position
+
+    oSel.moveStart('character', -field.value.length); // The caret position is selection length
+
+    iCaretPos = oSel.text.length;
+  } else if (field.selectionStart || field.selectionStart === '0') {
+    // Firefox support
+    iCaretPos = field.selectionStart;
+  } // Return results
+
+
+  return iCaretPos;
+};
+
+var setCursorPosition = function setCursorPosition(field, pos) {
+  var type = field.getAttribute('type');
+
+  if (type === 'text' || type === 'password') {
+    if (field.setSelectionRange) {
+      field.setSelectionRange(pos, pos);
+    } else if (field.createTextRange) {
+      var range = field.createTextRange();
+      range.collapse(true);
+      range.moveEnd('character', pos);
+      range.moveStart('character', pos);
+      range.select();
+    }
+  }
+};
+
+
+// CONCATENATED MODULE: ./src/utils/index.js
+
+// CONCATENATED MODULE: ./src/mixins/field.js
+
+
+
+
+
+/* harmony default export */ var mixins_field = ({
+  mixins: [mixins_all],
+  components: {
+    VMFieldWrapper: VMFieldWrapper,
+    VMValidator: VMValidator,
+    PropsSplit: PropsSplit
+  },
+  methods: {
+    beforeOnInput: function beforeOnInput() {},
+    onInput: function onInput(value) {
+      var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      this.field._isEdit = true;
+      console.log("".concat(this.componentName, ": "), "val: ".concat(value), "res: ".concat(this.field.checkValue(value)));
+      value = this.field.checkValue(value);
+
+      if (this.field.$el) {
+        // реактивность не срабатывает если после checkValue значение не изменилось
+        var elem = this.field.$el;
+        var posCur = getCaretPosition(elem);
+        elem.value = value;
+        setCursorPosition(elem, posCur);
+      }
+
+      this.beforeOnInput(value);
+      this.field.setValue(value);
+      this.field.checkValidation();
+      this.field.onChange(value, data);
+      this.$emit('input', value, data);
+    }
+  },
+  watch: {
+    text: function text() {
+      this.field.setText(this.text);
+    }
+  },
+  created: function created() {
+    this.field.setText(this.text);
+  }
+});
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMInput.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var VMInputvue_type_script_lang_js_ = ({
+  name: 'vm_input',
+  mixins: [mixins_field],
+  mounted: function mounted() {
+    this.field.$el = this.$refs.input;
+  }
+});
+// CONCATENATED MODULE: ./src/components/VMInput.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_VMInputvue_type_script_lang_js_ = (VMInputvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/components/VMInput.vue?vue&type=style&index=0&id=4735c048&lang=stylus&scoped=true&
+var VMInputvue_type_style_index_0_id_4735c048_lang_stylus_scoped_true_ = __webpack_require__("9c6a");
+
+// CONCATENATED MODULE: ./src/components/VMInput.vue
+
+
+
+
+
+
+/* normalize component */
+
+var VMInput_component = normalizeComponent(
+  components_VMInputvue_type_script_lang_js_,
+  VMInputvue_type_template_id_4735c048_scoped_true_lang_pug_render,
+  staticRenderFns,
+  false,
+  null,
+  "4735c048",
+  null
+  
+)
+
+VMInput_component.options.__file = "VMInput.vue"
+/* harmony default export */ var VMInput = (VMInput_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMTextarea.vue?vue&type=template&id=7b8d7098&scoped=true&lang=pug&
+var VMTextareavue_type_template_id_7b8d7098_scoped_true_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMFieldWrapper"}},[_c('div',{staticClass:"vm-input-block"},[_c('textarea',{ref:"textarea",staticClass:"vm-input vm-textarea",class:_vm.inputClass,attrs:{"minlength":_vm.field.minlength,"maxlength":_vm.field.maxlength,"placeholder":_vm.text.placeholder,"readonly":_vm.field.readonly,"required":_vm.required,"name":_vm.name},domProps:{"value":_vm.value},on:{"input":function($event){_vm.onInput($event.target.value)},"invalid":function($event){_vm.field.onInvalid()}}}),(!_vm.hideValidator)?_c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMValidator"}}):_vm._e()],1)])}
+var VMTextareavue_type_template_id_7b8d7098_scoped_true_lang_pug_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/VMTextarea.vue?vue&type=template&id=7b8d7098&scoped=true&lang=pug&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMTextarea.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var VMTextareavue_type_script_lang_js_ = ({
+  name: 'vm_textarea',
+  mixins: [mixins_field],
+  mounted: function mounted() {
+    this.field.$el = this.$refs.textarea;
+  }
+});
+// CONCATENATED MODULE: ./src/components/VMTextarea.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_VMTextareavue_type_script_lang_js_ = (VMTextareavue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/components/VMTextarea.vue?vue&type=style&index=0&id=7b8d7098&lang=stylus&scoped=true&
+var VMTextareavue_type_style_index_0_id_7b8d7098_lang_stylus_scoped_true_ = __webpack_require__("cf10");
+
+// CONCATENATED MODULE: ./src/components/VMTextarea.vue
+
+
+
+
+
+
+/* normalize component */
+
+var VMTextarea_component = normalizeComponent(
+  components_VMTextareavue_type_script_lang_js_,
+  VMTextareavue_type_template_id_7b8d7098_scoped_true_lang_pug_render,
+  VMTextareavue_type_template_id_7b8d7098_scoped_true_lang_pug_staticRenderFns,
+  false,
+  null,
+  "7b8d7098",
+  null
+  
+)
+
+VMTextarea_component.options.__file = "VMTextarea.vue"
+/* harmony default export */ var VMTextarea = (VMTextarea_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMSelect.vue?vue&type=template&id=5811604c&lang=pug&
+var VMSelectvue_type_template_id_5811604c_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMFieldWrapper"}},[_c('div',{staticClass:"vm-select-container",class:_vm.classObject},[_c('div',{staticClass:"vm-select-input-block"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.search),expression:"search"}],ref:"input",staticClass:"vm-input vm-select-input",attrs:{"placeholder":_vm.text.placeholder},domProps:{"value":(_vm.search)},on:{"focus":function($event){$event.stopPropagation();return _vm.onSearchFocus($event)},"dblclick":function($event){$event.stopPropagation();return _vm.selectAll($event)},"input":function($event){if($event.target.composing){ return; }_vm.search=$event.target.value}}}),(!_vm.isAutocomplete)?_c('div',{staticClass:"vm-select-input-overlay",on:{"click":_vm.toggle}}):_vm._e(),_c('div',{staticClass:"vm-select-trigger",on:{"click":_vm.toggle}},[_c('VMIcon',{staticClass:"vm-icon",attrs:{"icon":_vm.currentIcon}})],1)]),_c('transition',{attrs:{"name":"vm-show-select"}},[(_vm.isActive)?_c('div',{staticClass:"vm-select-options-container"},[_c('ul',{staticClass:"vm-select-options",class:{ multiple: _vm.isMultiple }},[(!_vm.searchedOptions || !_vm.searchedOptions.length)?_c('li',{key:"searchedOptionsNotResult",staticClass:"vm-select-option",attrs:{"title":"Нет результата"}},[_c('span',{staticClass:"vm-select-option-text"},[_vm._v("Нет результата")])]):_vm._e(),_vm._l((_vm.searchedOptions),function(option){return _c('li',{key:option.value,staticClass:"vm-select-option",class:{ selected: _vm.optionSelected(option) },attrs:{"title":option.label},on:{"click":function($event){_vm.selectOption(option)}}},[_c('span',{staticClass:"vm-select-option-text"},[_vm._v(_vm._s(option.label))])])})],2)]):_vm._e()])],1)])}
+var VMSelectvue_type_template_id_5811604c_lang_pug_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/VMSelect.vue?vue&type=template&id=5811604c&lang=pug&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMSelect.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ var VMSelectvue_type_script_lang_js_ = ({
+  name: 'vm_select',
+  mixins: [mixins_field, fieldSelect]
+});
+// CONCATENATED MODULE: ./src/components/VMSelect.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_VMSelectvue_type_script_lang_js_ = (VMSelectvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/VMSelect.vue
+
+
+
+
+
+/* normalize component */
+
+var VMSelect_component = normalizeComponent(
+  components_VMSelectvue_type_script_lang_js_,
+  VMSelectvue_type_template_id_5811604c_lang_pug_render,
+  VMSelectvue_type_template_id_5811604c_lang_pug_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+VMSelect_component.options.__file = "VMSelect.vue"
+/* harmony default export */ var VMSelect = (VMSelect_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMCheckbox.vue?vue&type=template&id=07a021c0&scoped=true&lang=pug&
+var VMCheckboxvue_type_template_id_07a021c0_scoped_true_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMFieldWrapper"}},[(_vm.text.label)?_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.text.label))]):_vm._e(),_c('input',{staticClass:"vm-input vm-input-checkbox",domProps:{"value":_vm.text.placeholder}}),_c('label',[_c('div',{staticClass:"vm-field-overlay"}),_c('div',{staticClass:"vm-checkbox",class:{ active: _vm.value }},[_c('input',{ref:"input",class:_vm.inputClass,attrs:{"required":_vm.required,"type":"checkbox","name":_vm.name},domProps:{"checked":_vm.value},on:{"change":function($event){_vm.onInput($event.target.checked)}}}),_c('div',{staticClass:"vm-checkbox-circle"})])])])}
+var VMCheckboxvue_type_template_id_07a021c0_scoped_true_lang_pug_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/VMCheckbox.vue?vue&type=template&id=07a021c0&scoped=true&lang=pug&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMCheckbox.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var VMCheckboxvue_type_script_lang_js_ = ({
+  name: 'vm_checkbox',
+  mixins: [mixins_field]
+});
+// CONCATENATED MODULE: ./src/components/VMCheckbox.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_VMCheckboxvue_type_script_lang_js_ = (VMCheckboxvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/components/VMCheckbox.vue?vue&type=style&index=0&id=07a021c0&lang=stylus&scoped=true&
+var VMCheckboxvue_type_style_index_0_id_07a021c0_lang_stylus_scoped_true_ = __webpack_require__("2812");
+
+// CONCATENATED MODULE: ./src/components/VMCheckbox.vue
+
+
+
+
+
+
+/* normalize component */
+
+var VMCheckbox_component = normalizeComponent(
+  components_VMCheckboxvue_type_script_lang_js_,
+  VMCheckboxvue_type_template_id_07a021c0_scoped_true_lang_pug_render,
+  VMCheckboxvue_type_template_id_07a021c0_scoped_true_lang_pug_staticRenderFns,
+  false,
+  null,
+  "07a021c0",
+  null
+  
+)
+
+VMCheckbox_component.options.__file = "VMCheckbox.vue"
+/* harmony default export */ var VMCheckbox = (VMCheckbox_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMMultiSelectGroup.vue?vue&type=template&id=4a5b9985&lang=pug&
+var VMMultiSelectGroupvue_type_template_id_4a5b9985_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMFieldWrapper"}},[_c('div',{staticClass:"vm-select-container",class:_vm.classObject},[_c('div',{staticClass:"vm-select-input-block"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.search),expression:"search"}],ref:"input",staticClass:"vm-input vm-select-input",attrs:{"placeholder":_vm.text.placeholder},domProps:{"value":(_vm.search)},on:{"focus":function($event){$event.stopPropagation();return _vm.onSearchFocus($event)},"dblclick":function($event){$event.stopPropagation();return _vm.selectAll($event)},"input":function($event){if($event.target.composing){ return; }_vm.search=$event.target.value}}}),(!_vm.isAutocomplete)?_c('div',{staticClass:"vm-select-input-overlay",on:{"click":_vm.toggle}}):_vm._e(),_c('div',{staticClass:"vm-select-trigger",on:{"click":_vm.toggle}},[_c('VMIcon',{staticClass:"vm-icon",attrs:{"icon":_vm.currentIcon}})],1)]),_c('transition',{attrs:{"name":"vm-show-select"}},[(_vm.isActive)?_c('div',{staticClass:"vm-select-options-container"},[_c('ul',{staticClass:"vm-select-options"},[(!_vm.searchedOptions || !_vm.searchedOptions.length)?_c('li',{key:"searchedOptionsNotResult",staticClass:"vm-select-option vm-column",attrs:{"title":"Нет результата"}},[_c('span',{staticClass:"vm-select-option-text"},[_vm._v("Нет результата")])]):_vm._e(),_vm._l((_vm.searchedOptions),function(option){return _c('li',{key:option.value,staticClass:"vm-select-option vm-column",attrs:{"title":option.label}},[_c('span',{staticClass:"vm-select-option-text"},[_vm._v(_vm._s(option.label))]),_c('ul',{staticClass:"vm-select-options-group",class:{ multiple: _vm.isMultiple }},_vm._l((option.options),function(val){return _c('li',{key:val,staticClass:"vm-select-option",class:{ selected: _vm.checkSelected({ group: option.value, value: val }) },attrs:{"title":val},on:{"click":function($event){_vm.selectOption(option, val)}}},[_c('span',{staticClass:"vm-select-option-text"},[_vm._v(_vm._s(val))])])}))])})],2)]):_vm._e()])],1)])}
+var VMMultiSelectGroupvue_type_template_id_4a5b9985_lang_pug_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/VMMultiSelectGroup.vue?vue&type=template&id=4a5b9985&lang=pug&
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.find-index.js
+var es6_array_find_index = __webpack_require__("20d6");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMMultiSelectGroup.vue?vue&type=script&lang=js&
+
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ var VMMultiSelectGroupvue_type_script_lang_js_ = ({
+  name: 'vm_select',
+  mixins: [mixins_field, fieldSelect],
+  methods: {
+    checkSelected: function checkSelected(newValue) {
+      var value = this.field.getValue();
+      return Array.isArray(value) ? value.find(function (el) {
+        return el.group === newValue.group && el.value === newValue.value;
+      }) : null;
+    },
+    checkSelectedGroup: function checkSelectedGroup(newValue) {
+      var value = this.field.getValue();
+      return Array.isArray(value) ? value.find(function (el) {
+        return el.group === newValue.group;
+      }) : null;
+    },
+    selectOption: function selectOption(option, newValue) {
+      var value = this.field.getValue() || [];
+      newValue = {
+        group: option.value,
+        value: newValue.toString()
+      };
+      var isValue = this.checkSelected(newValue);
+
+      if (isValue) {
+        var index = value.findIndex(function (el) {
+          return el === isValue;
+        });
+        value.splice(index, 1);
+      } else {
+        if (!this.isMultiple) {
+          var groupIsSelected = this.checkSelectedGroup({
+            group: option.value
+          });
+
+          if (groupIsSelected) {
+            var _index = value.findIndex(function (el) {
+              return el === groupIsSelected;
+            });
+
+            value.splice(_index, 1);
+          }
+        }
+
+        value.push(newValue);
+      }
+
+      this.onInput(value, value);
+      this.updateOptions();
+    },
+    updateOptions: function updateOptions() {
+      var value = this.field.getValue();
+      this.setSearch(Array.isArray(value) ? value.map(function (el) {
+        return el.value;
+      }).join(', ') : '');
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/VMMultiSelectGroup.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_VMMultiSelectGroupvue_type_script_lang_js_ = (VMMultiSelectGroupvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/VMMultiSelectGroup.vue
+
+
+
+
+
+/* normalize component */
+
+var VMMultiSelectGroup_component = normalizeComponent(
+  components_VMMultiSelectGroupvue_type_script_lang_js_,
+  VMMultiSelectGroupvue_type_template_id_4a5b9985_lang_pug_render,
+  VMMultiSelectGroupvue_type_template_id_4a5b9985_lang_pug_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+VMMultiSelectGroup_component.options.__file = "VMMultiSelectGroup.vue"
+/* harmony default export */ var VMMultiSelectGroup = (VMMultiSelectGroup_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMTimePicker.vue?vue&type=template&id=5fdab57d&scoped=true&lang=pug&
+var VMTimePickervue_type_template_id_5fdab57d_scoped_true_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMFieldWrapper"}},[_c('div',{staticClass:"vm-time-picker"},[_c('VMField',{staticClass:"vm-time-picker__item",attrs:{"field":_vm.selectTimeFrom}}),(_vm.isRange)?_c('VMField',{staticClass:"vm-time-picker__item",attrs:{"field":_vm.selectTimeTo}}):_vm._e()],1)])}
+var VMTimePickervue_type_template_id_5fdab57d_scoped_true_lang_pug_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/VMTimePicker.vue?vue&type=template&id=5fdab57d&scoped=true&lang=pug&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMTimePicker.vue?vue&type=script&lang=js&
+
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ var VMTimePickervue_type_script_lang_js_ = ({
+  name: 'vm_time_picker',
+  mixins: [mixins_field],
+  computed: {
+    currentValue: function currentValue() {
+      return this.value || [];
+    },
+    currentStart: function currentStart() {
+      var _this$currentValue = _slicedToArray(this.currentValue, 1),
+          value = _this$currentValue[0];
+
+      return value || null;
+    },
+    currentEnd: function currentEnd() {
+      var _this$currentValue2 = _slicedToArray(this.currentValue, 2),
+          value = _this$currentValue2[1];
+
+      return value || null;
+    },
+    isAutocomplete: function isAutocomplete() {
+      return this.field.autocomplete;
+    },
+    isRange: function isRange() {
+      return this.field.isRange;
+    },
+    selectTimeFrom: function selectTimeFrom() {
+      var _this = this;
+
+      return new select_Select({
+        name: 'VMTimePickerFrom',
+        autocomplete: this.isAutocomplete,
+        options: this.field.timeFrom(),
+        value: this.currentStart === null ? '' : this.currentStart,
+        onChange: function onChange(value) {
+          return _this.updateTime([+value, _this.currentEnd]);
+        }
+      });
+    },
+    selectTimeTo: function selectTimeTo() {
+      var _this2 = this;
+
+      return new select_Select({
+        name: 'VMTimePickerTo',
+        autocomplete: this.isAutocomplete,
+        options: this.field.timeTo(),
+        value: this.currentEnd === null ? '' : this.currentEnd,
+        onChange: function onChange(value) {
+          return _this2.updateTime([_this2.currentStart, +value]);
+        }
+      });
+    }
+  },
+  methods: {
+    updateTime: function updateTime(value) {
+      this.onInput(value);
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/VMTimePicker.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_VMTimePickervue_type_script_lang_js_ = (VMTimePickervue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/components/VMTimePicker.vue?vue&type=style&index=0&id=5fdab57d&lang=stylus&scoped=true&
+var VMTimePickervue_type_style_index_0_id_5fdab57d_lang_stylus_scoped_true_ = __webpack_require__("c73f");
+
+// CONCATENATED MODULE: ./src/components/VMTimePicker.vue
+
+
+
+
+
+
+/* normalize component */
+
+var VMTimePicker_component = normalizeComponent(
+  components_VMTimePickervue_type_script_lang_js_,
+  VMTimePickervue_type_template_id_5fdab57d_scoped_true_lang_pug_render,
+  VMTimePickervue_type_template_id_5fdab57d_scoped_true_lang_pug_staticRenderFns,
+  false,
+  null,
+  "5fdab57d",
+  null
+  
+)
+
+VMTimePicker_component.options.__file = "VMTimePicker.vue"
+/* harmony default export */ var VMTimePicker = (VMTimePicker_component.exports);
+// CONCATENATED MODULE: ./src/components/index.js
+
+
+
+
+
+
+// CONCATENATED MODULE: ./src/index.build.js
+
+
+
+if (typeof window !== 'undefined' && window.Vue) {
+  src.install(window.Vue, {
+    components: {
+      VMInput: VMInput,
+      VMSelect: VMSelect,
+      VMMultiSelectGroup: VMMultiSelectGroup,
+      VMCheckbox: VMCheckbox,
+      VMTextarea: VMTextarea,
+      VMTimePicker: VMTimePicker
+    },
+    form: {
+      buttonClass: 'button'
+    }
+  });
+}
+
+
+/* harmony default export */ var index_build = (src);
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
+/* concated harmony reexport VMInput */__webpack_require__.d(__webpack_exports__, "VMInput", function() { return VMInput; });
+/* concated harmony reexport VMSelect */__webpack_require__.d(__webpack_exports__, "VMSelect", function() { return VMSelect; });
+/* concated harmony reexport VMMultiSelectGroup */__webpack_require__.d(__webpack_exports__, "VMMultiSelectGroup", function() { return VMMultiSelectGroup; });
+/* concated harmony reexport VMCheckbox */__webpack_require__.d(__webpack_exports__, "VMCheckbox", function() { return VMCheckbox; });
+/* concated harmony reexport VMTextarea */__webpack_require__.d(__webpack_exports__, "VMTextarea", function() { return VMTextarea; });
+/* concated harmony reexport VMTimePicker */__webpack_require__.d(__webpack_exports__, "VMTimePicker", function() { return VMTimePicker; });
 
 
-/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (index_build["a" /* default */]);
+/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (index_build);
 
 
 
