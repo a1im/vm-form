@@ -3,28 +3,36 @@
 
 .vm-field
   --bg-color white
-  --text-color black
-  --placeholder-color gray
+  --text-color #434343
+  --scroll-color white
+  --font-size 1rem
+  --placeholder-color #cecece
   --field-height 46px
   --field-margin 10px
   --padding 1rem
-  --border-radius 23px
-  --border-color black
+  --border-radius 5px
+  --border-color #009efb
+  --border-width 1px
   --label-color white
-  --scroll-color white
-  --select-container-height 200px
+  --right-icon-width 40px
+  --message-color gray
+
   --select-icon-size 1em
-  --bg-select-container #c0c0c0
-  --bg-option-hover gray
-  --options-border-top white
-  --option-hover white
-  --bg-checkbox-circle #c0c0c0
-  --font-size 1rem
+  --select-container-bg white
+  --select-container-height 200px
+  --select-container-border-top white
+  --select-container-border var(--border-color)
+  --select-option-bg-hover #c0c0c0
+  --select-option-color-hover white
+  --select-option-circle-bg-action var(--validation-success)
+
+  --checkbox-circle-bg transparent
+  --checkbox-circle-bg-checked var(--validation-success)
+
   --validation-default #c0c0c0
   --validation-success #1ed700
   --validation-error #e00000
   --validation-warn #ffa500
-  --message-color gray
 
   display: flex
   flex-direction: column
@@ -65,7 +73,7 @@
     border-color var(--border-color)
     background-color var(--bg-color)
     border-style solid
-    border-width 2px
+    border-width var(--border-width)
     font-size 1em
     height var(--field-height)
     outline none
@@ -81,7 +89,7 @@
     position relative
 
     &.validator
-      padding-right: 32px
+      padding-right: var(--right-icon-width)
 
     &:-webkit-outer-spin-button
     &:-webkit-inner-spin-button

@@ -29,7 +29,7 @@ export default {
         position absolute
         top: 50%
         transform: translateY(-50%)
-        right: 10px
+        right: calc(var(--right-icon-width) / 2 - 12px)
         cursor pointer
         padding 6px
         z-index: 3

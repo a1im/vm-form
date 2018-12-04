@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "description": "vue model form",
   "main": "dist/vm-form.umd.min.js",
-  "module": "src/index.js",
+  "module": "dist/myLib.common.js",
   "unpkg": "dist/vm-form.umd.min.js",
   "author": "a1im",
   "license": "MIT",

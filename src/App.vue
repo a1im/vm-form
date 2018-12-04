@@ -24,6 +24,9 @@ export default {
                 comment: {
                     placeholder: 'Комментарий',
                 },
+                multimulti: {
+                    placeholder: 'Выбор',
+                },
             };
         },
     },

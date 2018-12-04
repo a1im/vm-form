@@ -5,8 +5,8 @@
         :value="text.placeholder"
         )
         label
-            .field-overlay
-            .checkbox(:class="{ active: value }")
+            .vm-field-overlay
+            .vm-checkbox(:class="{ active: value }")
                 input(
                 ref="input"
                 :class="inputClass"
@@ -16,7 +16,7 @@
                 :name="name"
                 @change="onInput($event.target.checked)"
                 )
-                .checkbox-circle
+                .vm-checkbox-circle
 </template>
 
 <script>
@@ -34,10 +34,12 @@ export default {
     .vm-field
         position relative
 
-        .vm-input
-            z-index 1
+        &:hover .vm-input-checkbox
+            background-color var(--select-option-bg-hover)
+            color var(--select-option-color-hover)
+            border-color transparent
 
-        .field-overlay
+        .vm-field-overlay
             bottom 0
             cursor pointer
             height 100%
@@ -46,26 +48,30 @@ export default {
             right 0
             top 0
             width 100%
-            z-index 2
+            z-index 3
 
-        .checkbox
+            &:hover
+                + .vm-checkbox .vm-checkbox-circle
+                    background-color var(--checkbox-circle-bg-checked)
+
+        .vm-checkbox
             input
                 position absolute
                 opacity 0
                 pointer-events none
 
-                &:checked + .checkbox-circle
-                    background-color var(--validation-success)
+                &:checked + .vm-checkbox-circle
+                    background-color var(--checkbox-circle-bg-checked)
 
-            &-circle
-                background-color var(--bg-checkbox-circle)
+            .vm-checkbox-circle
+                background-color var(--checkbox-circle-bg)
                 border-radius 50%
                 height 1em
                 width 1em
                 position absolute
                 top: 50%
                 transform translateY(-50%)
-                right .9rem
+                right: calc(var(--right-icon-width) / 2 - 8px)
                 transition all .2s
                 z-index 2
                 cursor pointer
