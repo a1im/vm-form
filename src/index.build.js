@@ -24,12 +24,22 @@ if (typeof window !== 'undefined' && window.Vue) {
     });
 }
 
-export {
+// export {
+//     VMInput,
+//     VMSelect,
+//     VMMultiSelectGroup,
+//     VMCheckbox,
+//     VMTextarea,
+//     VMTimePicker,
+// } from './components';
+// export default Root;
+
+module.exports = {
+    install: Root.install,
     VMInput,
     VMSelect,
     VMMultiSelectGroup,
     VMCheckbox,
     VMTextarea,
     VMTimePicker,
-} from './components';
-export default Root;
+};
