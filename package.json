@@ -1,6 +1,6 @@
 {
   "name": "vm-form",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "vue model form",
   "main": "dist/vm-form.umd.min.js",
   "module": "dist/vm-form.common.js",
