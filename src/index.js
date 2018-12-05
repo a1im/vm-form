@@ -1,5 +1,6 @@
 import './style/default.styl';
 import './style/select.styl';
+import './filters';
 import {
     Input,
     Select,
@@ -8,6 +9,7 @@ import {
     Form,
     Field,
     TimePicker,
+    Calendar,
 } from './models';
 import {
     VMField,
@@ -72,6 +74,10 @@ const Root = {
                 break;
             case 'timePicker':
                 field = new TimePicker(fieldData);
+
+                break;
+            case 'calendar':
+                field = new Calendar(fieldData);
 
                 break;
             default:

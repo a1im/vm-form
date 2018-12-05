@@ -11,7 +11,7 @@
                 )
                 .vm-select-input-overlay(v-if="!isAutocomplete" @click="toggle")
                 .vm-select-trigger(@click="toggle")
-                    VMIcon.vm-icon(:icon="currentIcon")
+                    VMIcon(:icon="currentIcon")
 
             transition(name="vm-show-select")
                 .vm-select-options-container(v-if="isActive")
@@ -34,12 +34,13 @@
 
 <script>
 import MixinField from '../mixins/field';
-import MixinFieldSelect from '../mixins/fieldSelect';
+import MixinDropdown from '../mixins/dropdown';
+import MixinSelect from '../mixins/fieldSelect';
 
 
 export default {
     name: 'vm_select',
 
-    mixins: [MixinField, MixinFieldSelect],
+    mixins: [MixinField, MixinDropdown, MixinSelect],
 };
 </script>

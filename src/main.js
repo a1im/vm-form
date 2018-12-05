@@ -1,22 +1,27 @@
 import Vue from 'vue';
 import App from './App.vue';
-import VMField, {
+import VMField from './index';
+import {
     VMInput,
-    VMTextarea,
-    VMCheckbox,
-    VMMultiSelectGroup,
     VMSelect,
+    VMMultiSelectGroup,
+    VMCheckbox,
+    VMTextarea,
     VMTimePicker,
-} from './index.build';
+    VMCalendar,
+} from './components';
+// import VMInput from './components/VMInput.vue';
+// import VMSelect from './components/VMSelect.vue';
 
 Vue.use(VMField, {
     components: {
         VMInput,
+        VMSelect,
         VMTextarea,
         VMCheckbox,
         VMMultiSelectGroup,
-        VMSelect,
         VMTimePicker,
+        VMCalendar,
     },
 });
 

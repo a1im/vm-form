@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { MixinAll } from '../mixins';
+import MixinAll from '../mixins/all';
 import VMLabel from './VMLabel.vue';
 
 

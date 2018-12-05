@@ -1,8 +1,9 @@
 <template lang="pug">
     #app
-        VMForm(:form="form" :langNameText="text" :excludes="['number', 'time']")
+        VMForm(:form="form" :langNameText="text" :excludes="['number', 'time', 'calendar']")
         VMField(:field="form.field('number')" icon="dots")
         VMField(:field="form.field('time')" icon="dots")
+        VMField(:field="form.field('calendar')" icon="dots")
 </template>
 
 <script>
@@ -71,6 +72,15 @@ export default {
                 offset: 500,
                 onChange: (value) => {
                     console.log('onChange', value);
+                },
+            },
+            {
+                name: 'calendar',
+                fieldType: 'calendar',
+                isRange: true,
+                isDouble: true,
+                onChange: (value) => {
+                    console.log('calendar onChange', value);
                 },
             },
         ]);

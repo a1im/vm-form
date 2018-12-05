@@ -1,5 +1,5 @@
-import { MixinAll } from './index';
-import { PropsSplit } from '../functional/index';
+import MixinAll from './all';
+import { PropsSplit } from '../functional';
 import VMFieldWrapper from '../components/VMFieldWrapper.vue';
 import VMValidator from '../components/VMValidator.vue';
 import { getCaretPosition, setCursorPosition } from '../utils';

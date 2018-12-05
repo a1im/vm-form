@@ -6,6 +6,7 @@ import {
     VMCheckbox,
     VMTextarea,
     VMTimePicker,
+    // VMCalendar,
 } from './components';
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -17,6 +18,7 @@ if (typeof window !== 'undefined' && window.Vue) {
             VMCheckbox,
             VMTextarea,
             VMTimePicker,
+            // VMCalendar,
         },
         form: {
             buttonClass: 'button',
@@ -24,22 +26,23 @@ if (typeof window !== 'undefined' && window.Vue) {
     });
 }
 
-// export {
-//     VMInput,
-//     VMSelect,
-//     VMMultiSelectGroup,
-//     VMCheckbox,
-//     VMTextarea,
-//     VMTimePicker,
-// } from './components';
-// export default Root;
-
-module.exports = {
-    install: Root.install,
+export {
     VMInput,
     VMSelect,
     VMMultiSelectGroup,
     VMCheckbox,
     VMTextarea,
     VMTimePicker,
+    // VMCalendar,
 };
+export default Root;
+
+// module.exports = {
+//     install: Root.install,
+//     VMInput,
+//     VMSelect,
+//     VMMultiSelectGroup,
+//     VMCheckbox,
+//     VMTextarea,
+//     VMTimePicker,
+// };

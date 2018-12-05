@@ -27,6 +27,7 @@ export default {
                 ...listeners,
             },
             class: [
+                'vm-icon',
                 { [staticClass]: staticClass },
                 (className || []),
             ],

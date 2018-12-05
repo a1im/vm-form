@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { MixinAll } from '../mixins/index';
+import MixinAll from '../mixins/all';
 
 
 export default {
