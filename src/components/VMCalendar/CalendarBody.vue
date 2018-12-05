@@ -178,6 +178,8 @@ export default {
             .vm-calendar-body-day-item
                 width 42px
                 height 42px
+                max-width: 96%
+                max-height: 96%
                 border-radius 50%
                 border 1px solid transparent
                 display: flex
