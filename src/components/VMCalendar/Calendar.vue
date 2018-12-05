@@ -229,7 +229,7 @@ export default {
                 flex: none
                 margin: 0 5px
                 width 1px
-                background-color var(--border-color)
+                background-color var(--calendar-separator-color)
 
         .vm-calendar-content-header
             display: flex

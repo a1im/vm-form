@@ -47,6 +47,8 @@ export default {
         align-items: stretch
         cursor pointer
         width 100%
+        border-radius var(--border-radius)
+        transition border, border-radius .1s
 
         .vm-calendar-header-separator
             margin 0 5px
@@ -73,6 +75,7 @@ export default {
             display: flex
 
         &.opened
+            .vm-calendar-header
             .vm-calendar-header-body
                 border-bottom-left-radius 0
                 border-bottom-right-radius 0
