@@ -102,6 +102,7 @@ export default {
                     this.resultClickDate = [];
                 }
                 this.resultClickDate.push(value);
+                this.sortResultDate();
 
                 if (this.resultClickDate.length >= 2) {
                     this.onInput(this.resultClickDate);
@@ -112,8 +113,6 @@ export default {
                 this.onInput(value);
                 this.toggleBody();
             }
-
-            this.sortResultDate();
         },
 
         deactivated() {
