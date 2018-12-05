@@ -78,7 +78,7 @@ export default {
                 name: 'calendar',
                 fieldType: 'calendar',
                 isRange: true,
-                isDouble: true,
+                // isDouble: true,
                 onChange: (value) => {
                     console.log('calendar onChange', value);
                 },

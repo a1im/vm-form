@@ -9,14 +9,16 @@
             .vm-calendar-body-day(
             v-for="item in calendarBody"
             v-bind:key="item.key"
-            @click="item.isMonth && clickDate(item)"
+            @click="clickDate(item)"
             @mouseover="updateHoverDate(item)"
             )
                 .vm-calendar-body-day-container(
                 v-bind:class=`{
                     'vm-not-active': !item.isMonth,
                     'vm-current-month': item.isMonth,
-                    'vm-current-day': item.currentDay && item.isMonth,
+                    'vm-selected': item.selected,
+                    'vm-selected-first': item.selectedFirst,
+                    'vm-selected-last': item.selectedLast,
                 }`
                 )
                     .vm-calendar-body-day-item {{ item.day }}
@@ -73,7 +75,9 @@ export default {
                 body.push({
                     day: (momentDate.getDate()).toString().padStart(2),
                     isMonth: momentDate.getMonth() === currentMonth,
-                    currentDay: momentDate.getTime() >= dateFrom.getTime() && momentDate.getTime() <= dateTo.getTime(),
+                    selected: momentDate.getTime() >= dateFrom.getTime() && momentDate.getTime() <= dateTo.getTime(),
+                    selectedFirst: momentDate.getTime() === dateFrom.getTime(),
+                    selectedLast: momentDate.getTime() === dateTo.getTime(),
                     timestamp: momentDate.getTime(),
                     momentDate: new Date(momentDate),
                 });
@@ -162,7 +166,7 @@ export default {
                     .vm-calendar-body-day-item
                         border-color var(--calendar-day-circle-selected-color)
 
-            &.vm-current-day
+            &.vm-selected
                 .vm-calendar-body-day-item
                     border-color var(--calendar-day-circle-selected-color)
 
