@@ -5146,22 +5146,22 @@ var VMTimePicker_component = normalizeComponent(
 
 VMTimePicker_component.options.__file = "VMTimePicker.vue"
 /* harmony default export */ var VMTimePicker = (VMTimePicker_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMCalendar/Calendar.vue?vue&type=template&id=4d429940&lang=pug&
-var Calendarvue_type_template_id_4d429940_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('PropsSplit',{staticClass:"vm-calendar",class:{ opened: _vm.isActive },attrs:{"props":_vm.$props,"component":"VMFieldWrapper"}},[_c('CalendarHeader',{attrs:{"interval":_vm.resultClickDate,"opened":_vm.isActive},on:{"click":_vm.toggleBody}}),_c('transition',{attrs:{"name":"vm-show-select","mode":"out-in"}},[(_vm.isActive)?_c('div',{staticClass:"vm-calendar-content"},[_c('div',{staticClass:"vm-calendar-content-header"},[_c('div',{staticClass:"vm-calendar-content-arrow-block",on:{"click":function($event){$event.stopPropagation();}}},[_c('div',{staticClass:"vm-calendar-content-arrow",on:{"click":_vm.clickYearDown}},[_c('VMIcon',{attrs:{"icon":"arrow-left"}})],1),_c('div',{staticClass:"vm-calendar-content-arrow",on:{"click":_vm.clickMonthDown}},[_c('VMIcon',{attrs:{"icon":"arrow-left"}})],1)]),_c('div',{staticClass:"vm-calendar-content-date-name"},[_c('span',[_vm._v(_vm._s(_vm.currentMonth.getFullYear())+" ")]),_c('span',[_vm._v(_vm._s(_vm.getMonth(_vm.currentMonth)))]),(_vm.isDouble)?[_c('span',[_vm._v(", "+_vm._s(_vm.getMonth(_vm.currentMonth2)))])]:_vm._e()],2),_c('div',{staticClass:"vm-calendar-content-arrow-block",on:{"click":function($event){$event.stopPropagation();}}},[_c('div',{staticClass:"vm-calendar-content-arrow",on:{"click":_vm.clickMonthUp}},[_c('VMIcon',{attrs:{"icon":"arrow-right"}})],1),_c('div',{staticClass:"vm-calendar-content-arrow",on:{"click":_vm.clickYearUp}},[_c('VMIcon',{attrs:{"icon":"arrow-right"}})],1)])]),_c('div',{staticClass:"vm-calendar-content-wrapper"},[_c('CalendarBody',{key:"calendar1",attrs:{"currentMonth":_vm.currentMonth,"interval":_vm.resultClickDate,"hoverDate":_vm.hoverDate},on:{"click":_vm.clickDate,"update":_vm.updateCurrentDate,"hover-date":_vm.updateHoverDate}}),(_vm.isDouble)?[_c('div',{staticClass:"vm-calendar-content-separator"}),_c('CalendarBody',{key:"calendar2",attrs:{"currentMonth":_vm.currentMonth2,"interval":_vm.resultClickDate,"hoverDate":_vm.hoverDate},on:{"click":_vm.clickDate,"update":_vm.updateCurrentDate,"hover-date":_vm.updateHoverDate}})]:_vm._e()],2)]):_vm._e()])],1)}
-var Calendarvue_type_template_id_4d429940_lang_pug_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMCalendar/Calendar.vue?vue&type=template&id=325d7aef&lang=pug&
+var Calendarvue_type_template_id_325d7aef_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('PropsSplit',{staticClass:"vm-calendar",class:{ opened: _vm.isActive },attrs:{"props":_vm.$props,"component":"VMFieldWrapper"}},[_c('CalendarHeader',{attrs:{"interval":_vm.resultClickDate,"opened":_vm.isActive},on:{"click":_vm.toggleBody}}),_c('transition',{attrs:{"name":"vm-show-select","mode":"out-in"}},[(_vm.isActive)?_c('div',{staticClass:"vm-calendar-content"},[_c('div',{staticClass:"vm-calendar-content-header"},[_c('div',{staticClass:"vm-calendar-content-arrow-block",on:{"click":function($event){$event.stopPropagation();}}},[_c('div',{staticClass:"vm-calendar-content-arrow",on:{"click":_vm.clickYearDown}},[_c('VMIcon',{attrs:{"icon":"arrow-left"}})],1),_c('div',{staticClass:"vm-calendar-content-arrow",on:{"click":_vm.clickMonthDown}},[_c('VMIcon',{attrs:{"icon":"arrow-left"}})],1)]),_c('div',{staticClass:"vm-calendar-content-date-name"},[_c('span',[_vm._v(_vm._s(_vm.currentMonth.getFullYear())+" ")]),_c('span',[_vm._v(_vm._s(_vm.getMonth(_vm.currentMonth)))]),(_vm.isDouble)?[_c('span',[_vm._v(", "+_vm._s(_vm.getMonth(_vm.currentMonth2)))])]:_vm._e()],2),_c('div',{staticClass:"vm-calendar-content-arrow-block",on:{"click":function($event){$event.stopPropagation();}}},[_c('div',{staticClass:"vm-calendar-content-arrow",on:{"click":_vm.clickMonthUp}},[_c('VMIcon',{attrs:{"icon":"arrow-right"}})],1),_c('div',{staticClass:"vm-calendar-content-arrow",on:{"click":_vm.clickYearUp}},[_c('VMIcon',{attrs:{"icon":"arrow-right"}})],1)])]),_c('div',{staticClass:"vm-calendar-content-wrapper"},[_c('CalendarBody',{key:"calendar1",attrs:{"currentMonth":_vm.currentMonth,"interval":_vm.resultClickDate,"hoverDate":_vm.hoverDate},on:{"click":_vm.clickDate,"update":_vm.updateCurrentDate,"hover-date":_vm.updateHoverDate}}),(_vm.isDouble)?[_c('div',{staticClass:"vm-calendar-content-separator"}),_c('CalendarBody',{key:"calendar2",attrs:{"currentMonth":_vm.currentMonth2,"interval":_vm.resultClickDate,"hoverDate":_vm.hoverDate},on:{"click":_vm.clickDate,"update":_vm.updateCurrentDate,"hover-date":_vm.updateHoverDate}})]:_vm._e()],2)]):_vm._e()])],1)}
+var Calendarvue_type_template_id_325d7aef_lang_pug_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/VMCalendar/Calendar.vue?vue&type=template&id=4d429940&lang=pug&
+// CONCATENATED MODULE: ./src/components/VMCalendar/Calendar.vue?vue&type=template&id=325d7aef&lang=pug&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.sort.js
 var es6_array_sort = __webpack_require__("55dd");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMCalendar/CalendarHeader.vue?vue&type=template&id=0fade34e&lang=pug&
-var CalendarHeadervue_type_template_id_0fade34e_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vm-calendar-header",class:{ opened: _vm.opened }},[_c('div',{staticClass:"vm-calendar-header-body",on:{"click":function($event){_vm.$emit('click')}}},[_c('div',{staticClass:"vm-calendar-header-date-name"},[_c('span',[_vm._v(_vm._s(_vm.dateFirst.toLocaleDateString()))]),(_vm.dateLast && _vm.dateFirst.getTime() !== _vm.dateLast.getTime())?[_c('span',{staticClass:"vm-calendar-header-separator"},[_vm._v("-")]),_c('span',[_vm._v(_vm._s(_vm.dateLast.toLocaleDateString()))])]:_vm._e()],2),_c('VMIcon',{staticClass:"vm-calendar-icon",attrs:{"icon":"calendar"}})],1)])}
-var CalendarHeadervue_type_template_id_0fade34e_lang_pug_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMCalendar/CalendarHeader.vue?vue&type=template&id=df7d33c4&lang=pug&
+var CalendarHeadervue_type_template_id_df7d33c4_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vm-calendar-header",class:{ opened: _vm.opened }},[_c('div',{staticClass:"vm-calendar-header-body",on:{"click":function($event){_vm.$emit('click')}}},[_c('div',{staticClass:"vm-calendar-header-date-name"},[_c('span',[_vm._v(_vm._s(_vm.dateFirst.toLocaleDateString()))]),(_vm.dateLast && _vm.dateFirst.getTime() !== _vm.dateLast.getTime())?[_c('span',{staticClass:"vm-calendar-header-separator"},[_vm._v("-")]),_c('span',[_vm._v(_vm._s(_vm.dateLast.toLocaleDateString()))])]:_vm._e()],2),_c('VMIcon',{staticClass:"vm-calendar-icon",attrs:{"icon":"calendar"}})],1)])}
+var CalendarHeadervue_type_template_id_df7d33c4_lang_pug_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/VMCalendar/CalendarHeader.vue?vue&type=template&id=0fade34e&lang=pug&
+// CONCATENATED MODULE: ./src/components/VMCalendar/CalendarHeader.vue?vue&type=template&id=df7d33c4&lang=pug&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMCalendar/CalendarHeader.vue?vue&type=script&lang=js&
 //
@@ -5216,8 +5216,8 @@ var CalendarHeadervue_type_style_index_0_lang_stylus_ = __webpack_require__("429
 
 var CalendarHeader_component = normalizeComponent(
   VMCalendar_CalendarHeadervue_type_script_lang_js_,
-  CalendarHeadervue_type_template_id_0fade34e_lang_pug_render,
-  CalendarHeadervue_type_template_id_0fade34e_lang_pug_staticRenderFns,
+  CalendarHeadervue_type_template_id_df7d33c4_lang_pug_render,
+  CalendarHeadervue_type_template_id_df7d33c4_lang_pug_staticRenderFns,
   false,
   null,
   null,
@@ -5568,8 +5568,8 @@ var Calendarvue_type_style_index_0_lang_stylus_ = __webpack_require__("6d83");
 
 var Calendar_component = normalizeComponent(
   VMCalendar_Calendarvue_type_script_lang_js_,
-  Calendarvue_type_template_id_4d429940_lang_pug_render,
-  Calendarvue_type_template_id_4d429940_lang_pug_staticRenderFns,
+  Calendarvue_type_template_id_325d7aef_lang_pug_render,
+  Calendarvue_type_template_id_325d7aef_lang_pug_staticRenderFns,
   false,
   null,
   null,

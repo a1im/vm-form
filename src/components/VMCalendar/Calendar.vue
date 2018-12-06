@@ -212,7 +212,7 @@ export default {
             left 0
             top calc(100% - 1px)
             //width 100%
-            z-index 10
+            z-index 4
             border var(--border-width) solid var(--border-color)
             // border-top none
             border-radius var(--border-radius)

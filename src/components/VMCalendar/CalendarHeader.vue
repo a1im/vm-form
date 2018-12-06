@@ -68,7 +68,6 @@ export default {
             border var(--border-width) solid var(--border-color)
             border-radius var(--border-radius)
             transition border, border-radius .1s
-            z-index 11
             width 100%
 
         .vm-calendar-header-body-item
@@ -79,6 +78,9 @@ export default {
             .vm-calendar-header-body
                 border-bottom-left-radius 0
                 border-bottom-right-radius 0
+
+            .vm-calendar-header-body
+                z-index 5
                 // border-bottom none
                 // padding-bottom: var(--border-width)
 
