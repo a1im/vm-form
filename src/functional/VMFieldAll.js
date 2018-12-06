@@ -32,7 +32,7 @@ export default {
             langNameText,
             excludes,
             includes,
-            ...propsOld
+            // ...propsOld
         } = props || {};
 
         return fields
@@ -44,7 +44,7 @@ export default {
                     field,
                     langNameText,
                     key: field.name,
-                    ...propsOld,
+                    // ...propsOld,
                 },
                 class: [
                     { [staticClass]: staticClass },
