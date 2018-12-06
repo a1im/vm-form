@@ -14,7 +14,9 @@ import {
     VMField,
     VMForm,
     VMFieldAll,
+    VMIcon,
 } from './functional';
+
 
 const Root = {
     install(Vue, {
@@ -22,12 +24,14 @@ const Root = {
         form,
         templates = () => ([]),
         defaultRequired = true,
+        icons = '/icons_bundle.svg',
     }) {
         if (this.installed) return;
 
         Vue.component('VMField', VMField(components || {}));
         Vue.component('VMForm', VMForm(form || {}));
         Vue.component('VMFieldAll', VMFieldAll);
+        Vue.component('VMIcon', VMIcon(icons));
 
         const $VMField = (name) => {
             if (name instanceof Field) return name;

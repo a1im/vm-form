@@ -1,11 +1,4 @@
-import VMIcon from '../functional/VMIcon';
-
-
 export default {
-    components: {
-        VMIcon,
-    },
-
     props: {
         icon: String,
     },

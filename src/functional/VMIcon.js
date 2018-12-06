@@ -1,6 +1,6 @@
-import iconsBundle from '../assets/icons_bundle.svg';
+// import iconsBundle from '../assets/icons_bundle.svg';
 
-export default {
+export default iconBundle => ({
     name: 'vm_icon',
 
     functional: true,
@@ -17,7 +17,7 @@ export default {
             listeners,
         } = ctx || {};
         const { staticClass, class: className } = data || {};
-        const svgLink = `${iconsBundle}#${props.icon}`;
+        const svgLink = `${iconBundle}#${props.icon}`;
 
         return c('svg', {
             props: {
@@ -37,4 +37,4 @@ export default {
             },
         })]);
     },
-};
+});

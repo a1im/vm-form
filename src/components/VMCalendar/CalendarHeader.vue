@@ -10,14 +10,8 @@
 </template>
 
 <script>
-import VMIcon from '../../functional/VMIcon';
-
 export default {
     name: 'vm_calendar_header',
-
-    components: {
-        VMIcon,
-    },
 
     props: {
         interval: {
