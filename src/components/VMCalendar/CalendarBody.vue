@@ -172,7 +172,7 @@ export default {
 
                 &:hover
                     .vm-calendar-body-day-item
-                        color white
+                        color var(--calendar-day-text-selected-color)
                         background-color var(--calendar-day-circle-selected-color)
 
             .vm-calendar-body-day-item
