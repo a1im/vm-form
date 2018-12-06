@@ -5,7 +5,6 @@ import {
     Input,
     Select,
     Textarea,
-    DatePicker,
     Form,
     Field,
     TimePicker,
@@ -66,10 +65,6 @@ const Root = {
                 break;
             case 'select':
                 field = new Select(fieldData);
-
-                break;
-            case 'datePicker':
-                field = new DatePicker(fieldData);
 
                 break;
             case 'timePicker':

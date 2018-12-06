@@ -3448,48 +3448,6 @@ function (_Field) {
 }(field_Field);
 
 
-// CONCATENATED MODULE: ./src/models/datePicker.js
-
-
-
-
-
-
-
-/* eslint-disable no-undef */
-
-
-var datePicker_DatePicker =
-/*#__PURE__*/
-function (_Field) {
-  _inherits(DatePicker, _Field);
-
-  function DatePicker(_ref) {
-    var _ref$value = _ref.value,
-        value = _ref$value === void 0 ? [] : _ref$value,
-        _ref$component = _ref.component,
-        component = _ref$component === void 0 ? 'VMDatePicker' : _ref$component,
-        defaultProps = _objectWithoutProperties(_ref, ["value", "component"]);
-
-    _classCallCheck(this, DatePicker);
-
-    if (!value || value.length < 2) {
-      var startDate = new Date();
-      var endDate = new Date();
-      startDate.setDate(endDate.getDate() - 7);
-      value = [startDate, endDate];
-    }
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(DatePicker).call(this, _objectSpread({}, defaultProps, {
-      component: component,
-      value: value
-    })));
-  }
-
-  return DatePicker;
-}(field_Field);
-
-
 // CONCATENATED MODULE: ./src/models/timePicker.js
 
 
@@ -3680,7 +3638,6 @@ function (_Field) {
 
 
 // CONCATENATED MODULE: ./src/models/index.js
-
 
 
 
@@ -4032,10 +3989,6 @@ var Root = {
 
         case 'select':
           field = new select_Select(fieldData);
-          break;
-
-        case 'datePicker':
-          field = new datePicker_DatePicker(fieldData);
           break;
 
         case 'timePicker':
@@ -5648,8 +5601,8 @@ if (typeof window !== 'undefined' && window.Vue) {
       VMMultiSelectGroup: VMMultiSelectGroup,
       VMCheckbox: VMCheckbox,
       VMTextarea: VMTextarea,
-      VMTimePicker: VMTimePicker // VMCalendar,
-
+      VMTimePicker: VMTimePicker,
+      VMCalendar: VMCalendar_Calendar
     },
     form: {
       buttonClass: 'button'
@@ -5674,6 +5627,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 /* concated harmony reexport VMCheckbox */__webpack_require__.d(__webpack_exports__, "VMCheckbox", function() { return VMCheckbox; });
 /* concated harmony reexport VMTextarea */__webpack_require__.d(__webpack_exports__, "VMTextarea", function() { return VMTextarea; });
 /* concated harmony reexport VMTimePicker */__webpack_require__.d(__webpack_exports__, "VMTimePicker", function() { return VMTimePicker; });
+/* concated harmony reexport VMCalendar */__webpack_require__.d(__webpack_exports__, "VMCalendar", function() { return VMCalendar_Calendar; });
 
 
 /* harmony default export */ var entry_lib = __webpack_exports__["default"] = (index_build);

@@ -6,7 +6,7 @@ import {
     VMCheckbox,
     VMTextarea,
     VMTimePicker,
-    // VMCalendar,
+    VMCalendar,
 } from './components';
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -18,7 +18,7 @@ if (typeof window !== 'undefined' && window.Vue) {
             VMCheckbox,
             VMTextarea,
             VMTimePicker,
-            // VMCalendar,
+            VMCalendar,
         },
         form: {
             buttonClass: 'button',
@@ -33,7 +33,7 @@ export {
     VMCheckbox,
     VMTextarea,
     VMTimePicker,
-    // VMCalendar,
+    VMCalendar,
 };
 export default Root;
 
