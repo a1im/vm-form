@@ -17,11 +17,28 @@ import {
     VMIcon,
 } from './functional';
 import langRu from './langs/ru';
+import {
+    VMInput,
+    VMSelect,
+    VMMultiSelectGroup,
+    VMCheckbox,
+    VMTextarea,
+    VMTimePicker,
+    VMCalendar,
+} from './components';
 
-
+const defaultComponents = {
+    VMInput,
+    VMSelect,
+    VMMultiSelectGroup,
+    VMCheckbox,
+    VMTextarea,
+    VMTimePicker,
+    VMCalendar,
+};
 const Root = {
     install(Vue, {
-        components,
+        components = {},
         form,
         templates = () => ([]),
         defaultRequired = true,
@@ -31,7 +48,10 @@ const Root = {
     }) {
         if (this.installed) return;
 
-        Vue.component('VMField', VMField(components || {}));
+        Vue.component('VMField', VMField({
+            ...defaultComponents,
+            ...components,
+        }));
         Vue.component('VMForm', VMForm(form || {}));
         Vue.component('VMFieldAll', VMFieldAll);
         Vue.component('VMIcon', VMIcon(icons));
@@ -108,4 +128,22 @@ const Root = {
     },
 };
 
+if (typeof window !== 'undefined' && window.Vue) {
+    Root.install(window.Vue, {
+        components: defaultComponents,
+        form: {
+            buttonClass: 'button',
+        },
+    });
+}
+
+export {
+    VMInput,
+    VMSelect,
+    VMMultiSelectGroup,
+    VMCheckbox,
+    VMTextarea,
+    VMTimePicker,
+    VMCalendar,
+};
 export default Root;

@@ -2750,6 +2750,28 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.find.js
+var es6_array_find = __webpack_require__("7514");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
+var es6_function_name = __webpack_require__("7f7f");
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/typeof.js
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    _typeof = function _typeof(obj) {
+      return _typeof2(obj);
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
+  }
+
+  return _typeof(obj);
+}
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -2784,28 +2806,6 @@ function _objectSpread(target) {
   }
 
   return target;
-}
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.find.js
-var es6_array_find = __webpack_require__("7514");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
-var es6_function_name = __webpack_require__("7f7f");
-
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/typeof.js
-function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
-
-function _typeof(obj) {
-  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
-    _typeof = function _typeof(obj) {
-      return _typeof2(obj);
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
-    };
-  }
-
-  return _typeof(obj);
 }
 // EXTERNAL MODULE: ./src/style/default.styl
 var style_default = __webpack_require__("7d4f");
@@ -3977,117 +3977,6 @@ var es6_string_includes = __webpack_require__("2fdb");
   weekDays: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
   months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
 });
-// CONCATENATED MODULE: ./src/index.js
-
-
-
-
-
-
-
-
-
-
-var Root = {
-  install: function install(Vue, _ref) {
-    var components = _ref.components,
-        form = _ref.form,
-        _ref$templates = _ref.templates,
-        templates = _ref$templates === void 0 ? function () {
-      return [];
-    } : _ref$templates,
-        _ref$defaultRequired = _ref.defaultRequired,
-        defaultRequired = _ref$defaultRequired === void 0 ? true : _ref$defaultRequired,
-        _ref$icons = _ref.icons,
-        icons = _ref$icons === void 0 ? '/icons_bundle.svg' : _ref$icons,
-        _ref$lang = _ref.lang,
-        lang = _ref$lang === void 0 ? {} : _ref$lang,
-        _ref$currentLang = _ref.currentLang,
-        currentLang = _ref$currentLang === void 0 ? 'ru' : _ref$currentLang;
-    if (this.installed) return;
-    Vue.component('VMField', VMField(components || {}));
-    Vue.component('VMForm', VMForm(form || {}));
-    Vue.component('VMFieldAll', VMFieldAll);
-    Vue.component('VMIcon', VMIcon(icons));
-
-    var $VMField = function $VMField(name) {
-      if (name instanceof field_Field) return name;
-      var obj = typeof name === 'string' ? {
-        name: name
-      } : _typeof(name) === 'object' && !Array.isArray(name) ? name : {};
-
-      if (!obj.name) {
-        throw {
-          error: 'Prop "name" is required'
-        };
-      }
-
-      var template = templates().find(function (el) {
-        return el.template === obj.template;
-      }) || {};
-      var fieldType = template.fieldType || obj.fieldType || 'input';
-      var templateDefault = templates().find(function (el) {
-        return el.template === fieldType;
-      }) || {}; // find template
-
-      var fieldData = _objectSpread({
-        required: defaultRequired
-      }, templateDefault, template, obj);
-
-      var field;
-
-      switch (fieldType) {
-        case 'input':
-          field = new input_Input(fieldData);
-          break;
-
-        case 'textarea':
-          field = new textarea_Textarea(fieldData);
-          break;
-
-        case 'select':
-          field = new select_Select(fieldData);
-          break;
-
-        case 'timePicker':
-          field = new timePicker_TimePicker(fieldData);
-          break;
-
-        case 'calendar':
-          field = new calendar_Calendar(fieldData);
-          break;
-
-        default:
-          field = new input_Input(fieldData);
-      }
-
-      return field;
-    };
-
-    var $VMForm = function $VMForm(data, submit) {
-      return new form_Form(data.map(function (el) {
-        return $VMField(el);
-      }), submit);
-    };
-
-    lang = _objectSpread({
-      ru: ru
-    }, lang);
-    $VMForm.config = {
-      currentLang: '',
-      lang: lang
-    };
-
-    $VMForm.setLang = function (value) {
-      $VMForm.config.currentLang = String(value).toLowerCase();
-    };
-
-    $VMForm.setLang(currentLang);
-    Vue.prototype.$VMField = $VMField;
-    Vue.prototype.$VMForm = $VMForm;
-  }
-};
-/* harmony default export */ var src = (Root);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMInput.vue?vue&type=template&id=d9d6f6d8&scoped=true&lang=pug&
 var VMInputvue_type_template_id_d9d6f6d8_scoped_true_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMFieldWrapper"}},[_c('div',{staticClass:"vm-input-block"},[_c('input',{ref:"input",staticClass:"vm-input",class:_vm.inputClass,attrs:{"minlength":_vm.field.minlength,"maxlength":_vm.field.maxlength,"placeholder":_vm.text.placeholder,"readonly":_vm.field.readonly,"required":_vm.required,"type":_vm.field.type || 'text',"name":_vm.name},domProps:{"value":_vm.value},on:{"input":function($event){_vm.onInput($event.target.value)},"invalid":function($event){_vm.field.onInvalid()}}}),(!_vm.hideValidator)?_c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMValidator"}}):_vm._e()],1)])}
 var staticRenderFns = []
@@ -5665,21 +5554,131 @@ Calendar_component.options.__file = "Calendar.vue"
 
 
 
-// CONCATENATED MODULE: ./src/index.build.js
+// CONCATENATED MODULE: ./src/index.js
 
 
+
+
+
+
+
+
+
+
+
+var defaultComponents = {
+  VMInput: VMInput,
+  VMSelect: VMSelect,
+  VMMultiSelectGroup: VMMultiSelectGroup,
+  VMCheckbox: VMCheckbox,
+  VMTextarea: VMTextarea,
+  VMTimePicker: VMTimePicker,
+  VMCalendar: VMCalendar_Calendar
+};
+var Root = {
+  install: function install(Vue, _ref) {
+    var _ref$components = _ref.components,
+        components = _ref$components === void 0 ? {} : _ref$components,
+        form = _ref.form,
+        _ref$templates = _ref.templates,
+        templates = _ref$templates === void 0 ? function () {
+      return [];
+    } : _ref$templates,
+        _ref$defaultRequired = _ref.defaultRequired,
+        defaultRequired = _ref$defaultRequired === void 0 ? true : _ref$defaultRequired,
+        _ref$icons = _ref.icons,
+        icons = _ref$icons === void 0 ? '/icons_bundle.svg' : _ref$icons,
+        _ref$lang = _ref.lang,
+        lang = _ref$lang === void 0 ? {} : _ref$lang,
+        _ref$currentLang = _ref.currentLang,
+        currentLang = _ref$currentLang === void 0 ? 'ru' : _ref$currentLang;
+    if (this.installed) return;
+    Vue.component('VMField', VMField(_objectSpread({}, defaultComponents, components)));
+    Vue.component('VMForm', VMForm(form || {}));
+    Vue.component('VMFieldAll', VMFieldAll);
+    Vue.component('VMIcon', VMIcon(icons));
+
+    var $VMField = function $VMField(name) {
+      if (name instanceof field_Field) return name;
+      var obj = typeof name === 'string' ? {
+        name: name
+      } : _typeof(name) === 'object' && !Array.isArray(name) ? name : {};
+
+      if (!obj.name) {
+        throw {
+          error: 'Prop "name" is required'
+        };
+      }
+
+      var template = templates().find(function (el) {
+        return el.template === obj.template;
+      }) || {};
+      var fieldType = template.fieldType || obj.fieldType || 'input';
+      var templateDefault = templates().find(function (el) {
+        return el.template === fieldType;
+      }) || {}; // find template
+
+      var fieldData = _objectSpread({
+        required: defaultRequired
+      }, templateDefault, template, obj);
+
+      var field;
+
+      switch (fieldType) {
+        case 'input':
+          field = new input_Input(fieldData);
+          break;
+
+        case 'textarea':
+          field = new textarea_Textarea(fieldData);
+          break;
+
+        case 'select':
+          field = new select_Select(fieldData);
+          break;
+
+        case 'timePicker':
+          field = new timePicker_TimePicker(fieldData);
+          break;
+
+        case 'calendar':
+          field = new calendar_Calendar(fieldData);
+          break;
+
+        default:
+          field = new input_Input(fieldData);
+      }
+
+      return field;
+    };
+
+    var $VMForm = function $VMForm(data, submit) {
+      return new form_Form(data.map(function (el) {
+        return $VMField(el);
+      }), submit);
+    };
+
+    lang = _objectSpread({
+      ru: ru
+    }, lang);
+    $VMForm.config = {
+      currentLang: '',
+      lang: lang
+    };
+
+    $VMForm.setLang = function (value) {
+      $VMForm.config.currentLang = String(value).toLowerCase();
+    };
+
+    $VMForm.setLang(currentLang);
+    Vue.prototype.$VMField = $VMField;
+    Vue.prototype.$VMForm = $VMForm;
+  }
+};
 
 if (typeof window !== 'undefined' && window.Vue) {
-  src.install(window.Vue, {
-    components: {
-      VMInput: VMInput,
-      VMSelect: VMSelect,
-      VMMultiSelectGroup: VMMultiSelectGroup,
-      VMCheckbox: VMCheckbox,
-      VMTextarea: VMTextarea,
-      VMTimePicker: VMTimePicker,
-      VMCalendar: VMCalendar_Calendar
-    },
+  Root.install(window.Vue, {
+    components: defaultComponents,
     form: {
       buttonClass: 'button'
     }
@@ -5687,15 +5686,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 
-/* harmony default export */ var index_build = (src); // module.exports = {
-//     install: Root.install,
-//     VMInput,
-//     VMSelect,
-//     VMMultiSelectGroup,
-//     VMCheckbox,
-//     VMTextarea,
-//     VMTimePicker,
-// };
+/* harmony default export */ var src = (Root);
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 /* concated harmony reexport VMInput */__webpack_require__.d(__webpack_exports__, "VMInput", function() { return VMInput; });
 /* concated harmony reexport VMSelect */__webpack_require__.d(__webpack_exports__, "VMSelect", function() { return VMSelect; });
@@ -5706,7 +5697,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 /* concated harmony reexport VMCalendar */__webpack_require__.d(__webpack_exports__, "VMCalendar", function() { return VMCalendar_Calendar; });
 
 
-/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (index_build);
+/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (src);
 
 
 

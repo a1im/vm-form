@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name vm-form src/index.build.js",
+    "build": "vue-cli-service build --target lib --name vm-form src/index.js",
     "build:test": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
