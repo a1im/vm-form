@@ -1,6 +1,5 @@
 import './style/default.styl';
 import './style/select.styl';
-import './filters';
 import {
     Input,
     Select,

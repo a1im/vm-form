@@ -2804,35 +2804,6 @@ var style_default = __webpack_require__("7d4f");
 // EXTERNAL MODULE: ./src/style/select.styl
 var style_select = __webpack_require__("f627");
 
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.to-string.js
-var es6_regexp_to_string = __webpack_require__("6b54");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.string.pad-start.js
-var es7_string_pad_start = __webpack_require__("f576");
-
-// CONCATENATED MODULE: ./src/filters/padStart.js
-
-
-
-var padStart_filter = function filter(value) {
-  var num = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
-  return value = (value || '').toString().padStart(num, '0');
-};
-
-/* harmony default export */ var padStart = (padStart_filter);
-// CONCATENATED MODULE: ./src/filters/date.js
-
-var formater = new Intl.DateTimeFormat();
-
-var date_filter = function filter(date) {
-  date = _typeof(date) !== 'object' ? new Date(date) : date;
-  return formater.format(date);
-};
-
-/* harmony default export */ var filters_date = (date_filter);
-// CONCATENATED MODULE: ./src/filters/index.js
-
-
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
 function _arrayWithHoles(arr) {
   if (Array.isArray(arr)) return arr;
@@ -3445,6 +3416,9 @@ function (_Field) {
   return Select;
 }(field_Field);
 
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.to-string.js
+var es6_regexp_to_string = __webpack_require__("6b54");
 
 // CONCATENATED MODULE: ./src/models/timePicker.js
 
@@ -5148,6 +5122,9 @@ var CalendarBodyvue_type_template_id_a76d15f4_lang_pug_staticRenderFns = []
 
 // CONCATENATED MODULE: ./src/components/VMCalendar/CalendarBody.vue?vue&type=template&id=a76d15f4&lang=pug&
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.string.pad-start.js
+var es7_string_pad_start = __webpack_require__("f576");
+
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
 var es6_number_constructor = __webpack_require__("c5f6");
 
@@ -5546,7 +5523,6 @@ Calendar_component.options.__file = "Calendar.vue"
 
 
 // CONCATENATED MODULE: ./src/index.js
-
 
 
 
