@@ -47,16 +47,13 @@
 </template>
 
 <script>
-import MixinField from '../../mixins/field';
-import MixinDropdown from '../../mixins/dropdown';
+import Dropdown from '../Dropdown';
 import CalendarHeader from './CalendarHeader.vue';
 import CalendarBody from './CalendarBody.vue';
 
 
-export default {
+export default Dropdown.extend({
     name: 'vm_calendar',
-
-    mixins: [MixinField, MixinDropdown],
 
     components: {
         CalendarHeader,
@@ -193,7 +190,7 @@ export default {
     created() {
         this.updateDate(this.value);
     },
-};
+});
 </script>
 
 <style lang="stylus">

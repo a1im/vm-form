@@ -40,15 +40,11 @@
 </template>
 
 <script>
-import MixinField from '../mixins/field';
-import MixinDropdown from '../mixins/dropdown';
-import MixinSelect from '../mixins/fieldSelect';
+import VMSelect from './VMSelect.vue';
 
 
-export default {
-    name: 'vm_select',
-
-    mixins: [MixinField, MixinDropdown, MixinSelect],
+export default VMSelect.extend({
+    name: 'vm_select_group',
 
     methods: {
         checkSelected(newValue) {
@@ -105,5 +101,5 @@ export default {
                 : '');
         },
     },
-};
+});
 </script>

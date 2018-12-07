@@ -1,4 +1,7 @@
-export default {
+import Field from './Field';
+
+
+export default Field.extend({
     props: {
         icon: String,
     },
@@ -40,4 +43,4 @@ export default {
         document.removeEventListener('mouseup', this.clickedOutside, true);
         document.removeEventListener('touchend', this.clickedOutside, true);
     },
-};
+});

@@ -19,18 +19,16 @@
 </template>
 
 <script>
-import MixinField from '../mixins/field';
+import Field from './Field';
 
 
-export default {
+export default Field.extend({
     name: 'vm_input',
-
-    mixins: [MixinField],
 
     mounted() {
         this.field.$el = this.$refs.input;
     },
-};
+});
 </script>
 
 <style lang="stylus" scoped>

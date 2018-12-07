@@ -1,6 +1,8 @@
+import Vue from 'vue';
 import { Field } from '../models';
 
-export default {
+
+export default Vue.extend({
     props: {
         langText: Object,
         langNameText: Object,
@@ -71,4 +73,4 @@ export default {
             return this.$options.name;
         },
     },
-};
+});

@@ -2,7 +2,7 @@
     PropsSplit(:props="$props" component="VMFieldWrapper")
         .vm-input-block
             textarea.vm-input.vm-textarea(
-            ref="textarea"
+            ref="input"
             :class="inputClass"
             :minlength="field.minlength"
             :maxlength="field.maxlength"
@@ -18,18 +18,12 @@
 </template>
 
 <script>
-import MixinField from '../mixins/field';
+import VMInput from './VMInput.vue';
 
 
-export default {
+export default VMInput.extend({
     name: 'vm_textarea',
-
-    mixins: [MixinField],
-
-    mounted() {
-        this.field.$el = this.$refs.textarea;
-    },
-};
+});
 </script>
 
 <style lang="stylus" scoped>

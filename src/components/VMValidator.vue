@@ -14,14 +14,12 @@
 </template>
 
 <script>
-import MixinAll from '../mixins/all';
+import Entity from './Entity';
 
 
-export default {
+export default Entity.extend({
     name: 'vm_validator',
-
-    mixins: [MixinAll],
-};
+});
 </script>
 
 <style lang="stylus">

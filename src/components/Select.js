@@ -1,4 +1,7 @@
-export default {
+import Dropdown from './Dropdown';
+
+
+export default Dropdown.extend({
     data: () => ({
         search: '',
         isFirstClick: true,
@@ -139,4 +142,4 @@ export default {
     created() {
         this.updateOptions();
     },
-};
+});

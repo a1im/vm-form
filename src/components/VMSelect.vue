@@ -33,14 +33,10 @@
 </template>
 
 <script>
-import MixinField from '../mixins/field';
-import MixinDropdown from '../mixins/dropdown';
-import MixinSelect from '../mixins/fieldSelect';
+import Select from './Select';
 
 
-export default {
+export default Select.extend({
     name: 'vm_select',
-
-    mixins: [MixinField, MixinDropdown, MixinSelect],
-};
+});
 </script>

@@ -6,19 +6,17 @@
 </template>
 
 <script>
-import MixinAll from '../mixins/all';
+import Entity from './Entity';
 import VMLabel from './VMLabel.vue';
 
 
-export default {
+export default Entity.extend({
     name: 'vm_field_wrapper',
-
-    mixins: [MixinAll],
 
     components: {
         VMLabel,
     },
-};
+});
 </script>
 
 <style lang="stylus"></style>

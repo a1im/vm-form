@@ -6,14 +6,12 @@
 </template>
 
 <script>
-import MixinField from '../mixins/field';
+import Field from './Field';
 import { Select } from '../models';
 
 
-export default {
+export default Field.extend({
     name: 'vm_time_picker',
-
-    mixins: [MixinField],
 
     computed: {
         currentValue() {
@@ -66,7 +64,7 @@ export default {
             this.onInput(value);
         },
     },
-};
+});
 </script>
 
 <style lang="stylus" scoped>
