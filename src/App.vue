@@ -4,6 +4,7 @@
         VMField(:field="form.field('number')" icon="dots")
         VMField(:field="form.field('time')" icon="dots")
         VMField(:field="form.field('calendar')" icon="dots")
+        button(@click="$VMForm.setLang('ru')") change lang
 </template>
 
 <script>

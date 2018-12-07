@@ -25,7 +25,10 @@
 </template>
 
 <script>
-export default {
+import Entity from '../Entity';
+
+
+export default Entity.extend({
     name: 'vm_calendar_body',
 
     props: {
@@ -81,15 +84,7 @@ export default {
         },
 
         namesWeekDays() {
-            const wd2 = [
-                'Вс',
-                'Пн',
-                'Вт',
-                'Ср',
-                'Чт',
-                'Пт',
-                'Сб',
-            ];
+            const wd2 = this.lang.weekDays;
             const arr = wd2.map(e => e);
 
             arr.push(arr.shift());
@@ -114,7 +109,7 @@ export default {
             this.$emit('hover-date', timestamp);
         },
     },
-};
+});
 </script>
 
 <style lang="stylus">

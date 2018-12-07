@@ -13,12 +13,15 @@ export default Vue.extend({
         message: String,
         field: {
             type: Object,
-            required: true,
             validator: value => value instanceof Field,
         },
     },
 
     computed: {
+        lang() {
+            return this.$VMForm.config.lang[this.$VMForm.config.currentLang];
+        },
+
         name() {
             return this.field.name;
         },

@@ -16,6 +16,7 @@ import {
     VMFieldAll,
     VMIcon,
 } from './functional';
+import langRu from './langs/ru';
 
 
 const Root = {
@@ -25,6 +26,8 @@ const Root = {
         templates = () => ([]),
         defaultRequired = true,
         icons = '/icons_bundle.svg',
+        lang = {},
+        currentLang = 'ru',
     }) {
         if (this.installed) return;
 
@@ -86,6 +89,19 @@ const Root = {
             return field;
         };
         const $VMForm = (data, submit) => new Form(data.map(el => $VMField(el)), submit);
+
+        lang = {
+            ru: langRu,
+            ...lang,
+        };
+        $VMForm.config = {
+            currentLang: '',
+            lang,
+        };
+        $VMForm.setLang = (value) => {
+            $VMForm.config.currentLang = String(value).toLowerCase();
+        };
+        $VMForm.setLang(currentLang);
 
         Vue.prototype.$VMField = $VMField;
         Vue.prototype.$VMForm = $VMForm;

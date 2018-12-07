@@ -10,6 +10,7 @@ import {
     VMTimePicker,
     VMCalendar,
 } from './components';
+import langEn from './langs/en';
 // import VMInput from './components/VMInput.vue';
 // import VMSelect from './components/VMSelect.vue';
 
@@ -23,6 +24,10 @@ Vue.use(VMField, {
         VMTimePicker,
         VMCalendar,
     },
+    lang: {
+        en: langEn,
+    },
+    currentLang: 'en',
 });
 
 Vue.config.productionTip = process.NODE_ENV === 'production';

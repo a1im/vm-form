@@ -1,0 +1,25 @@
+export default {
+    weekDays: [
+        'Sn',
+        'Mn',
+        'Td',
+        'Wd',
+        'Th',
+        'Fr',
+        'St',
+    ],
+    months: [
+        'January',
+        'February',
+        'Martha',
+        'April',
+        'May',
+        'June',
+        'July',
+        'Augusta',
+        'September',
+        'October',
+        'November',
+        'December',
+    ],
+};

@@ -15,9 +15,10 @@
                             VMIcon(icon="arrow-left")
                     .vm-calendar-content-date-name
                         span {{ currentMonth.getFullYear() }}&nbsp;
-                        span {{ getMonth(currentMonth) }}
+                        monthName(:monthNum="currentMonth.getMonth()")
                         template(v-if="isDouble")
-                            span , {{ getMonth(currentMonth2) }}
+                            span ,&nbsp;
+                            monthName(:monthNum="currentMonth.getMonth()")
                     .vm-calendar-content-arrow-block(@click.stop="")
                         .vm-calendar-content-arrow(@click="clickMonthUp")
                             VMIcon(icon="arrow-right")
@@ -50,6 +51,7 @@
 import Dropdown from '../Dropdown';
 import CalendarHeader from './CalendarHeader.vue';
 import CalendarBody from './CalendarBody.vue';
+import monthName from './MonthName.vue';
 
 
 export default Dropdown.extend({
@@ -58,6 +60,7 @@ export default Dropdown.extend({
     components: {
         CalendarHeader,
         CalendarBody,
+        monthName,
     },
 
     data: () => ({
@@ -164,26 +167,6 @@ export default Dropdown.extend({
         clickYearUp() {
             this.currentDate.setYear(this.currentDate.getFullYear() + 1);
             this.updateCurrentDate(this.currentDate.getTime());
-        },
-
-        getMonth(date) {
-            const lang = [
-                'Январь',
-                'Февраль',
-                'Март',
-                'Апрель',
-                'Май',
-                'Июнь',
-                'Июль',
-                'Август',
-                'Сентябрь',
-                'Октябрь',
-                'Ноябрь',
-                'Декабрь',
-            ];
-            const month = date.getMonth();
-
-            return lang[month];
         },
     },
 
