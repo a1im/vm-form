@@ -6,7 +6,8 @@
                 template(v-if="dateLast && dateFirst.getTime() !== dateLast.getTime()")
                     span.vm-calendar-header-separator -
                     span {{ dateLast.toLocaleDateString() }}
-            VMIcon.vm-calendar-icon(icon="calendar")
+            .vm-select-trigger
+                VMIcon.vm-calendar-icon(icon="calendar")
 </template>
 
 <script>
@@ -58,6 +59,7 @@ export default {
             cursor pointer
             user-select none
             padding 0 .5em
+            padding-right var(--right-icon-width)
             height var(--field-height)
             border var(--border-width) solid var(--border-color)
             border-radius var(--border-radius)
@@ -86,6 +88,6 @@ export default {
             white-space: nowrap
 
         .vm-calendar-icon
-            flex none
+            font-size: 1.2em
 
 </style>

@@ -428,14 +428,14 @@ exports.f = Object.getOwnPropertySymbols;
 
 /***/ }),
 
-/***/ "2812":
+/***/ "27b2":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_11_oneOf_1_0_node_modules_css_loader_index_js_ref_11_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_oneOf_1_2_node_modules_stylus_loader_index_js_ref_11_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VMCheckbox_vue_vue_type_style_index_0_id_07a021c0_lang_stylus_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("a145");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_11_oneOf_1_0_node_modules_css_loader_index_js_ref_11_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_oneOf_1_2_node_modules_stylus_loader_index_js_ref_11_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VMCheckbox_vue_vue_type_style_index_0_id_07a021c0_lang_stylus_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_11_oneOf_1_0_node_modules_css_loader_index_js_ref_11_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_oneOf_1_2_node_modules_stylus_loader_index_js_ref_11_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VMCheckbox_vue_vue_type_style_index_0_id_07a021c0_lang_stylus_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_11_oneOf_1_0_node_modules_css_loader_index_js_ref_11_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_oneOf_1_2_node_modules_stylus_loader_index_js_ref_11_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VMCheckbox_vue_vue_type_style_index_0_id_5d71b90b_lang_stylus_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("d0ee");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_11_oneOf_1_0_node_modules_css_loader_index_js_ref_11_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_oneOf_1_2_node_modules_stylus_loader_index_js_ref_11_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VMCheckbox_vue_vue_type_style_index_0_id_5d71b90b_lang_stylus_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_11_oneOf_1_0_node_modules_css_loader_index_js_ref_11_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_oneOf_1_2_node_modules_stylus_loader_index_js_ref_11_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VMCheckbox_vue_vue_type_style_index_0_id_5d71b90b_lang_stylus_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
 /* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_11_oneOf_1_0_node_modules_css_loader_index_js_ref_11_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_oneOf_1_2_node_modules_stylus_loader_index_js_ref_11_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VMCheckbox_vue_vue_type_style_index_0_id_07a021c0_lang_stylus_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_11_oneOf_1_0_node_modules_css_loader_index_js_ref_11_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_oneOf_1_2_node_modules_stylus_loader_index_js_ref_11_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VMCheckbox_vue_vue_type_style_index_0_id_5d71b90b_lang_stylus_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -1335,6 +1335,13 @@ module.exports = {
 
 /***/ }),
 
+/***/ "8bbf":
+/***/ (function(module, exports) {
+
+module.exports = require("vue");
+
+/***/ }),
+
 /***/ "9093":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2173,13 +2180,6 @@ module.exports = !__webpack_require__("79e5")(function () {
 
 /***/ }),
 
-/***/ "a145":
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
 /***/ "a25f":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2578,6 +2578,13 @@ module.exports = function (object, names) {
 /* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_11_oneOf_1_0_node_modules_css_loader_index_js_ref_11_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_oneOf_1_2_node_modules_stylus_loader_index_js_ref_11_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VMTextarea_vue_vue_type_style_index_0_id_7b8d7098_lang_stylus_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_11_oneOf_1_0_node_modules_css_loader_index_js_ref_11_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_oneOf_1_2_node_modules_stylus_loader_index_js_ref_11_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VMTextarea_vue_vue_type_style_index_0_id_7b8d7098_lang_stylus_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
 /* unused harmony reexport * */
  /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_11_oneOf_1_0_node_modules_css_loader_index_js_ref_11_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_oneOf_1_2_node_modules_stylus_loader_index_js_ref_11_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VMTextarea_vue_vue_type_style_index_0_id_7b8d7098_lang_stylus_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "d0ee":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -4825,12 +4832,16 @@ var VMSelect_component = normalizeComponent(
 
 VMSelect_component.options.__file = "VMSelect.vue"
 /* harmony default export */ var VMSelect = (VMSelect_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMCheckbox.vue?vue&type=template&id=07a021c0&scoped=true&lang=pug&
-var VMCheckboxvue_type_template_id_07a021c0_scoped_true_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMFieldWrapper"}},[(_vm.text.label)?_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.text.label))]):_vm._e(),_c('input',{staticClass:"vm-input vm-input-checkbox",domProps:{"value":_vm.text.placeholder}}),_c('label',[_c('div',{staticClass:"vm-field-overlay"}),_c('div',{staticClass:"vm-checkbox",class:{ active: _vm.value }},[_c('input',{ref:"input",class:_vm.inputClass,attrs:{"required":_vm.required,"type":"checkbox","name":_vm.name},domProps:{"checked":_vm.value},on:{"change":function($event){_vm.onInput($event.target.checked)}}}),_c('div',{staticClass:"vm-checkbox-circle"})])])])}
-var VMCheckboxvue_type_template_id_07a021c0_scoped_true_lang_pug_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"cffca526-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMCheckbox.vue?vue&type=template&id=5d71b90b&scoped=true&lang=pug&
+var VMCheckboxvue_type_template_id_5d71b90b_scoped_true_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('PropsSplit',{attrs:{"props":_vm.$props,"component":"VMFieldWrapper"}},[(_vm.text.label)?_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.text.label))]):_vm._e(),_c('input',{staticClass:"vm-input vm-input-checkbox",domProps:{"value":_vm.text.placeholder}}),_c('label',[_c('div',{staticClass:"vm-field-overlay"}),_c('div',{staticClass:"vm-checkbox",class:{ active: _vm.value }},[_c('input',{ref:"input",class:_vm.inputClass,attrs:{"required":_vm.required,"type":"checkbox","name":_vm.name},domProps:{"checked":_vm.value},on:{"change":function($event){_vm.onInput($event.target.checked)}}}),_c('div',{staticClass:"vm-checkbox-circle"})])])])}
+var VMCheckboxvue_type_template_id_5d71b90b_scoped_true_lang_pug_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/VMCheckbox.vue?vue&type=template&id=07a021c0&scoped=true&lang=pug&
+// CONCATENATED MODULE: ./src/components/VMCheckbox.vue?vue&type=template&id=5d71b90b&scoped=true&lang=pug&
+
+// EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
+var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
+var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VMCheckbox.vue?vue&type=script&lang=js&
 //
@@ -4855,14 +4866,15 @@ var VMCheckboxvue_type_template_id_07a021c0_scoped_true_lang_pug_staticRenderFns
 //
 //
 
-/* harmony default export */ var VMCheckboxvue_type_script_lang_js_ = ({
+
+/* harmony default export */ var VMCheckboxvue_type_script_lang_js_ = (external_commonjs_vue_commonjs2_vue_root_Vue_default.a.extend({
   name: 'vm_checkbox',
   mixins: [mixins_field]
-});
+}));
 // CONCATENATED MODULE: ./src/components/VMCheckbox.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_VMCheckboxvue_type_script_lang_js_ = (VMCheckboxvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/VMCheckbox.vue?vue&type=style&index=0&id=07a021c0&lang=stylus&scoped=true&
-var VMCheckboxvue_type_style_index_0_id_07a021c0_lang_stylus_scoped_true_ = __webpack_require__("2812");
+// EXTERNAL MODULE: ./src/components/VMCheckbox.vue?vue&type=style&index=0&id=5d71b90b&lang=stylus&scoped=true&
+var VMCheckboxvue_type_style_index_0_id_5d71b90b_lang_stylus_scoped_true_ = __webpack_require__("27b2");
 
 // CONCATENATED MODULE: ./src/components/VMCheckbox.vue
 
@@ -4875,11 +4887,11 @@ var VMCheckboxvue_type_style_index_0_id_07a021c0_lang_stylus_scoped_true_ = __we
 
 var VMCheckbox_component = normalizeComponent(
   components_VMCheckboxvue_type_script_lang_js_,
-  VMCheckboxvue_type_template_id_07a021c0_scoped_true_lang_pug_render,
-  VMCheckboxvue_type_template_id_07a021c0_scoped_true_lang_pug_staticRenderFns,
+  VMCheckboxvue_type_template_id_5d71b90b_scoped_true_lang_pug_render,
+  VMCheckboxvue_type_template_id_5d71b90b_scoped_true_lang_pug_staticRenderFns,
   false,
   null,
-  "07a021c0",
+  "5d71b90b",
   null
   
 )
