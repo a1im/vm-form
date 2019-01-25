@@ -1,7 +1,7 @@
 export default {
     functional: true,
 
-    render: (ce, ctx) => {
+    render(ce, ctx) {
         const {
             props,
             data,
