@@ -15,36 +15,45 @@
 
             transition(name="vm-show-select")
                 .vm-select-options-container(v-if="isActive")
-                    ul.vm-select-options
-                        li.vm-select-option.vm-column(
-                        v-if="!searchedOptions || !searchedOptions.length"
-                        key="searchedOptionsNotResult"
-                        title="Нет результата"
+                    RecycleScroller(
+                        :items="multiOptions"
+                        :item-size="35"
+                        class="vm-select-options"
+                        v-slot="{ item }"
+                    )
+                        .vm-select-option(
+                            :key="item.id"
+                            :title="item.label"
+                            :class="[item.class, { multiple: isMultiple }, { selected: item.parent && checkSelected({ group: item.parent.value, value: item.value }) }]"
+                            @click="selectOption(item)"
                         )
-                            span.vm-select-option-text Нет результата
-                        li.vm-select-option.vm-column(
-                        v-for="option in searchedOptions"
-                        :key="option.value"
-                        :title="option.label"
-                        )
-                            span.vm-select-option-text {{ option.label }}
-                            ul.vm-select-options-group(:class="{ multiple: isMultiple }")
-                                li.vm-select-option(
-                                v-for="val in option.options"
-                                :key="val"
-                                :title="val"
-                                :class="{ selected: checkSelected({ group: option.value, value: val }) }"
-                                @click="selectOption(option, val)"
-                                )
-                                    span.vm-select-option-text {{ val }}
+                            span.vm-select-option-text {{ item.label }}
 </template>
 
 <script>
+import 'vue-virtual-scroller/dist/vue-virtual-scroller.css';
+import { RecycleScroller } from 'vue-virtual-scroller';
 import VMSelect from './VMSelect.vue';
-
+import { toOption } from '../utils';
 
 export default VMSelect.extend({
     name: 'vm_select_group',
+
+    components: {
+        RecycleScroller,
+    },
+
+    data: () => ({
+        multiOptions: [],
+    }),
+
+    watch: {
+        isActive(val) {
+            if (val) {
+                this.updateOptionItems();
+            }
+        },
+    },
 
     methods: {
         checkSelected(newValue) {
@@ -63,10 +72,13 @@ export default VMSelect.extend({
                 : null;
         },
 
-        selectOption(option, newValue) {
+        selectOption({ parent, value: newValue }) {
+            if (!parent) {
+                return;
+            }
             const value = this.field.getValue() || [];
 
-            newValue = { group: option.value, value: newValue.toString() };
+            newValue = { group: parent.value, value: newValue.toString() };
             const isValue = this.checkSelected(newValue);
 
             if (isValue) {
@@ -75,7 +87,7 @@ export default VMSelect.extend({
                 value.splice(index, 1);
             } else {
                 if (!this.isMultiple) {
-                    const groupIsSelected = this.checkSelectedGroup({ group: option.value });
+                    const groupIsSelected = this.checkSelectedGroup({ group: parent.value });
 
                     if (groupIsSelected) {
                         const index = value.findIndex(el => el === groupIsSelected);
@@ -99,6 +111,34 @@ export default VMSelect.extend({
                     .map(el => el.value)
                     .join(', ')
                 : '');
+        },
+
+        updateOptionItems() {
+            const getOptions = (options, level = 0, key = '', parent = null) => options.reduce((accum, el) => {
+                el = toOption(el);
+                // eslint-disable-next-line no-shadow
+                const { options = [], value } = el;
+                const newKey = `${key}_lvl${level}_${value}`;
+                const newEl = {
+                    ...el,
+                    options: [],
+                    level,
+                    id: newKey,
+                    class: [
+                        `level-${level}`,
+                    ],
+                    parent,
+                };
+
+                accum.push(newEl);
+                getOptions(options, level + 1, newKey, newEl).forEach(it => accum.push(it));
+
+                return accum;
+            }, []);
+
+            this.multiOptions = this.searchedOptions && this.searchedOptions.length
+                ? getOptions(this.searchedOptions)
+                : { id: 'not-found', label: 'Нет результата' };
         },
     },
 });

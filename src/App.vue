@@ -51,7 +51,7 @@ export default {
                 options: [
                     { label: 'First', options: ['asf'] },
                     { label: 'Last1', options: ['1', '2'] },
-                    { label: 'Last2', options: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'] },
+                    { label: 'Last2', options: Array.from({ length: 30000 }).map((_, index) => index.toString()) },
                     { label: 'Last3', options: ['1', '2'] },
                     { label: 'Last4', options: ['1', '2'] },
                     { label: 'Last5', options: ['1', '2'] },

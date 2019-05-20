@@ -1,4 +1,5 @@
 import Dropdown from './Dropdown';
+import { toOption } from '../utils';
 
 
 export default Dropdown.extend({
@@ -11,15 +12,7 @@ export default Dropdown.extend({
         options() {
             const options = this.field.options || [];
 
-            return options.map(el => ({
-                value: typeof el === 'object'
-                    ? el.value === undefined ? el.label : el.value
-                    : el,
-                label: typeof el === 'object'
-                    ? el.label === undefined ? el.value : el.label
-                    : el,
-                options: el && el.options || [],
-            }));
+            return options.map(el => toOption(el));
         },
 
         classObject() {
