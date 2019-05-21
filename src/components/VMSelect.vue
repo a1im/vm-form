@@ -21,7 +21,7 @@
                     key-field="value"
                     v-slot="{ item }"
                 )
-                    .vm-select-option(
+                    .vm-select-option.level-1(
                         :key="item.value"
                         :title="item.label"
                         :class="[{ selected: optionSelected(item) }]"

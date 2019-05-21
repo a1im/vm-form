@@ -24,7 +24,7 @@ export default {
         },
         itemSize: {
             type: Number,
-            default: 35,
+            default: 40,
         },
         keyField: {
             type: String,
