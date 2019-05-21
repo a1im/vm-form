@@ -3,40 +3,43 @@
         .vm-select-container(:class="classObject")
             .vm-select-input-block
                 input.vm-input.vm-select-input(
-                v-model="search"
-                ref="input"
-                :placeholder="text.placeholder"
-                @focus.stop="onSearchFocus"
-                @dblclick.stop="selectAll"
+                    v-model="search"
+                    ref="input"
+                    :placeholder="text.placeholder"
+                    @focus.stop="onSearchFocus"
+                    @dblclick.stop="selectAll"
                 )
                 .vm-select-input-overlay(v-if="!isAutocomplete" @click="toggle")
                 .vm-select-trigger(@click="toggle")
                     VMIcon(:icon="currentIcon")
 
             transition(name="vm-show-select")
-                .vm-select-options-container(v-if="isActive")
-                    ul.vm-select-options(:class="{ multiple: isMultiple }")
-                        li.vm-select-option(
-                        v-if="!searchedOptions || !searchedOptions.length"
-                        key="searchedOptionsNotResult"
-                        title="Нет результата"
-                        )
-                            span.vm-select-option-text Нет результата
-                        li.vm-select-option(
-                        v-for="option in searchedOptions"
-                        :key="option.value"
-                        :title="option.label"
-                        :class="{ selected: optionSelected(option) }"
-                        @click="selectOption(option)"
-                        )
-                            span.vm-select-option-text {{ option.label }}
+                VMSelectOptions(
+                    v-if="isActive"
+                    :items="searchedOptions"
+                    :classes="{ multiple: isMultiple }"
+                    key-field="value"
+                    v-slot="{ item }"
+                )
+                    .vm-select-option(
+                        :key="item.value"
+                        :title="item.label"
+                        :class="[{ selected: optionSelected(item) }]"
+                        @click="!item.disabled && selectOption(item)"
+                    )
+                        span.vm-select-option-text {{ item.label }}
 </template>
 
 <script>
 import Select from './Select';
+import VMSelectOptions from './VMSelectOptions.vue';
 
 
 export default Select.extend({
     name: 'vm_select',
+
+    components: {
+        VMSelectOptions,
+    },
 });
 </script>

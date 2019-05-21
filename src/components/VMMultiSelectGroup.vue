@@ -14,33 +14,31 @@
                     VMIcon(:icon="currentIcon")
 
             transition(name="vm-show-select")
-                .vm-select-options-container(v-if="isActive")
-                    RecycleScroller(
-                        :items="multiOptions"
-                        :item-size="35"
-                        class="vm-select-options"
-                        v-slot="{ item }"
+                VMSelectOptions(
+                    v-if="isActive"
+                    :items="multiOptions"
+                    :classes="{ multiple: isMultiple }"
+                    v-slot="{ item }"
+                )
+                    .vm-select-option(
+                        :key="item.id"
+                        :title="item.label"
+                        :class="[item.class, { selected: item.parent && checkSelected({ group: item.parent.value, value: item.value }) }]"
+                        @click="!item.disabled && selectOption(item)"
                     )
-                        .vm-select-option(
-                            :key="item.id"
-                            :title="item.label"
-                            :class="[item.class, { multiple: isMultiple }, { selected: item.parent && checkSelected({ group: item.parent.value, value: item.value }) }]"
-                            @click="selectOption(item)"
-                        )
-                            span.vm-select-option-text {{ item.label }}
+                        span.vm-select-option-text {{ item.label }}
 </template>
 
 <script>
-import 'vue-virtual-scroller/dist/vue-virtual-scroller.css';
-import { RecycleScroller } from 'vue-virtual-scroller';
 import VMSelect from './VMSelect.vue';
+import VMSelectOptions from './VMSelectOptions.vue';
 import { toOption } from '../utils';
 
 export default VMSelect.extend({
     name: 'vm_select_group',
 
     components: {
-        RecycleScroller,
+        VMSelectOptions,
     },
 
     data: () => ({
@@ -136,9 +134,7 @@ export default VMSelect.extend({
                 return accum;
             }, []);
 
-            this.multiOptions = this.searchedOptions && this.searchedOptions.length
-                ? getOptions(this.searchedOptions)
-                : { id: 'not-found', label: 'Нет результата' };
+            this.multiOptions = getOptions(this.searchedOptions);
         },
     },
 });
