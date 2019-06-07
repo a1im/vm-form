@@ -12,6 +12,8 @@
             :type="field.type || 'text'"
             :value="value"
             :name="name"
+            :tabindex="field.tabindex"
+            :autofocus="field.autofocus"
             @input="onInput($event.target.value)"
             @invalid="field.onInvalid()"
             )

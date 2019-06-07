@@ -14,6 +14,8 @@
                 type="checkbox"
                 :checked="value"
                 :name="name"
+                :tabindex="field.tabindex"
+                :autofocus="field.autofocus"
                 @change="onInput($event.target.checked)"
                 )
                 .vm-checkbox-circle

@@ -38,6 +38,8 @@ export default {
         this.form = this.$VMForm([
             {
                 name: 'name',
+                autofocus: true,
+                tabindex: 1,
             },
             {
                 name: 'number',
@@ -60,6 +62,7 @@ export default {
             {
                 name: 'comment',
                 fieldType: 'textarea',
+                tabindex: 1,
             },
             {
                 name: 'is-form',

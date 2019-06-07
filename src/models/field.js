@@ -9,6 +9,8 @@ export default class Field {
         hideValidator = false,
         inputClass = '',
         fieldClass = '',
+        tabindex = 1,
+        autofocus = false,
         langPath = null,
         onChange = () => ({}),
         pattern = '',
@@ -24,6 +26,8 @@ export default class Field {
         this.component = component;
         this.inputClass = inputClass;
         this.fieldClass = fieldClass;
+        this.tabindex = tabindex;
+        this.autofocus = autofocus;
         this.langPath = langPath;
         this.onChange = onChange;
         this.pattern = pattern;
