@@ -8,6 +8,7 @@
             :maxlength="field.maxlength"
             :placeholder="text.placeholder"
             :readonly="field.readonly"
+            :disabled="field.disabled"
             :required="required"
             :value="value"
             :name="name"

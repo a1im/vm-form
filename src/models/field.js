@@ -5,6 +5,7 @@ export default class Field {
         prop = 'name',
         label = '',
         value = '',
+        disabled = false,
         required = false,
         hideValidator = false,
         inputClass = '',
@@ -22,6 +23,7 @@ export default class Field {
         this.value = typeof value !== 'object' || Array.isArray(value)
             ? { [this.prop]: value }
             : value;
+        this.disabled = disabled;
         this.required = required;
         this.component = component;
         this.inputClass = inputClass;

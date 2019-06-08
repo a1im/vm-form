@@ -6,6 +6,7 @@
                     v-model="search"
                     ref="input"
                     :placeholder="text.placeholder"
+                    :disabled="field.disabled"
                     @focus.stop="onSearchFocus"
                     @dblclick.stop="selectAll"
                 )

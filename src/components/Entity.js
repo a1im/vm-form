@@ -59,6 +59,7 @@ export default Vue.extend({
                 {
                     [`vm-field-${this.field.name}`]: true,
                     required: this.field.required,
+                    disabled: this.field.disabled,
                 },
                 (this.field.fieldClass || []),
             ];

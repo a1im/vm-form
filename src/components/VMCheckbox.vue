@@ -10,6 +10,7 @@
                 input(
                 ref="input"
                 :class="inputClass"
+                :disabled="field.disabled"
                 :required="required"
                 type="checkbox"
                 :checked="value"

@@ -5,6 +5,7 @@
                 input.vm-input.vm-select-input(
                 v-model="search"
                 ref="input"
+                :disabled="field.disabled"
                 :placeholder="text.placeholder"
                 @focus.stop="onSearchFocus"
                 @dblclick.stop="selectAll"

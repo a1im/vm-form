@@ -9,6 +9,7 @@
             :placeholder="text.placeholder"
             :readonly="field.readonly"
             :required="required"
+            :disabled="field.disabled"
             :type="field.type || 'text'"
             :value="value"
             :name="name"

@@ -41,6 +41,9 @@ export default Field.extend({
         selectTimeFrom() {
             return new Select({
                 name: 'VMTimePickerFrom',
+                disabled: this.field.disabled,
+                tabindex: this.field.tabindex,
+                autofocus: this.field.autofocus,
                 autocomplete: this.isAutocomplete,
                 options: this.field.timeFrom(),
                 value: this.currentStart === null ? '' : this.currentStart,
@@ -51,6 +54,9 @@ export default Field.extend({
         selectTimeTo() {
             return new Select({
                 name: 'VMTimePickerTo',
+                disabled: this.field.disabled,
+                tabindex: this.field.tabindex,
+                autofocus: this.field.autofocus,
                 autocomplete: this.isAutocomplete,
                 options: this.field.timeTo(),
                 value: this.currentEnd === null ? '' : this.currentEnd,

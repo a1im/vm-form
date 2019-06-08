@@ -1,6 +1,6 @@
 <template lang="pug">
     .vm-validator(
-    v-if="field.type !== 'hidden'"
+    v-if="isActive"
     @mouseenter="field.onValidator($event)"
     @touchstart="field.onValidator($event)"
     )
@@ -19,6 +19,12 @@ import Entity from './Entity';
 
 export default Entity.extend({
     name: 'vm_validator',
+
+    computed: {
+        isActive() {
+            return this.field.type !== 'hidden' && !this.field.disabled;
+        },
+    },
 });
 </script>
 

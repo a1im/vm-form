@@ -124,6 +124,10 @@ export default Dropdown.extend({
         },
 
         toggle() {
+            if (this.field.disabled) {
+                return;
+            }
+
             if (this.isActive) {
                 this.deactivated();
             } else {
