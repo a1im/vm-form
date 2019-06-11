@@ -8,9 +8,8 @@ export default options => ({
 
     props: {
         form: {
-            type: Object,
+            type: Form,
             required: true,
-            validator: value => value instanceof Form,
         },
         langNameText: {
             type: Object,
@@ -39,31 +38,13 @@ export default options => ({
         },
     },
 
-    methods: {
-        async submit() {
-            this.$emit('submit');
-            await this.form.onSubmit();
-        },
-    },
-
-    render: (ce, ctx) => {
+    render: (h, ctx) => {
         const {
             children,
             listeners,
             data,
             props,
         } = ctx || {};
-
-        if (
-            !props
-            || !props.form
-            || !(props.form instanceof Form)
-        ) {
-            console.error('required props form!!!', ctx);
-
-            return;
-        }
-
         const { staticClass, class: className } = data || {};
         const {
             form,
@@ -76,7 +57,7 @@ export default options => ({
             includes,
         } = props || {};
 
-        return ce('form', {
+        return h('form', {
             class: [
                 { [staticClass]: staticClass },
                 (className || []),
@@ -89,7 +70,7 @@ export default options => ({
                 ...listeners,
             },
         }, children || [
-            ce('VMFieldAll', {
+            h('VMFieldAll', {
                 props: {
                     fields: form.fields,
                     langNameText,
@@ -98,7 +79,7 @@ export default options => ({
                     class: fieldClass || [],
                 },
             }),
-            ce('button', {
+            h('button', {
                 class: ['vm-button', buttonClass || []],
                 attrs: {
                     type: 'submit',

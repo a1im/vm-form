@@ -44,6 +44,12 @@ export default Entity.extend({
             this.field.onChange(value, data);
             this.$emit('input', value, data);
         },
+
+        autoFocus() {
+            if (this.field.autofocus && this.$refs.input) {
+                this.$refs.input.focus();
+            }
+        },
     },
 
     watch: {
@@ -54,5 +60,9 @@ export default Entity.extend({
 
     created() {
         this.field.setText(this.text);
+    },
+
+    mounted() {
+        this.autoFocus();
     },
 });

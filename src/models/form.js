@@ -15,11 +15,11 @@ export default class Form {
                 if (el instanceof Field) {
                     this.fields.push(el);
                 } else {
-                    throw { message: 'Error create input' };
+                    throw new Error('Error create input');
                 }
             });
         } else {
-            throw { message: 'Error create form' };
+            throw new Error('Error create form');
         }
     }
 

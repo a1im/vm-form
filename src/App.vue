@@ -37,19 +37,16 @@ export default {
     created() {
         this.form = this.$VMForm([
             {
-                disabled: true,
                 name: 'name',
                 autofocus: true,
                 tabindex: 1,
             },
             {
-                disabled: true,
                 name: 'number',
                 fieldType: 'select',
                 options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             },
             {
-                disabled: true,
                 name: 'multimulti',
                 fieldType: 'select',
                 component: 'VMMultiSelectGroup',
@@ -63,7 +60,6 @@ export default {
                 ],
             },
             {
-                disabled: true,
                 name: 'comment',
                 fieldType: 'textarea',
                 tabindex: 1,
