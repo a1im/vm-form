@@ -12,8 +12,7 @@ export default Vue.extend({
         validationError: String,
         message: String,
         field: {
-            type: Object,
-            validator: value => value instanceof Field,
+            type: Field,
         },
     },
 
@@ -27,7 +26,8 @@ export default Vue.extend({
         },
 
         text() {
-            return this.langText
+            return this.field.text
+                || this.langText
                 || (this.langNameText || {})[this.name]
                 || Object.assign(
                     {},

@@ -16,6 +16,7 @@ export default class Field {
         onChange = () => ({}),
         pattern = '',
         validation = () => {},
+        text = null,
     }) {
         this.name = name;
         this.prop = prop;
@@ -35,6 +36,7 @@ export default class Field {
         this.pattern = pattern;
         this.validation = validation;
         this.hideValidator = hideValidator;
+        this.text = text;
         this.$el = null;
         this.langText = {};
 
