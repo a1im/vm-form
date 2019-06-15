@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import Field from './field';
+import masker from '../utils/masked/masker';
 
 export default class Input extends Field {
     constructor({
@@ -7,6 +8,9 @@ export default class Input extends Field {
         maxlength = null,
         readonly = false,
         type = 'text',
+        mask,
+        maskTokens,
+        onChangeNotMasked = () => {},
 
         component = 'VMInput',
         ...defaultProps
@@ -20,5 +24,18 @@ export default class Input extends Field {
         this.minlength = minlength;
         this.maxlength = maxlength;
         this.readonly = readonly;
+        this.mask = mask;
+        this.maskTokens = maskTokens;
+        this.onChangeNotMasked = onChangeNotMasked;
+
+        const saveOnChange = this.onChange;
+
+        this.onChange = (...args) => {
+            saveOnChange(...args);
+
+            const [value] = args;
+
+            this.onChangeNotMasked(masker(value, this.mask, false, this.maskTokens), ...args);
+        };
     }
 }

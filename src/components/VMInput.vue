@@ -14,18 +14,37 @@
             :value="value"
             :name="name"
             :tabindex="field.tabindex"
-            @input="onInput($event.target.value)"
+            v-mask="config"
+            @inputMasked="onInput($event.target.value)"
             @invalid="field.onInvalid()"
             )
             PropsSplit(v-if="!hideValidator" :props="$props" component="VMValidator")
 </template>
 
 <script>
+import { mask } from '../utils/masked';
 import Field from './Field';
-
 
 export default Field.extend({
     name: 'vm_input',
+
+    directives: {
+        mask,
+    },
+
+    computed: {
+        isMask() {
+            return Boolean(this.field.mask);
+        },
+
+        config() {
+            return {
+                mask: this.field.mask,
+                tokens: this.field.maskTokens,
+                masked: this.field.masked,
+            };
+        },
+    },
 
     mounted() {
         this.field.$el = this.$refs.input;

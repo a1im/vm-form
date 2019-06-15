@@ -18,8 +18,8 @@ export default {
     computed: {
         text() {
             return {
-                name: {
-                    placeholder: 'Имя',
+                phone: {
+                    placeholder: 'Телефон',
                 },
                 'is-form': {
                     placeholder: 'Подтвердите',
@@ -37,9 +37,17 @@ export default {
     created() {
         this.form = this.$VMForm([
             {
-                name: 'name',
+                name: 'phone',
                 autofocus: true,
                 tabindex: 1,
+                value: '79999999999',
+                mask: ['+# (###) ###-##-##', '+## (###) ###-##-##'],
+                validation: val => ([11, 12].includes(val.replace(/[^\d]/g, '').length)
+                    ? ''
+                    : 'Заполните номер'),
+                onChangeNotMasked: (val) => {
+                    console.log('onChangeNotMasked', val);
+                },
             },
             {
                 name: 'number',
