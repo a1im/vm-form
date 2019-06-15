@@ -50,10 +50,6 @@ export default Field.extend({
             width 100%
             z-index 3
 
-            &:hover
-                + .vm-checkbox .vm-checkbox-circle
-                    background-color var(--checkbox-circle-bg-checked)
-
         .vm-checkbox
             input
                 position absolute
