@@ -2,11 +2,9 @@
     PropsSplit(:props="$props" component="VMFieldWrapper")
         .vm-select-container(:class="classObject")
             .vm-select-input-block
-                input.vm-input.vm-select-input(
-                    v-model="search"
+                VMField.vm-select-input(
+                    :field="SearchField"
                     ref="input"
-                    :placeholder="text.placeholder"
-                    :disabled="field.disabled"
                     @focus.stop="onSearchFocus"
                     @dblclick.stop="selectAll"
                 )

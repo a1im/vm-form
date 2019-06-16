@@ -9,6 +9,19 @@ export default Dropdown.extend({
     }),
 
     computed: {
+        SearchField() {
+            return this.$VMField({
+                name: 'VMSearchField',
+                prop: 'search',
+                value: this,
+                required: this.field.required,
+                disabled: this.field.disabled,
+                mask: this.field.mask,
+                text: this.text,
+                hideValidator: true,
+            });
+        },
+
         options() {
             const options = this.field.options || [];
 
@@ -82,7 +95,9 @@ export default Dropdown.extend({
         },
 
         selectAll() {
-            this.$refs.input.select();
+            const input = this.$el.querySelector('.vm-select-input input');
+
+            input.select();
         },
 
         onSearchFocus() {

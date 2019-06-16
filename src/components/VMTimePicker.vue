@@ -48,6 +48,7 @@ export default Field.extend({
                 options: this.field.timeFrom(),
                 value: this.currentStart === null ? '' : this.currentStart,
                 onChange: value => this.updateTime([+value, this.currentEnd]),
+                mask: '##:##',
             });
         },
 
@@ -61,6 +62,7 @@ export default Field.extend({
                 options: this.field.timeTo(),
                 value: this.currentEnd === null ? '' : this.currentEnd,
                 onChange: value => this.updateTime([this.currentStart, +value]),
+                mask: '##:##',
             });
         },
     },

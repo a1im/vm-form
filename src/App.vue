@@ -78,7 +78,6 @@ export default {
                 component: 'VMCheckbox',
             },
             {
-                disabled: true,
                 name: 'time',
                 fieldType: 'timePicker',
                 isRange: true,

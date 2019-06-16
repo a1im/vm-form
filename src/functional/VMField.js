@@ -4,30 +4,34 @@ import { Field } from '../models';
 export default components => ({
     functional: true,
 
+    props: {
+        field: {
+            type: Field,
+            required: true,
+        },
+    },
+
     render: (ce, ctx) => {
         const {
             props,
             data,
+            listeners,
         } = ctx || {};
+        const { field = {} } = props;
+        const { component = '' } = field;
+        const componentField = components[component];
 
-        if (
-            !props
-            || !props.field
-            || !(props.field instanceof Field)
-            || !props.field.component
-        ) {
-            console.error('required prop field!!!', ctx);
+        if (!componentField) {
+            console.error(`component "${component}" not found!!!`);
 
             return;
         }
 
-        if (!components[props.field.component]) {
-            console.error(`component "${props.field.component}" not found!!!`);
+        field.listeners = {
+            ...field.listeners,
+            ...listeners,
+        };
 
-            return;
-        }
-
-        const componentField = components[props.field.component];
         const { staticClass, class: className } = data || {};
 
         return ce(componentField, {

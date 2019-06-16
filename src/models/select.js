@@ -6,6 +6,8 @@ export default class Select extends Field {
         multiple = false,
         autocomplete = false,
         options = [],
+        mask,
+        maskTokens,
 
         component = 'VMSelect',
         ...defaultProps
@@ -18,6 +20,8 @@ export default class Select extends Field {
         this.options = options;
         this.multiple = multiple;
         this.autocomplete = autocomplete;
+        this.mask = mask;
+        this.maskTokens = maskTokens;
     }
 
     setValue(value) {

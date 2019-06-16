@@ -15,6 +15,7 @@
             :name="name"
             :tabindex="field.tabindex"
             v-mask="config"
+            v-on="field.listeners"
             @inputMasked="onInput($event.target.value)"
             @invalid="field.onInvalid()"
             )
