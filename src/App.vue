@@ -1,6 +1,6 @@
 <template lang="pug">
     #app
-        VMForm(:form="form" :langNameText="text" :excludes="['number', 'time', 'calendar']")
+        VMForm(:form="form" :langNameText="text" :excludes="['number', 'calendar']")
         VMField(:field="form.field('number')" icon="dots")
         VMField(:field="form.field('time')" icon="dots")
         VMField(:field="form.field('calendar')" icon="dots")
@@ -78,6 +78,7 @@ export default {
                 component: 'VMCheckbox',
             },
             {
+                required: true,
                 name: 'time',
                 fieldType: 'timePicker',
                 isRange: true,
@@ -86,6 +87,7 @@ export default {
                 onChange: (value) => {
                     console.log('onChange', value);
                 },
+                validation: value => (value === '21:40' ? 'Ошибка' : ''),
             },
             {
                 name: 'calendar',

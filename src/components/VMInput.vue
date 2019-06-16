@@ -17,7 +17,7 @@
             v-mask="config"
             v-on="field.listeners"
             @inputMasked="onInput($event.target.value)"
-            @invalid="field.onInvalid()"
+            @invalid="() => field.onInvalid()"
             )
             PropsSplit(v-if="!hideValidator" :props="$props" component="VMValidator")
 </template>
@@ -47,8 +47,23 @@ export default Field.extend({
         },
     },
 
+    watch: {
+        field() {
+            this.inputInit();
+        },
+    },
+
+    methods: {
+        inputInit() {
+            this.field.$el = this.$refs.input;
+            if (this.field.validationStart) {
+                this.field.checkValidation();
+            }
+        },
+    },
+
     mounted() {
-        this.field.$el = this.$refs.input;
+        this.inputInit();
     },
 });
 </script>

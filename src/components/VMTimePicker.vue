@@ -42,6 +42,7 @@ export default Field.extend({
             return new Select({
                 name: 'VMTimePickerFrom',
                 disabled: this.field.disabled,
+                required: this.field.required,
                 tabindex: this.field.tabindex,
                 autofocus: this.field.autofocus,
                 autocomplete: this.isAutocomplete,
@@ -49,6 +50,7 @@ export default Field.extend({
                 value: this.currentStart === null ? '' : this.currentStart,
                 onChange: value => this.updateTime([+value, this.currentEnd]),
                 mask: '##:##',
+                validation: this.field.validation,
             });
         },
 
@@ -56,6 +58,7 @@ export default Field.extend({
             return new Select({
                 name: 'VMTimePickerTo',
                 disabled: this.field.disabled,
+                required: this.field.required,
                 tabindex: this.field.tabindex,
                 autofocus: this.field.autofocus,
                 autocomplete: this.isAutocomplete,

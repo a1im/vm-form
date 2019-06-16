@@ -12,15 +12,19 @@ export default Dropdown.extend({
         SearchField() {
             return this.$VMField({
                 name: 'VMSearchField',
-                prop: 'search',
-                value: this,
+                value: this.search,
                 required: this.field.required,
                 disabled: this.field.disabled,
                 mask: this.field.mask,
                 text: {
                     placeholder: this.text.placeholder,
                 },
+                validation: this.field.validation,
                 hideValidator: true,
+                validationStart: true,
+                onChange: (value) => {
+                    this.search = value;
+                },
             });
         },
 

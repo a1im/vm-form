@@ -64,6 +64,8 @@ export default options => ({
             ],
             on: {
                 async submit(event) {
+                    // console.log('', Array.from(event.srcElement));
+                    form.fields.forEach(it => it.onValidator(event));
                     event.preventDefault();
                     await form.onSubmit();
                 },

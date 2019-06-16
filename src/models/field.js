@@ -16,6 +16,7 @@ export default class Field {
         onChange = () => ({}),
         pattern = '',
         validation = () => {},
+        validationStart = false,
         text = null,
     }) {
         this.name = name;
@@ -39,6 +40,7 @@ export default class Field {
         this.text = text;
         this.$el = null;
         this.langText = {};
+        this.validationStart = validationStart;
 
         // validation variable
         this._isInvalid = null;
