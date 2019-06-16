@@ -26,7 +26,10 @@ export default Vue.extend({
         },
 
         text() {
-            return this.field.text
+            const { text } = this.field;
+
+            return (text || {})[this.name]
+                || text
                 || this.langText
                 || (this.langNameText || {})[this.name]
                 || Object.assign(
