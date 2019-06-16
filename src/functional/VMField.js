@@ -10,27 +10,30 @@ export default components => ({
             data,
             listeners,
         } = ctx || {};
-        const { field = {} } = props;
-        const { component = '' } = field;
-        const componentField = components[component];
 
-        if (!(field instanceof Field) || !component) {
+        if (
+            !props
+            || !props.field
+            || !(props.field instanceof Field)
+            || !props.field.component
+        ) {
             console.error('required prop field!!!', ctx);
 
             return;
         }
 
-        if (!componentField) {
-            console.error(`component "${component}" not found!!!`);
+        if (!components[props.field.component]) {
+            console.error(`component "${props.field.component}" not found!!!`);
 
             return;
         }
 
-        field.listeners = {
-            ...field.listeners,
+        props.field.listeners = {
+            ...props.field.listeners,
             ...listeners,
         };
 
+        const componentField = components[props.field.component];
         const { staticClass, class: className } = data || {};
 
         return ce(componentField, {
