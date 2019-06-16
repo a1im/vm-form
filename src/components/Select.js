@@ -17,7 +17,9 @@ export default Dropdown.extend({
                 required: this.field.required,
                 disabled: this.field.disabled,
                 mask: this.field.mask,
-                text: this.text,
+                text: {
+                    placeholder: this.text.placeholder,
+                },
                 hideValidator: true,
             });
         },
