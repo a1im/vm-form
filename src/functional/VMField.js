@@ -4,13 +4,6 @@ import { Field } from '../models';
 export default components => ({
     functional: true,
 
-    props: {
-        field: {
-            type: Field,
-            required: true,
-        },
-    },
-
     render: (ce, ctx) => {
         const {
             props,
@@ -20,6 +13,12 @@ export default components => ({
         const { field = {} } = props;
         const { component = '' } = field;
         const componentField = components[component];
+
+        if (!(field instanceof Field) || !component) {
+            console.error('required prop field!!!', ctx);
+
+            return;
+        }
 
         if (!componentField) {
             console.error(`component "${component}" not found!!!`);
