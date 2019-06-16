@@ -64,18 +64,21 @@ export default class Field {
     }
 
     checkValidation() {
-        let text;
-
         if (this.$el && this.validation) {
-            text = this.validation(this.getValue(), this.langText, this);
+            const text = this.validation(this.getValue(), this.langText, this);
 
             this.$el.setCustomValidity(text || '');
 
             // console.log('setCustomValidity', Object.getPrototypeOf(this.$el));
-            this._isInvalid = !!text || !this.$el.validity.valid;
+            return Boolean(text || !this.$el.validity.valid);
         }
 
         return this._isInvalid;
+    }
+
+    updateValidation() {
+        this._isEdit = true;
+        this._isInvalid = this.checkValidation();
     }
 
     clearValidation() {
@@ -92,12 +95,11 @@ export default class Field {
     }
 
     onValidator(event) {
-        this._isEdit = true;
-        this._isInvalid = this.checkValidation();
+        this.updateValidation();
         if (this.$el) {
             this.$el.focus();
             this.$el.reportValidity();
-            event.preventDefault();
+            event && event.preventDefault();
         }
     }
 

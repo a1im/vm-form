@@ -40,7 +40,7 @@ export default Entity.extend({
 
             this.beforeOnInput(value);
             this.field.setValue(value);
-            this.field.checkValidation();
+            this.field.updateValidation();
             this.field.onChange(value, data);
             this.$emit('input', value, data);
         },

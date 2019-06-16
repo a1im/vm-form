@@ -56,9 +56,7 @@ export default Field.extend({
     methods: {
         inputInit() {
             this.field.$el = this.$refs.input;
-            if (this.field.validationStart) {
-                this.field.checkValidation();
-            }
+            this.field.checkValidation();
         },
     },
 

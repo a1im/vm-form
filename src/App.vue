@@ -40,7 +40,7 @@ export default {
                 name: 'phone',
                 autofocus: true,
                 tabindex: 1,
-                value: '79999999999',
+                value: '7',
                 mask: ['+# (###) ###-##-##', '+## (###) ###-##-##'],
                 validation: val => ([11, 12].includes(val.replace(/[^\d]/g, '').length)
                     ? ''

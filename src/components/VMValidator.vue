@@ -5,11 +5,11 @@
     @touchstart="field.onValidator($event)"
     )
         .vm-validator-circle(
-        :class=`{
-            error: !field._isEdit && field._isInvalid === true,
-            success: field._isInvalid === false,
-            warn: field._isEdit && field._isInvalid === true,
-        }`
+            :class=`{
+                error: isError,
+                success: isSuccess,
+                warn: isWarning,
+            }`
         )
 </template>
 
@@ -23,6 +23,18 @@ export default Entity.extend({
     computed: {
         isActive() {
             return this.field.type !== 'hidden' && !this.field.disabled;
+        },
+
+        isError() {
+            return !this.field._isEdit && this.field._isInvalid === true;
+        },
+
+        isSuccess() {
+            return this.field._isInvalid === false;
+        },
+
+        isWarning() {
+            return this.field._isEdit && this.field._isInvalid === true;
         },
     },
 });

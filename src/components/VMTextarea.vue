@@ -14,7 +14,7 @@
             :name="name"
             :tabindex="field.tabindex"
             @input="onInput($event.target.value)"
-            @invalid="field.onInvalid()"
+            @invalid="() => field.onInvalid()"
             )
             PropsSplit(v-if="!hideValidator" :props="$props" component="VMValidator")
 </template>

@@ -21,7 +21,6 @@ export default Dropdown.extend({
                 },
                 validation: this.field.validation,
                 hideValidator: true,
-                validationStart: true,
                 onChange: (value) => {
                     this.search = value;
                 },
