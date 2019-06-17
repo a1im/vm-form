@@ -25,6 +25,7 @@ import {
     VMTimePicker,
     VMCalendar,
 } from './components';
+import masker from './utils/masked/masker';
 
 const defaultComponents = {
     VMInput,
@@ -108,6 +109,7 @@ const Root = {
             return Vue.observable ? Vue.observable(field) : field;
         };
         const $VMForm = (data, submit) => new Form(data.map(el => $VMField(el)), submit);
+        const $VMMasker = (value, mask, masked = true, tokens) => masker(value, mask, masked, tokens);
 
         lang = {
             ru: langRu,
@@ -124,6 +126,7 @@ const Root = {
 
         Vue.prototype.$VMField = $VMField;
         Vue.prototype.$VMForm = $VMForm;
+        Vue.prototype.$VMForm = $VMMasker;
     },
 };
 
