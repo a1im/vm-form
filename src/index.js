@@ -147,5 +147,6 @@ export {
     VMTextarea,
     VMTimePicker,
     VMCalendar,
+    masker,
 };
 export default Root;
