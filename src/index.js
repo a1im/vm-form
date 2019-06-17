@@ -105,7 +105,7 @@ const Root = {
                 field = new Input(fieldData);
             }
 
-            return field;
+            return Vue.observable ? Vue.observable(field) : field;
         };
         const $VMForm = (data, submit) => new Form(data.map(el => $VMField(el)), submit);
 
