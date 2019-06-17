@@ -10886,7 +10886,7 @@ var Root = {
     $VMForm.setLang(currentLang);
     Vue.prototype.$VMField = $VMField;
     Vue.prototype.$VMForm = $VMForm;
-    Vue.prototype.$VMForm = $VMMasker;
+    Vue.prototype.$VMMasker = $VMMasker;
   }
 };
 
