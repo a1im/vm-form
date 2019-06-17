@@ -1,9 +1,11 @@
 <template lang="pug">
     #app
-        VMForm(:form="form" :langNameText="text" :excludes="['number', 'calendar']")
+        VMForm(:form="form" :langNameText="text" :excludes="['number']")
+            VMField(:field="form.field('calendar')" icon="dots")
+            VMFieldAll(:fields="form.fields" :excludes="['number', 'calendar']")
+            button(type="submit") submit
         VMField(:field="form.field('number')" icon="dots")
         VMField(:field="form.field('time')" icon="dots")
-        VMField(:field="form.field('calendar')" icon="dots")
         button(@click="$VMForm.setLang('ru')") change lang
 </template>
 

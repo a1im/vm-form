@@ -1,14 +1,11 @@
 <template lang="pug">
-    PropsSplit(:props="$props" component="VMFieldWrapper")
+    VMFieldWrapper(v-bind="$props")
         .vm-select-container(:class="classObject")
             .vm-select-input-block
-                input.vm-input.vm-select-input(
-                v-model="search"
-                ref="input"
-                :disabled="field.disabled"
-                :placeholder="text.placeholder"
-                @focus.stop="onSearchFocus"
-                @dblclick.stop="selectAll"
+                BaseInput.vm-select-input(
+                    :field="SearchField"
+                    @focus.stop="onSearchFocus"
+                    @dblclick.stop="selectAll"
                 )
                 .vm-select-input-overlay(v-if="!isAutocomplete" @click="toggle")
                 .vm-select-trigger(@click="toggle")

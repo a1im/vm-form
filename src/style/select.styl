@@ -4,7 +4,7 @@
     position relative
 
     &.active
-      .vm-select-input input
+      .vm-select-input
       .vm-select-input-block
         border-bottom-left-radius 0
         border-bottom-right-radius 0
@@ -15,21 +15,16 @@
       .vm-select-input
         position relative
         z-index 7
-
-      .vm-select-input input
         transition border-radius .1s
 
       .vm-select-input-overlay
         z-index 7
 
   .vm-select-input
-    width 100%
-    margin 0
-    input
-      padding-right var(--right-icon-width)
-      text-overflow ellipsis
-      transition border-radius .1s .2s
-      z-index 2
+    padding-right var(--right-icon-width)
+    text-overflow ellipsis
+    transition border-radius .1s .2s
+    z-index 2
 
   .vm-select-input-block
     border-radius var(--border-radius)

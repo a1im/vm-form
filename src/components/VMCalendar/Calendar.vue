@@ -1,5 +1,6 @@
 <template lang="pug">
-    PropsSplit.vm-calendar(:props="$props" component="VMFieldWrapper" :class="{ opened: isActive }")
+    VMFieldWrapper.vm-calendar(v-bind="$props" :class="{ opened: isActive }")
+        BaseInput.vm-calendar-input(v-bind="$props")
         CalendarHeader(
         :interval="resultClickDate"
         :opened="isActive"
@@ -51,6 +52,7 @@
 import Dropdown from '../Dropdown';
 import CalendarHeader from './CalendarHeader.vue';
 import CalendarBody from './CalendarBody.vue';
+import BaseInput from '../BaseInput.vue';
 import monthName from './MonthName.vue';
 
 
@@ -61,6 +63,7 @@ export default Dropdown.extend({
         CalendarHeader,
         CalendarBody,
         monthName,
+        BaseInput,
     },
 
     data: () => ({
@@ -177,6 +180,13 @@ export default Dropdown.extend({
 </script>
 
 <style lang="stylus">
+    .vm-calendar-input
+        position: absolute !important
+        width: 100% !important
+        height: 100% !important
+        opacity 0 !important
+        pointer-events none !important
+
     .vm-calendar
         position relative
         display: flex
@@ -185,69 +195,69 @@ export default Dropdown.extend({
         width 100%
         color var(--text-color)
 
-        .vm-calendar-content
-            position absolute
-            background-color var(--bg-color)
-            padding .75em
-            left 0
-            top calc(100% - 1px)
-            //width 100%
-            z-index 4
-            border var(--border-width) solid var(--border-color)
-            // border-top none
-            border-radius var(--border-radius)
-            border-top-left-radius 0
-            border-top-right-radius 0
+    .vm-calendar-content
+        position absolute
+        background-color var(--bg-color)
+        padding .75em
+        left 0
+        top calc(100% - 1px)
+        //width 100%
+        z-index 4
+        border var(--border-width) solid var(--border-color)
+        // border-top none
+        border-radius var(--border-radius)
+        border-top-left-radius 0
+        border-top-right-radius 0
 
-        .vm-calendar-content-wrapper
-            width 100%
+    .vm-calendar-content-wrapper
+        width 100%
+        display: flex
+        align-items stretch
+
+        .vm-calendar-content-separator
+            flex: none
+            margin: 0 5px
+            width 1px
+            background-color var(--calendar-separator-color)
+
+    .vm-calendar-content-header
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 10px
+
+        .vm-calendar-content-name
+            &:before
+                padding-bottom: 35px
+
+            .vm-calendar-body-day-container
+                background-color transparent
+                border-bottom 1px solid gray
+
+        .vm-calendar-content-arrow-block
             display: flex
-            align-items stretch
 
-            .vm-calendar-content-separator
-                flex: none
-                margin: 0 5px
-                width 1px
-                background-color var(--calendar-separator-color)
-
-        .vm-calendar-content-header
+        .vm-calendar-content-arrow
+            flex none
+            height 100%
+            padding 2px
+            border-radius 5px
+            border 1px solid transparent
+            transition border .2s
             display: flex
             align-items: center
-            justify-content: space-between
-            margin-bottom: 10px
+            cursor pointer
 
-            .vm-calendar-content-name
-                &:before
-                    padding-bottom: 35px
+            &:hover
+                border 1px solid var(--border-color)
 
-                .vm-calendar-body-day-container
-                    background-color transparent
-                    border-bottom 1px solid gray
+            &:not(:last-child)
+                margin-right: .4em
 
-            .vm-calendar-content-arrow-block
-                display: flex
-
-            .vm-calendar-content-arrow
-                flex none
-                height 100%
-                padding 2px
-                border-radius 5px
-                border 1px solid transparent
-                transition border .2s
-                display: flex
-                align-items: center
-                cursor pointer
-
-                &:hover
-                    border 1px solid var(--border-color)
-
-                &:not(:last-child)
-                    margin-right: .4em
-
-            .vm-calendar-content-date-name
-                user-select none
-                margin 0 auto
-                text-overflow: ellipsis
-                overflow: hidden
-                white-space: nowrap
+        .vm-calendar-content-date-name
+            user-select none
+            margin 0 auto
+            text-overflow: ellipsis
+            overflow: hidden
+            white-space: nowrap
 </style>

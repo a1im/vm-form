@@ -1,5 +1,4 @@
 import Entity from './Entity';
-import { PropsSplit } from '../functional';
 import VMFieldWrapper from './VMFieldWrapper.vue';
 import VMValidator from './VMValidator.vue';
 import { getCaretPosition, setCursorPosition } from '../utils';
@@ -9,8 +8,7 @@ import { Field } from '../models';
 export default Entity.extend({
     props: {
         field: {
-            type: Object,
-            validator: value => value instanceof Field,
+            type: Field,
             required: true,
         },
     },
@@ -18,7 +16,6 @@ export default Entity.extend({
     components: {
         VMFieldWrapper,
         VMValidator,
-        PropsSplit,
     },
 
     methods: {

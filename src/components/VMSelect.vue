@@ -1,10 +1,9 @@
 <template lang="pug">
-    PropsSplit(:props="$props" component="VMFieldWrapper")
+    VMFieldWrapper(v-bind="$props")
         .vm-select-container(:class="classObject")
             .vm-select-input-block
-                VMField.vm-select-input(
+                BaseInput.vm-select-input(
                     :field="SearchField"
-                    ref="input"
                     @focus.stop="onSearchFocus"
                     @dblclick.stop="selectAll"
                 )
@@ -32,6 +31,7 @@
 <script>
 import Select from './Select';
 import VMSelectOptions from './VMSelectOptions.vue';
+import BaseInput from './BaseInput.vue';
 
 
 export default Select.extend({
@@ -39,6 +39,7 @@ export default Select.extend({
 
     components: {
         VMSelectOptions,
+        BaseInput,
     },
 });
 </script>

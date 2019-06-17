@@ -1,5 +1,5 @@
 <template lang="pug">
-    PropsSplit(:props="$props" component="VMFieldWrapper")
+    VMFieldWrapper(v-bind="$props")
         .vm-time-picker
             VMField.vm-time-picker__item(:field="selectTimeFrom")
             VMField.vm-time-picker__item(v-if="isRange" :field="selectTimeTo")

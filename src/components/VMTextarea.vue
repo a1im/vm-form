@@ -1,5 +1,5 @@
 <template lang="pug">
-    PropsSplit(:props="$props" component="VMFieldWrapper")
+    VMFieldWrapper(v-bind="$props")
         .vm-input-block
             textarea.vm-input.vm-textarea(
             ref="input"
@@ -16,7 +16,7 @@
             @input="onInput($event.target.value)"
             @invalid="() => field.onInvalid()"
             )
-            PropsSplit(v-if="!hideValidator" :props="$props" component="VMValidator")
+            VMValidator(v-if="!hideValidator" v-bind="$props")
 </template>
 
 <script>

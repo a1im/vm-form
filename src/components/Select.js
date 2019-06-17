@@ -16,11 +16,8 @@ export default Dropdown.extend({
                 required: this.field.required,
                 disabled: this.field.disabled,
                 mask: this.field.mask,
-                text: {
-                    placeholder: this.text.placeholder,
-                },
+                text: this.text,
                 validation: this.field.validation,
-                hideValidator: true,
                 onChange: (value) => {
                     this.search = value;
                 },
@@ -100,7 +97,8 @@ export default Dropdown.extend({
         },
 
         selectAll() {
-            const input = this.$el.querySelector('.vm-select-input input');
+            console.log('selectAll');
+            const input = this.$el.querySelector('.vm-select-input');
 
             input.select();
         },

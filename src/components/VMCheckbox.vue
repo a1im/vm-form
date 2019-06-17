@@ -1,5 +1,5 @@
 <template lang="pug">
-    PropsSplit(:props="$props" component="VMFieldWrapper")
+    VMFieldWrapper(v-bind="$props")
         label.label(v-if="text.label") {{ text.label }}
         input.vm-input.vm-input-checkbox(
         :value="text.placeholder"
