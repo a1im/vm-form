@@ -12,6 +12,7 @@
         :value="value"
         :name="name"
         :tabindex="field.tabindex"
+        :autocomplete="field.autocomplete"
         v-mask="config"
         v-on="listeners"
         @inputMasked="onInput($event.target.value)"

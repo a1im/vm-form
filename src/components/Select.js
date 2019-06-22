@@ -12,6 +12,7 @@ export default Dropdown.extend({
         SearchField() {
             return this.$VMField({
                 name: 'VMSearchField',
+                autocomplete: 'off',
                 value: this.search,
                 required: this.field.required,
                 disabled: this.field.disabled,

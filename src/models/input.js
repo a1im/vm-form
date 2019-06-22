@@ -8,6 +8,7 @@ export default class Input extends Field {
         maxlength = null,
         readonly = false,
         type = 'text',
+        autocomplete = 'on',
         mask,
         maskTokens,
         onChangeNotMasked = () => {},
@@ -24,6 +25,7 @@ export default class Input extends Field {
         this.minlength = minlength;
         this.maxlength = maxlength;
         this.readonly = readonly;
+        this.autocomplete = autocomplete;
         this.mask = mask;
         this.maskTokens = maskTokens;
         this.onChangeNotMasked = onChangeNotMasked;
